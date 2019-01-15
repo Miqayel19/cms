@@ -5,8 +5,8 @@
     <section class="content-header">
         <!-- /.row -->
         <ol class="breadcrumb" style="float:left;position:static">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Dashboard</a></li>
+            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="dashboard">Dashboard</a></li>
         </ol>
     </section>
     <div id="wrapper">
@@ -22,15 +22,15 @@
                             </div>
                             <!-- /.panel-heading -->
                             <div class="panel-body">
-                                <table class="table table-hover ">
+                                <table class="table table-hover table-responsive">
                                     <thead>
                                     <tr>
-                                        <th>Name</th>
-                                        <th>Surname</th>
-                                        <th>Phone</th>
-                                        <th>Email</th>
-                                        <th>Faculties</th>
-                                        <th>Groups</th>
+                                        <th style="width: 15%">Name</th>
+                                        <th style="width: 20%">Surname</th>
+                                        <th style="width: 15%">Phone</th>
+                                        <th style="width: 20%">Email</th>
+                                        <th style="width: 15%">Faculties</th>
+                                        <th style="width: 15%">Groups</th>
                                     </tr>
                                     </thead>
                                     <tr>
@@ -63,7 +63,11 @@
                                             <td>{{$student->surname}}</td>
                                             <td>{{$student->phone}}</td>
                                             <td>{{$student->email}}</td>
-                                            <td>{{$student->faculty->name}}</td>
+                                            <td>
+                                                @if($student->faculty)
+                                                    {{$student->faculty->name}}
+                                                @endif
+                                            </td>
                                             <td>{{$student->group->name}}</td>
                                         </tr>
                                     @endforeach
@@ -120,13 +124,14 @@
                 });
 
             }
+
             $(document).on('change', '.fac_val', function () {
                 SearchFacultyByAjax();
                 var id = $(this).val();
                 $.ajax({
                     type: 'GET',
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                    url: '/api/faculties/'+id+'/groups/json',
+                    url: '/api/faculties/' + id + '/groups/json',
                     success: function (data) {
                         $('.search_group').html(data);
                     }

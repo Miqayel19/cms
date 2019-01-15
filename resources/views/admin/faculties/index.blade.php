@@ -2,13 +2,11 @@
 
 @section('content')
 
-    <section class="content-header" style="padding:35px 15px 0 15px">
-
-        <!-- /.row -->
+    <section class="content-header" style="padding:7px 15px 0 15px">
 
         <ol class="breadcrumb" style="float:left;position:static">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Faculties</a></li>
+            <li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="#" active>Faculties</a></li>
         </ol>
     </section>
     <section class="content">
@@ -17,7 +15,6 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Faculties</h3>
-
                         <div class="box-tools" style='right:0px;top:3px'>
                             <a class="input-group input-group-sm" href="{{url('api/faculties/create')}}"
                                style="text-align: right">
@@ -27,19 +24,18 @@
                     </div>
                 </div>
                 <!-- /.box-header -->
-
                 <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-striped ">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
-                            <th>Actions</th>
+                            <th style="text-align: right">Actions</th>
                         </tr>
                         @foreach($faculties as $faculty)
                             <tr>
                                 <td>{{$faculty->id}}</td>
                                 <td>{{$faculty->name}}</td>
-                                <td>
+                                <td style="text-align: right">
                                     <a href="{{url('api/faculties/'.$faculty->id.'/edit')}}" class="edit"><i
                                                 class="fa fa-fw fa-edit"></i></a>
                                     <a class="delete_fac" data-toggle="modal"
@@ -56,13 +52,7 @@
             </div>
             <!-- /.box -->
         </div>
-        </div>
-        @if (isset($errors))
-            {{ implode('', $errors->all('<div>:message</div>')) }}
-        @endif
-        <div class="modal modal-primary fade delete_modal" id="modal-primary" style="display: none;">
-
-        </div>
+        <div class="modal modal-primary fade delete_modal" id="modal-primary" style="display: none;"></div>
     </section>
     <!-- /.content -->
 

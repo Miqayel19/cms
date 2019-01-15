@@ -32,7 +32,6 @@ class FacultiesController extends Controller
      */
     public function dashboard()
     {
-
         $students = Student::with('faculty', 'group')->orderBy('id', 'DESC')->get();
         $faculties = Faculty::all();
         return view('admin.includes.dashboard', compact('students', 'faculties'));
@@ -110,17 +109,12 @@ class FacultiesController extends Controller
         $validator = Validator::make($data, $rules);
 
         if ($validator->fails()) {
-
-//          return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
-            return redirect()->to('/api/faculties')->withErrors($validator);
-
+            return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
         }
-            $result = Faculty::create($data);
-            $faculties = $result->orderBy('id', 'DESC')->get()->all();
-//          return response()->json($faculty);
-            return view('admin.faculties.index', compact('faculties'));
-        }
-
+        $result = Faculty::create($data);
+        $faculties = $result->orderBy('id', 'DESC')->get()->all();
+        return view('admin.faculties.index', compact('faculties'));
+    }
 
 
     /**
@@ -157,7 +151,6 @@ class FacultiesController extends Controller
      */
     public function show($id)
     {
-
         $faculties = Faculty::where('id', $id)->first();
         return response()->json($faculties, 200);
     }
@@ -170,10 +163,8 @@ class FacultiesController extends Controller
      */
     public function edit($id)
     {
-
         $faculty = Faculty::where('id', $id)->first();
         return view('admin.faculties.edit', compact('faculty'));
-
     }
 
     /**
@@ -222,13 +213,10 @@ class FacultiesController extends Controller
         $validator = Validator::make($data, $rules);
 
         if ($validator->fails()) {
-
-//          return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
-            return redirect()->to('/api/faculties')->back()->withErrors($validator);
+            return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
         }
 
         Faculty::where('id', $id)->update($data);
-//      return response()->json(['status' => 'success', 'message' => 'Faculty updated!'], 200);
         return redirect()->to('/api/faculties');
     }
 
@@ -269,29 +257,25 @@ class FacultiesController extends Controller
      */
     public function destroy($id)
     {
-
         Faculty::where('id', $id)->delete();
-        //return response()->json(['status' => 'success', 'message' => 'Faculty deleted!'], 200);
         return redirect()->to('/api/faculties');
-
     }
 
-    public function show_group_json(Request $request,$id){
+    public function show_group_json(Request $request, $id)
+    {
         $this->searchByAjax($request);
         $faculty_groups = Group::where('fac_id', $id)->with('faculty')->get();
-        return View::make('admin.faculties.modals.group_modal',compact('faculty_groups'));
+        return View::make('admin.faculties.modals.group_modal', compact('faculty_groups'));
     }
 
     public function show_group($id)
     {
         $faculty_group = Faculty::where('id', $id)->with('group')->get();
         return response()->json(['Faculty_Groups' => $faculty_group, 'message' => 'Group by Faculty showed!'], 200);
-
     }
 
     public function getByAjax(Request $request)
     {
-
         $id = $request->get('id');
         $faculty = Faculty::where('id', $id)->first();
         return View::make('admin.faculties.modals.delete', compact('faculty'));
@@ -304,8 +288,7 @@ class FacultiesController extends Controller
         $phone = $request->get('search_phone');
         $mail = $request->get('search_email');
         $fac_id = $request->get('search_fac');
-        $group_id=  $request->get('id');
-
+        $group_id = $request->get('id');
 
         $students = Student::query();
         if ($name) {
@@ -327,18 +310,13 @@ class FacultiesController extends Controller
             $students->with('group')->where('group_id', 'like', '%' . $group_id . '%');
         }
         $students = $students->get();
-
         return View::make('admin.includes.search', compact('students'));
     }
 
     public function getInfoByAjax(Request $request)
     {
-
         $id = $request->get('id');
-
-        // Stugem Group_id ka te che stex, u  et Id-n stanam Ajax-ov uxarkem es ej
         $fac_groups = Group::where(['fac_id' => $id])->get();
-
         return View::make('admin.students.select', compact('fac_groups'));
     }
 

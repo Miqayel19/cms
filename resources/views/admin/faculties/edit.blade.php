@@ -2,11 +2,10 @@
 @section('content')
 
     <section class="content-header">
-
         <!-- /.row -->
         <ol class="breadcrumb"  style="float:left;position:static">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Faculties</a></li>
+            <li><a href="dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="faculties" active>Faculties</a></li>
         </ol>
     </section>
     <div>

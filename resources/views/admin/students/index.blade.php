@@ -2,13 +2,13 @@
 
 @section('content')
 
-    <section class="content-header" style="padding:35px 15px 0 15px">
+    <section class="content-header" style="padding:7px 15px 0 15px">
 
         <!-- /.row -->
 
         <ol class="breadcrumb" style="float:left;position:static">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Students</a></li>
+            <li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="strudents" active>Students</a></li>
         </ol>
     </section>
     <section class="content">
@@ -17,7 +17,6 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Students</h3>
-
                         <div class="box-tools" style='right:0px;top:3px'>
                             <a class="input-group input-group-sm" href="{{url('api/students/create')}}"
                                style="text-align: right">
@@ -29,7 +28,7 @@
                 <!-- /.box-header -->
 
                 <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-striped ">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
@@ -38,7 +37,7 @@
                             <th>Email address</th>
                             <th>Faculty</th>
                             <th>Group</th>
-                            <th>Actions</th>
+                            <th style="text-align: right">Actions</th>
                         </tr>
                         @foreach($students as $student)
                             <tr>
@@ -53,11 +52,11 @@
                                     @endif
                                 </td>
                                 <td>
-                                    @if($student->group)
+                                    @if($student->faculty)
                                         {{$student->group->name}}
                                     @endif
                                 </td>
-                                <td>
+                                <td style="text-align: right">
                                     <a href="{{url('api/students/'.$student->id.'/edit')}}" class="edit"><i
                                                 class="fa fa-fw fa-edit"></i></a>
                                     <a class="delete_student" data-toggle="modal"

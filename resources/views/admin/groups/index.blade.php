@@ -2,13 +2,11 @@
 
 @section('content')
 
-    <section class="content-header" style="padding:35px 15px 0 15px">
-
+    <section class="content-header" style="padding:7px 15px 0 15px">
         <!-- /.row -->
-
         <ol class="breadcrumb" style="float:left;position:static">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Groups</a></li>
+            <li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="groups" active>Groups</a></li>
         </ol>
     </section>
     <section class="content">
@@ -17,7 +15,6 @@
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Groups</h3>
-
                         <div class="box-tools" style='right:0px;top:3px'>
                             <a class="input-group input-group-sm" href="{{url('api/groups/create')}}"
                                style="text-align: right">
@@ -27,14 +24,13 @@
                     </div>
                 </div>
                 <!-- /.box-header -->
-
                 <div class="box-body table-responsive no-padding">
-                    <table class="table table-hover">
+                    <table class="table table-hover table-responsive table-striped ">
                         <tr>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Faculty</th>
-                            <th>Actions</th>
+                            <th style="text-align: right">Actions</th>
                         </tr>
                         @foreach($groups as $group)
                             <tr>
@@ -42,15 +38,12 @@
                                 <td>{{$group->name}}</td>
                                 <td>
                                     @if($group->faculty)
-                                    {{$group->faculty->name}}
+                                        {{$group->faculty->name}}
                                     @endif
                                 </td>
-                                <td>
-                                    <a href="{{url('api/groups/'.$group->id.'/edit')}}" class="edit"><i
-                                                class="fa fa-fw fa-edit"></i></a>
-                                    <a class="delete_group" data-toggle="modal"
-                                       data-target="#modal-primary" data-id="{{$group->id}}"
-                                       id="{{$group->id}}">
+                                <td style="text-align: right">
+                                    <a href="{{url('api/groups/'.$group->id.'/edit')}}" class="edit"><i class="fa fa-fw fa-edit"></i></a>
+                                    <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$group->id}}" id="{{$group->id}}">
                                         <i class="fa fa-fw fa-remove "></i>
                                     </a>
                                 </td>
@@ -62,13 +55,9 @@
             </div>
             <!-- /.box -->
         </div>
-        </div>
-        <div class="modal modal-primary fade delete_modal" id="modal-primary" style="display: none;">
-
-        </div>
+        <div class="modal modal-primary fade delete_modal" id="modal-primary" style="display: none;"></div>
     </section>
     <!-- /.content -->
-
 
     <script>
 

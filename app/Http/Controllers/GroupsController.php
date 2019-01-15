@@ -32,9 +32,6 @@ class GroupsController extends Controller
     public function index()
     {
         $groups = Group::with('faculty')->get();
-
-
-//        return response()->json($groups,200);
         return view('admin.groups.index', compact('groups'));
     }
 
@@ -105,7 +102,6 @@ class GroupsController extends Controller
         }
 
         $groups = Group::create($data)->get();
-        //return response()->json($groups);
         return view('admin.groups.index',compact('groups'));
     }
 
@@ -148,13 +144,11 @@ class GroupsController extends Controller
         return response()->json($group,200);
     }
 
-
     public function edit($id)
     {
         $group = Group::where('id', $id)->first();
         $faculties = Faculty::all();
         return view('admin.groups.edit', compact('group','faculties'));
-
     }
 
     /**
@@ -195,7 +189,6 @@ class GroupsController extends Controller
 
     public function update(Request $request, $id)
     {
-
         $data = [
             'name' => $request->get('name'),
             'fac_id' => $request->get('fac_id')
@@ -212,8 +205,6 @@ class GroupsController extends Controller
         }
 
         Group::where('id',$id)->update($data);
-        //$group = Group::find($id);
-        //return response()->json($group,201);
         return redirect()->to('/api/groups');
     }
 
@@ -256,11 +247,11 @@ class GroupsController extends Controller
     public function destroy($id)
     {
         Group::where('id',$id)->delete();
-//        return response()->json(['status' => 'success','message' => 'Group deleted!',200]);
-        return redirect()->to('/api/groups');
+        return redirect()->back();
     }
 
-    public function getByAjax(Request $request){
+    public function getByAjax(Request $request)
+    {
         $id = $request->get('id');
         $group = Group::where('id',$id)->first();
         return View::make('admin.groups.modals.delete',compact('group'));
