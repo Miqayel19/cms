@@ -16,6 +16,9 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+Route::get('/dashboard','FacultiesController@dashboard');
+Route::post('/dashboard/get-info-by-ajax','FacultiesController@getInfoByAjax');
+Route::post('/search-by-ajax','FacultiesController@searchByAjax');
 
 Route::group(['prefix' => 'faculties'],function (){
     Route::get('/', 'FacultiesController@index');
@@ -26,6 +29,7 @@ Route::group(['prefix' => 'faculties'],function (){
     Route::put('/{id}','FacultiesController@update');
     Route::delete('/{id}','FacultiesController@destroy');
     Route::get('/{id}/groups', 'FacultiesController@show_group');
+    Route::get('/{id}/groups/json', 'FacultiesController@show_group_json');
     Route::post('/get-by-ajax','FacultiesController@getByAjax');
 
 });

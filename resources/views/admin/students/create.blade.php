@@ -25,7 +25,7 @@
                                 <input class="form-control" type="text" placeholder="Student name" name="name" required>
                                 <br>
                                 <label>Surname</label>
-                                <input class="form-control" type="text" placeholder="Student surnname" name="surname" required>
+                                <input class="form-control" type="text" placeholder="Student surname" name="surname" required>
                                 <br>
                                 <label>Phone</label>
                                 <input class="form-control" type="text" placeholder="Student phone number" name="phone" required>
@@ -34,17 +34,16 @@
                                 <input class="form-control" type="text" placeholder="Student email" name="email" required>
                                 <br>
                                 <label for="groupFaculty">Choose Faculty</label>
-                                <select class="form-control" name="fac_id">
+                                <select class="form-control fac_info" name="fac_id">
+                                    <option>All</option>
                                     @foreach($faculties as $faculty)
                                         <option value={{$faculty->id}}>{{$faculty->name}}</option>
                                     @endforeach
                                 </select>
                                 <br>
                                 <label for="groupFaculty">Choose Group</label>
-                                <select class="form-control" name="group_id">
-                                    @foreach($groups as $group)
-                                        <option value={{$group->id}}>{{$group->name}}</option>
-                                    @endforeach
+                                <select class="form-control group_info" name="group_id">
+
                                 </select>
                             </div>
                         </div>
@@ -66,4 +65,22 @@
             {!! Form::close() !!}
         </div>
     </div>
+    <script>
+
+        $(document).ready(function () {
+            $(document).on('change', '.fac_info', function () {
+                var id = $(this).val();
+                $.ajax({
+                    type: 'POST',
+                    headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
+                    url: '/api/students/get-info-by-ajax',
+                    data: {id: id},
+                    success: function (data) {
+                        $('.group_info').html(data);
+                    }
+                });
+            })
+        })
+
+    </script>
 @endsection

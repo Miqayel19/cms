@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Faculty;
+use App\Student;
+use App\Group;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
@@ -10,59 +12,147 @@ use Illuminate\Support\Facades\View;
 class FacultiesController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @OA\GET(
+     *      path="/api/dashboard",
+     *      operationId="getDashboard",
+     *      tags={"dashboard"},
+     *      summary="Get list of students information",
+     *      description="Returns list of information",
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function dashboard()
+    {
+
+        $students = Student::with('faculty', 'group')->orderBy('id', 'DESC')->get();
+        $faculties = Faculty::all();
+        return view('admin.includes.dashboard', compact('students', 'faculties'));
+    }
+
+
+    /**
+     * @OA\GET(
+     *      path="/api/faculties",
+     *      operationId="getFacultiesList",
+     *      tags={"faculties"},
+     *      summary="Get list of faculties",
+     *      description="Returns list of faculties",
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $faculties = Faculty::orderBy('id','DESC')->get();
+        $faculties = Faculty::orderBy('id', 'DESC')->get();
         return view('admin.faculties.index', compact('faculties'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+
     public function create()
     {
         return view('admin.faculties.create');
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @OA\POST(
+     *      path="/api/faculties",
+     *      operationId="addFaculty",
+     *      tags={"faculties"},
+     *      summary="Create faculty",
+     *      description="Create the faculty in store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful created"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
      *
-     * @param  \Illuminate\Http\Request $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
     {
         $data = [
-
             'name' => $request->get('name')
         ];
 
         $rules = [
-
-            'name' => 'required'
+            'name' => 'required|unique:faculties',
         ];
 
-        $validator = Validator::make($data,$rules);
+        $validator = Validator::make($data, $rules);
+
         if ($validator->fails()) {
-           return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
+
+//          return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
+            return redirect()->to('/api/faculties')->withErrors($validator);
+
+        }
+            $result = Faculty::create($data);
+            $faculties = $result->orderBy('id', 'DESC')->get()->all();
+//          return response()->json($faculty);
+            return view('admin.faculties.index', compact('faculties'));
         }
 
-        $result = Faculty::create($data);
-        $faculties = $result->orderBy('id','DESC')->get()->all();
-//        return response()->json($faculty);
-        return view('admin.faculties.index',compact('faculties'));
-    }
+
 
     /**
-     * Display the specified resource.
+     * @OA\GET(
+     *      path="/api/faculties/{id}",
+     *      operationId="getFacultybyId",
+     *      tags={"faculties"},
+     *      summary="Get faculty by Id",
+     *      description="Returns the faculty by Id",
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
      *
-     * @param  int $id
+     *     @OA\Response(
+     *         response="404",
+     *         description="Faculty not found"
+     *     ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -80,16 +170,45 @@ class FacultiesController extends Controller
      */
     public function edit($id)
     {
+
         $faculty = Faculty::where('id', $id)->first();
         return view('admin.faculties.edit', compact('faculty'));
 
     }
 
     /**
-     * Update the specified resource in storage.
+     * @OA\PUT(
+     *      path="/api/faculties/{id}",
+     *      operationId="addFaculty",
+     *      tags={"faculties"},
+     *      summary="Update faculty by Id",
+     *      description="Update the faculty in store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful created"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
      *
-     * @param  \Illuminate\Http\Request $request
-     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -98,11 +217,14 @@ class FacultiesController extends Controller
             'name' => $request->get('name')
         ];
         $rules = [
-            'name' => 'required'
+            'name' => 'required|unique:faculties'
         ];
         $validator = Validator::make($data, $rules);
+
         if ($validator->fails()) {
-            return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
+
+//          return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
+            return redirect()->to('/api/faculties')->back()->withErrors($validator);
         }
 
         Faculty::where('id', $id)->update($data);
@@ -111,9 +233,38 @@ class FacultiesController extends Controller
     }
 
     /**
-     * Remove the specified resource from storage.
+     * @OA\DELETE(
+     *      path="/api/faculties/{id}",
+     *      operationId="deleteFaculty",
+     *      tags={"faculties"},
+     *      summary="Delete faculty by Id",
+     *      description="Delete the faculty from store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful deleted"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
      *
-     * @param  int $id
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
@@ -125,17 +276,71 @@ class FacultiesController extends Controller
 
     }
 
+    public function show_group_json(Request $request,$id){
+        $this->searchByAjax($request);
+        $faculty_groups = Group::where('fac_id', $id)->with('faculty')->get();
+        return View::make('admin.faculties.modals.group_modal',compact('faculty_groups'));
+    }
+
     public function show_group($id)
     {
-
         $faculty_group = Faculty::where('id', $id)->with('group')->get();
         return response()->json(['Faculty_Groups' => $faculty_group, 'message' => 'Group by Faculty showed!'], 200);
 
     }
 
-    public function getByAjax(Request $request){
+    public function getByAjax(Request $request)
+    {
+
         $id = $request->get('id');
-        $faculty = Faculty::where('id',$id)->first();
-        return View::make('admin.faculties.modals.delete',compact('faculty'));
+        $faculty = Faculty::where('id', $id)->first();
+        return View::make('admin.faculties.modals.delete', compact('faculty'));
     }
+
+    public function searchByAjax(Request $request)
+    {
+        $name = $request->get('search_name');
+        $surname = $request->get('search_surname');
+        $phone = $request->get('search_phone');
+        $mail = $request->get('search_email');
+        $fac_id = $request->get('search_fac');
+        $group_id=  $request->get('id');
+
+
+        $students = Student::query();
+        if ($name) {
+            $students->where('name', 'like', '%' . $name . '%');
+        }
+        if ($surname) {
+            $students->where('surname', 'like', '%' . $surname . '%');
+        }
+        if ($phone) {
+            $students->where('phone', 'like', '%' . $phone . '%');
+        }
+        if ($mail) {
+            $students->where('email', 'like', '%' . $mail . '%');
+        }
+        if ($fac_id) {
+            $students->with('faculty')->where('fac_id', 'like', '%' . $fac_id . '%');
+        }
+        if ($group_id) {
+            $students->with('group')->where('group_id', 'like', '%' . $group_id . '%');
+        }
+        $students = $students->get();
+
+        return View::make('admin.includes.search', compact('students'));
+    }
+
+    public function getInfoByAjax(Request $request)
+    {
+
+        $id = $request->get('id');
+
+        // Stugem Group_id ka te che stex, u  et Id-n stanam Ajax-ov uxarkem es ej
+        $fac_groups = Group::where(['fac_id' => $id])->get();
+
+        return View::make('admin.students.select', compact('fac_groups'));
+    }
+
+
 }

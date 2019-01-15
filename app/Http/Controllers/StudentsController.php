@@ -12,11 +12,29 @@ use Illuminate\Support\Facades\View;
 class StudentsController extends Controller
 {
 
+    /**
+     * @OA\GET(
+     *      path="/api/students",
+     *      operationId="getStudentssList",
+     *      tags={"students"},
+     *      summary="Get list of students",
+     *      description="Returns list of students",
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
+
     public function index()
     {
         $students = Student::with('group','faculty')->get();
-//        $faculty_group = Group::with('faculty')->where('id',$id)->first();
-
 
         //return response()->json($students, 200);
         return view('admin.students.index', compact('students'));
@@ -31,6 +49,50 @@ class StudentsController extends Controller
         return view('admin.students.create',compact('students','faculties','groups'));
     }
 
+
+    /**
+     * @OA\POST(
+     *      path="/api/students",
+     *      operationId="addStudent",
+     *      tags={"students"},
+     *      summary="Create student",
+     *      description="Create the student in store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="fac_id",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="group_id",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful created"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function store(Request $request)
     {
@@ -64,6 +126,38 @@ class StudentsController extends Controller
         return view('admin.students.index',compact('students'));
     }
 
+    /**
+     * @OA\GET(
+     *      path="/api/students/{id}",
+     *      operationId="getStudentbyId",
+     *      tags={"students"},
+     *      summary="Get student by Id",
+     *      description="Returns the student by Id",
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
+     *
+     *     @OA\Response(
+     *         response="404",
+     *         description="Student not found"
+     *     ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function show($id)
     {
@@ -78,6 +172,43 @@ class StudentsController extends Controller
         $groups = Group::where(['fac_id'=>$student->fac_id])->get();
         return view('admin.students.edit', compact('student','faculties','groups'));
     }
+
+
+    /**
+     * @OA\PUT(
+     *      path="/api/students/{id}",
+     *      operationId="updateStudent",
+     *      tags={"students"},
+     *      summary="Update student by Id",
+     *      description="Update the student in store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful updated"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function update(Request $request, $id)
     {
@@ -106,12 +237,46 @@ class StudentsController extends Controller
         }
 
         Student::where('id',$id)->update($data);
-//        $students = Student::find($id);
-        
+
         //return response()->json($students,201);
         return redirect()->to('/api/students');
     }
 
+    /**
+     * @OA\DELETE(
+     *      path="/api/students/{id}",
+     *      operationId="deleteStudent",
+     *      tags={"students"},
+     *      summary="Delete student by Id",
+     *      description="Delete the student from store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful deleted"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function destroy($id)
     {
@@ -129,6 +294,7 @@ class StudentsController extends Controller
     public function getInfoByAjax(Request $request){
 
         $id = $request->get('id');
+        // Stugem Group_id ka te che stex, u  et Id-n stanam Ajax-ov uxarkem es ej
         $fac_groups = Group::where(['fac_id'=>$id])->get();
         return View::make('admin.students.select',compact('fac_groups'));
     }

@@ -35,20 +35,22 @@
                                 <input class="form-control" type="text" placeholder="Student email" value="{{$student->email}}" name="email">
                                 <br>
                                 <label>Faculty Name</label>
+
                                 <select class="form-control fac_val" name="fac_id">
                                     @if(isset($faculties)){
                                         @foreach($faculties as $faculty)
                                             <option value={{$faculty->id}}  @if($student->fac_id == $faculty->id) selected @endif>{{$faculty->name}}</option>
                                         @endforeach
                                         }
-                                    @else { }
                                     @endif
                                 </select>
                                 <br>
                                 <label>Group Name</label>
+                                        @if($student->group)
                                 <select class="form-control group_val" name="group_id" id ={{$student->group->fac_id}}>
                                     <option value={{$student->group->id}} selected="selected">{{$student->group->name}}</option>
                                 </select>
+                                @endif
                             </div>
                         </div>
                         <br>

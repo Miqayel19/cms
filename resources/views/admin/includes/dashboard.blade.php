@@ -44,7 +44,7 @@
                                                    name="search_email" id="search_email"></th>
                                         <th>
                                             <select class="form-control fac_val" id="search_fac">
-                                                <option value="{{null}}">All</option>
+                                                <option>All</option>
                                                 @foreach($faculties as $faculty)
                                                     <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                                                 @endforeach
@@ -52,7 +52,7 @@
                                         </th>
                                         <th>
                                             <select class="form-control search_group">
-                                                <option value="{{null}}">All</option>
+                                                <option>All</option>
                                             </select>
                                         </th>
                                     </tr>
@@ -114,6 +114,7 @@
                         search_fac: search_faculty,
                     },
                     success: function (data) {
+
                         $(".search").html(data);
                     }
                 });

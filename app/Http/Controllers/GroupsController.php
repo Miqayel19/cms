@@ -11,7 +11,21 @@ use Illuminate\Support\Facades\View;
 class GroupsController extends Controller
 {
     /**
-     * Display a listing of the resource.
+     * @OA\GET(
+     *      path="/api/groups",
+     *      operationId="getGroupsList",
+     *      tags={"groups"},
+     *      summary="Get list of groups",
+     *      description="Returns list of groups",
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
      *
      * @return \Illuminate\Http\Response
      */
@@ -37,9 +51,38 @@ class GroupsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * @OA\POST(
+     *      path="/api/groups",
+     *      operationId="addGroup",
+     *      tags={"groups"},
+     *      summary="Create group",
+     *      description="Create the group in store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="fac_id",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="int"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful created"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
      *
-     * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -66,6 +109,39 @@ class GroupsController extends Controller
         return view('admin.groups.index',compact('groups'));
     }
 
+    /**
+     * @OA\GET(
+     *      path="/api/groups/{id}",
+     *      operationId="getGroupbyId",
+     *      tags={"groups"},
+     *      summary="Get group by Id",
+     *      description="Returns the group by Id",
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful operation"
+     *       ),
+     *
+     *     @OA\Response(
+     *         response="404",
+     *         description="Group not found"
+     *     ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
+
     public function show($id)
     {
         $group = Group::with('faculty')->where('id',$id)->first();
@@ -81,6 +157,41 @@ class GroupsController extends Controller
 
     }
 
+    /**
+     * @OA\PUT(
+     *      path="/api/groups/{id}",
+     *      operationId="updateGroup",
+     *      tags={"groups"},
+     *      summary="Update group by Id",
+     *      description="Update the group in store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="integer"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful updated"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function update(Request $request, $id)
     {
@@ -105,6 +216,42 @@ class GroupsController extends Controller
         //return response()->json($group,201);
         return redirect()->to('/api/groups');
     }
+
+    /**
+     * @OA\DELETE(
+     *      path="/api/groups/{id}",
+     *      operationId="deleteGroup",
+     *      tags={"groups"},
+     *      summary="Delete group by Id",
+     *      description="Delete the group from store",
+     *      @OA\Parameter(
+     *          name="name",
+     *          required=true,
+     *          in="path",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *     @OA\Parameter(
+     *          name="id",
+     *          required=true,
+     *          in="query",
+     *          @OA\Schema(
+     *              type="string"
+     *          )
+     *      ),
+     *      @OA\Response(
+     *          response=200,
+     *          description="successful deleted"
+     *       ),
+     *       @OA\Response(response=400, description="Bad request"),
+     *       security={
+     *           {"api_key_security_example": {}}
+     *       }
+     *     )
+     *
+     * @return \Illuminate\Http\Response
+     */
 
     public function destroy($id)
     {

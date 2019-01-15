@@ -57,12 +57,14 @@
             <!-- /.box -->
         </div>
         </div>
+        @if (isset($errors))
+            {{ implode('', $errors->all('<div>:message</div>')) }}
+        @endif
         <div class="modal modal-primary fade delete_modal" id="modal-primary" style="display: none;">
 
         </div>
     </section>
     <!-- /.content -->
-
 
     <script>
 

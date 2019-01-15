@@ -41,5 +41,11 @@
             </div>
             {!! Form::close() !!}
         </div>
+        <div>
+            @if(isset($error))
+            <p>{{$error}} </p>
+            @endif
+        </div>
     </div>
+
 @endsection
