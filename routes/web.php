@@ -15,3 +15,5 @@ Route::get('/', function () {
     return view('admin.app');
 });
 
+//Route::get('/api/create', 'FacultiesController@create');
+

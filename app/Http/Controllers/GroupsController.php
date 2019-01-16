@@ -98,7 +98,7 @@ class GroupsController extends Controller
 
         $validator = Validator::make($data,$rules);
         if ($validator->fails()) {
-            return response()->json(['status' => 'error','errors' => $validator->errors()],400);
+            return Redirect::back()->withErrors($validator)->withInput();
         }
 
         $groups = Group::create($data)->get();
@@ -201,7 +201,7 @@ class GroupsController extends Controller
 
         $validator = Validator::make($data,$rules);
         if ($validator->fails()) {
-            return response()->json(['status' => 'error','errors' => $validator->errors()],400);
+            return Redirect::back()->withErrors($validator)->withInput();
         }
 
         Group::where('id',$id)->update($data);

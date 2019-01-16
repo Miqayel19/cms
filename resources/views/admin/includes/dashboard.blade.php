@@ -2,10 +2,10 @@
 
 @section('content')
 
-    <section class="content-header">
+    <section class="content-header" style="padding:7px 15px 0 15px">
         <!-- /.row -->
         <ol class="breadcrumb" style="float:left;position:static">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
             <li><a href="dashboard">Dashboard</a></li>
         </ol>
     </section>
@@ -44,7 +44,7 @@
                                                    name="search_email" id="search_email"></th>
                                         <th>
                                             <select class="form-control fac_val" id="search_fac">
-                                                <option>All</option>
+                                                <option value="{{null}}">All</option>
                                                 @foreach($faculties as $faculty)
                                                     <option value="{{$faculty->id}}">{{$faculty->name}}</option>
                                                 @endforeach
@@ -68,7 +68,11 @@
                                                     {{$student->faculty->name}}
                                                 @endif
                                             </td>
-                                            <td>{{$student->group->name}}</td>
+                                            <td>
+                                                @if($student->faculty)
+                                                    {{$student->group->name}}
+                                                @endif
+                                            </td>
                                         </tr>
                                     @endforeach
                                     </tbody>
@@ -86,7 +90,7 @@
     <script>
 
         $(document).ready(function () {
-            $('.search_ajax').on('keyup', function () {
+            $(document).on('keyup','.search_ajax', function () {
                 var search_name = $('#search_name').val();
                 var search_surname = $('#search_surname').val();
                 var search_phone = $('#search_phone').val();

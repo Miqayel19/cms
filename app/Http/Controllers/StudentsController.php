@@ -225,11 +225,11 @@ class StudentsController extends Controller
 
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
-            return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
+            return Redirect::back()->withErrors($validator)->withInput();
         }
 
         Student::where('id', $id)->update($data);
-        return redirect()->to('/api/students');
+        return redirect()->back();
     }
 
     /**

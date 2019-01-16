@@ -4,7 +4,7 @@
 
         <ol class="breadcrumb" style="float:left;position:static">
             <li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="#" active>Faculties</a></li>
+            <li><a href="faculties" active>Faculties</a></li>
         </ol>
     </section>
     <section class="content">

@@ -3,12 +3,11 @@
 @section('content')
 
     <section class="content-header" style="padding:7px 15px 0 15px">
-
         <!-- /.row -->
 
         <ol class="breadcrumb" style="float:left;position:static">
             <li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="strudents" active>Students</a></li>
+            <li><a href="students" active>Students</a></li>
         </ol>
     </section>
     <section class="content">
@@ -26,7 +25,6 @@
                     </div>
                 </div>
                 <!-- /.box-header -->
-
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover table-striped ">
                         <tr>

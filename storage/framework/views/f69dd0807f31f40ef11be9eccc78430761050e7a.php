@@ -1,9 +1,9 @@
 <?php $__env->startSection('content'); ?>
 
-    <section class="content-header">
+    <section class="content-header" style="padding:7px 15px 0 15px">
         <!-- /.row -->
         <ol class="breadcrumb" style="float:left;position:static">
-            <li><a href="#"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="dashboard"><i class="fa fa-dashboard"></i>Home</a></li>
             <li><a href="dashboard">Dashboard</a></li>
         </ol>
     </section>
@@ -42,7 +42,7 @@
                                                    name="search_email" id="search_email"></th>
                                         <th>
                                             <select class="form-control fac_val" id="search_fac">
-                                                <option>All</option>
+                                                <option value="<?php echo e(null); ?>">All</option>
                                                 <?php $__currentLoopData = $faculties; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $faculty): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                                     <option value="<?php echo e($faculty->id); ?>"><?php echo e($faculty->name); ?></option>
                                                 <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
@@ -67,7 +67,12 @@
 
                                                 <?php endif; ?>
                                             </td>
-                                            <td><?php echo e($student->group->name); ?></td>
+                                            <td>
+                                                <?php if($student->faculty): ?>
+                                                    <?php echo e($student->group->name); ?>
+
+                                                <?php endif; ?>
+                                            </td>
                                         </tr>
                                     <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
                                     </tbody>
@@ -85,7 +90,7 @@
     <script>
 
         $(document).ready(function () {
-            $('.search_ajax').on('keyup', function () {
+            $(document).on('keyup','.search_ajax', function () {
                 var search_name = $('#search_name').val();
                 var search_surname = $('#search_surname').val();
                 var search_phone = $('#search_phone').val();

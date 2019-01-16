@@ -9,7 +9,6 @@
     </section>
     <section class="content">
         <div class="row">
-            <div class="col-xs-12">
                 <div class="box">
                     <div class="box-header">
                         <h3 class="box-title">Groups</h3>
@@ -36,7 +35,7 @@
                                 <td><?php echo e($group->name); ?></td>
                                 <td>
                                     <?php if($group->faculty): ?>
-                                    <?php echo e($group->faculty->name); ?>
+                                        <?php echo e($group->faculty->name); ?>
 
                                     <?php endif; ?>
                                 </td>
@@ -51,13 +50,10 @@
                     </table>
                 </div>
                 <!-- /.box-body -->
-            </div>
-            <!-- /.box -->
         </div>
         <div class="modal modal-primary fade delete_modal" id="modal-primary" style="display: none;"></div>
     </section>
     <!-- /.content -->
-
 
     <script>
 

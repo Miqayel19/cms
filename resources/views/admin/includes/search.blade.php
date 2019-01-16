@@ -4,8 +4,16 @@
         <td>{{$student->surname}}</td>
         <td>{{$student->phone}}</td>
         <td>{{$student->email}}</td>
-        <td>{{$student->faculty->name}}</td>
-        <td>{{$student->group->name}}</td>
+        <td>
+            @if($student->faculty)
+                {{$student->faculty->name}}
+            @endif
+        </td>
+        <td>
+            @if($student->faculty)
+                {{$student->group->name}}
+            @endif
+        </td>
     </tr>
 @endforeach
 

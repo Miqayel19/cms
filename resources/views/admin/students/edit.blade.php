@@ -1,17 +1,15 @@
 @extends('admin.app')
 @section('content')
 
-    <section class="content-header">
+    <section class="content-header" style="padding:7px 15px 0 15px">
         <!-- /.row -->
         <ol class="breadcrumb"  style="float:left;position:static">
-            <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-            <li><a href="#">Students</a></li>
+            <li><a href="../dashboard"><i class="fa fa-dashboard"></i> Home</a></li>
+            <li><a href="../students">Students</a></li>
         </ol>
     </section>
-    <div>
-        <br>
-        <br>
-        <div class="content">
+        <section class="content">
+            <div class="row">
             {!! Form::open(['url'=> '/api/students/'.$student->id,'method'=> 'PUT']) !!}
             <div class="box box-success">
                 <div class="box-header with-border">
@@ -19,20 +17,24 @@
                 </div>
                 <div class="box-body">
                     <div class="row">
-                        <div class="form-group">
-                            <div class="col-md-12">
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <label>Name</label>
                                 <input class="form-control" type="text" placeholder="Student name" value="{{$student->name}}" name="name">
-                                <br>
+                            </div>
+                            <div class="form-group">
                                 <label>Surname</label>
                                 <input class="form-control" type="text" placeholder="Student surname" value="{{$student->surname}}" name="surname">
-                                <br>
+                            </div>
+                            <div class="form-group">
                                 <label>Phone</label>
                                 <input class="form-control" type="text" placeholder="Student phone" value="{{$student->phone}}" name="phone">
-                                <br>
+                            </div>
+                            <div class="form-group">
                                 <label>Email address</label>
                                 <input class="form-control" type="text" placeholder="Student email" value="{{$student->email}}" name="email">
-                                <br>
+                            </div>
+                            <div class="form-group">
                                 <label>Faculty Name</label>
                                 <select class="form-control fac_val" name="fac_id">
                                     @if($faculties){
@@ -42,7 +44,8 @@
                                         }
                                     @endif
                                 </select>
-                                <br>
+                            </div>
+                            <div class="form-group">
                                 <label>Group Name</label>
                                 @if($student->group)
                                     <select class="form-control group_val" name="group_id" id ={{$student->group->fac_id}}>
@@ -51,10 +54,7 @@
                                 @endif
                             </div>
                         </div>
-                        <br>
                     </div>
-                    <br>
-                    <br>
                     <div class="row" style="text-align: right">
                         <div class="form-group">
                             <div class="col-md-12">
@@ -67,8 +67,8 @@
                 <!-- /.box-body -->
             </div>
             {!! Form::close() !!}
-        </div>
-    </div>
+            </div>
+        </section>
 
     <script>
 

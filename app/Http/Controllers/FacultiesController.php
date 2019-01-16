@@ -109,7 +109,7 @@ class FacultiesController extends Controller
         $validator = Validator::make($data, $rules);
 
         if ($validator->fails()) {
-            return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
+            return Redirect::back()->withErrors($validator)->withInput();
         }
         $result = Faculty::create($data);
         $faculties = $result->orderBy('id', 'DESC')->get()->all();
@@ -213,7 +213,7 @@ class FacultiesController extends Controller
         $validator = Validator::make($data, $rules);
 
         if ($validator->fails()) {
-            return response()->json(['status' => 'error', 'errors' => $validator->errors()], 400);
+            return Redirect::back()->withErrors($validator)->withInput();
         }
 
         Faculty::where('id', $id)->update($data);
@@ -292,7 +292,7 @@ class FacultiesController extends Controller
 
         $students = Student::query();
         if ($name) {
-            $students->where('name', 'like', '%' . $name . '%');
+            $students->where('name', 'like', '%' .$name. '%');
         }
         if ($surname) {
             $students->where('surname', 'like', '%' . $surname . '%');
@@ -306,11 +306,12 @@ class FacultiesController extends Controller
         if ($fac_id) {
             $students->with('faculty')->where('fac_id', 'like', '%' . $fac_id . '%');
         }
+
         if ($group_id) {
             $students->with('group')->where('group_id', 'like', '%' . $group_id . '%');
         }
-        $students = $students->get();
-        return View::make('admin.includes.search', compact('students'));
+        $students = $students->with('faculty','group')->orderBy('id', 'DESC')->get();
+        return View::make('admin.includes.search',compact('students'));
     }
 
     public function getInfoByAjax(Request $request)
