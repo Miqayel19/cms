@@ -19,6 +19,7 @@ return array(
     'App\\Http\\Controllers\\FacultiesController' => $baseDir . '/app/Http/Controllers/FacultiesController.php',
     'App\\Http\\Controllers\\GroupsController' => $baseDir . '/app/Http/Controllers/GroupsController.php',
     'App\\Http\\Controllers\\StudentsController' => $baseDir . '/app/Http/Controllers/StudentsController.php',
+    'App\\Http\\Controllers\\UsersController' => $baseDir . '/app/Http/Controllers/UsersController.php',
     'App\\Http\\Kernel' => $baseDir . '/app/Http/Kernel.php',
     'App\\Http\\Middleware\\Authenticate' => $baseDir . '/app/Http/Middleware/Authenticate.php',
     'App\\Http\\Middleware\\CheckForMaintenanceMode' => $baseDir . '/app/Http/Middleware/CheckForMaintenanceMode.php',

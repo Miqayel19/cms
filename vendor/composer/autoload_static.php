@@ -461,6 +461,7 @@ class ComposerStaticInit2cf25a26df6a27f313487079412e4eff
         'App\\Http\\Controllers\\FacultiesController' => __DIR__ . '/../..' . '/app/Http/Controllers/FacultiesController.php',
         'App\\Http\\Controllers\\GroupsController' => __DIR__ . '/../..' . '/app/Http/Controllers/GroupsController.php',
         'App\\Http\\Controllers\\StudentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentsController.php',
+        'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',
         'App\\Http\\Kernel' => __DIR__ . '/../..' . '/app/Http/Kernel.php',
         'App\\Http\\Middleware\\Authenticate' => __DIR__ . '/../..' . '/app/Http/Middleware/Authenticate.php',
         'App\\Http\\Middleware\\CheckForMaintenanceMode' => __DIR__ . '/../..' . '/app/Http/Middleware/CheckForMaintenanceMode.php',

@@ -3,15 +3,17 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Faculty Dashboard</title>
+    <title>CMS</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
 
+    <link href="{{asset('css/iEdit.css')}}" rel="stylesheet"/>
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
+          integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Ionicons -->
     <link rel="stylesheet" href="{{asset('css/ionicons.min.css')}}">
     <!-- jvectormap -->
@@ -37,21 +39,21 @@
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 
-    <div class="wrapper">
-        @include('admin.includes.header')
+<div class="wrapper">
+    @include('admin.includes.header')
 
-        @include('admin.includes.sidebar')
-        <div class="content-wrapper">
-            @yield('content')
-        </div>
-        @include('admin.includes.footer')
-
-        @include('admin.includes.control-sidebar')
-
+    @include('admin.includes.sidebar')
+    <div class="content-wrapper">
+        @yield('content')
     </div>
+    @include('admin.includes.footer')
+
+    @include('admin.includes.control-sidebar')
+
+</div>
 
 
-    <script src="{{asset('js/bootstrap.min.js')}}"></script>
+<script src="{{asset('js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
 <script src="{{asset('js/fastclick.js')}}" type="text/javascript"></script>
 <!-- AdminLTE App -->
@@ -60,6 +62,7 @@
 <script src="{{asset('js/jquery.sparkline.min.js')}}" type="text/javascript"></script>
 <!-- jvectormap  -->
 <script src="{{asset('js/jquery-jvectormap-1.2.2.min.js')}}"></script>
+
 <script src="{{asset('js/jquery-jvectormap-world-mill-en.js')}}"></script>
 <!-- SlimScroll -->
 <script src="{{asset('js/jquery.slimscroll.min.js')}}"></script>
@@ -69,6 +72,10 @@
 <script src="{{asset('js/dashboard2.js')}}"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('js/demo.js')}}"></script>
+
+<script src="{{asset('js/script.js')}}"></script>
+
+<script src="{{asset('js/iEdit.js')}}"></script>
 
 </body>
 </html>
