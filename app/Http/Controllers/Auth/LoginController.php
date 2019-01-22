@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
-
+use Illuminate\Support\Facades\Input;
 
 class LoginController extends Controller
 {
@@ -59,17 +59,19 @@ class LoginController extends Controller
             'password' => 'required'
         ];
         $validator = Validator::make($data, $rules);
-
         if ($validator->fails()) {
-            dd($validator->errors());
             return redirect()->back()->withErrors($validator)->withInput();
         }
 
-        $credentials = $request->only('phone', 'password');
+        $credentials = array('phone' => Input::get('phone'),'password' => Input::get('password'));
         if(Auth::attempt($credentials)){
                 $user = Auth::user();
                 Auth::login($user);
                return redirect()->to('/admin');
+            }
+            else{
+
+            return redirect()->to('/login');
             }
 
     }

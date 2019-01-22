@@ -70,11 +70,10 @@
                                 <label>Choose image</label>
                                 <div class="input-group">
                                     <input id="file" type="file" name="image">
-                                    <img id="result">
+                                    <img id="result" name="crop">
                                 </div>
                             </div>
                         </div>
-
                     </div>
                     <div class="row" style="text-align: right">
                         <div class="col-md-12">

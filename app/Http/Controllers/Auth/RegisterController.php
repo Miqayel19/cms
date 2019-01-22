@@ -4,9 +4,9 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
+use Illuminate\Http\Request;
 
 class RegisterController extends Controller
 {
@@ -43,10 +43,15 @@ class RegisterController extends Controller
     /**
      * Get a validator for an incoming registration request.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \Illuminate\Contracts\Validation\Validator
      */
     public function index()
+    {
+        return view('admin.auth.register');
+    }
+
+    public function show_user()
     {
         return view('admin.auth.register');
     }
@@ -69,7 +74,7 @@ class RegisterController extends Controller
     /**
      * Create a new user instance after a valid registration.
      *
-     * @param  array  $data
+     * @param  array $data
      * @return \App\User
      */
     protected function register(array $data)
@@ -84,5 +89,28 @@ class RegisterController extends Controller
             'image' => $data->image->path(),
             'company' => $data['company']
         ]);
+    }
+
+    public function verify()
+    {
+
+        return view('admin.auth.verify');
+    }
+
+    public function check_verify(Request $request)
+    {
+        $phone = $request->get('phone');
+        $verify_code = $request->get('verify_code');
+        $user = User::where('phone',$phone)->get()->first();
+        $code = $user->verify_code;
+        if($verify_code == $code){
+
+            return redirect()->to('users/profile');
+        }
+        else
+            $error = 'Please fill the correct Verification code';
+            return redirect()->back()->withErrors($error);
+
+
     }
 }

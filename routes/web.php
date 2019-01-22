@@ -44,7 +44,15 @@ Route::get('/signup', 'Auth\RegisterController@index');
 
 
 Route::post('/send', 'UsersController@send_sms');
+Route::get('/verify', 'Auth\RegisterController@verify');
+Route::post('/check_verify', 'Auth\RegisterController@check_verify');
+
 Route::get('/404', 'Auth\LoginController@error');
+
+Route::get('/user/support', 'SupportController@index');
+Route::get('/user/support/new_ticket', 'SupportController@create');
+Route::post('/user/support', 'SupportController@store');
+
 
 
 

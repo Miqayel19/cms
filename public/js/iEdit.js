@@ -338,7 +338,7 @@ $(document).ready(function(){
 
 
 		iEdit.callback(iEdit.processCan.toDataURL("image/"+iEdit.imageType, iEdit.imageQuality));
-        console.log(iEdit);
+
 		iEdit.close();
 
 	});

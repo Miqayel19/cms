@@ -45,6 +45,7 @@ class UsersController extends Controller
     public function store(Request $request)
     {
 
+        dd($request->all());
         $data = [
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
@@ -162,7 +163,6 @@ class UsersController extends Controller
 
         $validator = Validator::make($data,$rules);
         if ($validator->fails()) {
-//            dd($validator->errors());
             return redirect()->back()->withErrors($validator)->withInput();
 
         }
@@ -224,7 +224,6 @@ class UsersController extends Controller
     }
     public function send_sms()
     {
-//        $new = News::where('id', $id)->first();
         return view('admin.auth.send');
 
     }
@@ -271,14 +270,7 @@ class UsersController extends Controller
 
             $data['image']='no-image.png';
         }
-//            $phone = $request->input('phone');
-//            $a = User::where('phone',$data['phone'])->get()->first();
-//            if($a == $request->input('phone')){
-//                dd('Match');
-//                $user = User::where('phone',$a)->get();
-//                dd($user);
-//
-//            }
+
             $users = User::create([
                 'name' => $data['name'],
                 'email' => $data['email'],
@@ -298,7 +290,9 @@ class UsersController extends Controller
     {
         $id = $request->get('id');
         $ticket = Tickets::where('id',$id)->first();
-        dd($ticket);
+//        dd($ticket);
         return View::make('admin.users.modals.delete_tickets',compact('ticket'));
     }
+
+
 }
