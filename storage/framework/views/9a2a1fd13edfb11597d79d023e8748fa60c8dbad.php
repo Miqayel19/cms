@@ -8,7 +8,7 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
 
-    <link href="<?php echo e(asset('css/iEdit.css')); ?>" rel="stylesheet"/>
+    <link href="<?php echo e(asset('css/imgareaselect.css')); ?>" rel="stylesheet"/>
 
     <link rel="stylesheet" href="<?php echo e(asset('css/bootstrap.min.css')); ?>">
     <!-- Font Awesome -->
@@ -73,9 +73,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo e(asset('js/demo.js')); ?>"></script>
 
-<script src="<?php echo e(asset('js/script.js')); ?>"></script>
-
-<script src="<?php echo e(asset('js/iEdit.js')); ?>"></script>
+<script src="<?php echo e(asset('js/jquery.imgareaselect.min.js')); ?>"></script>
 
 </body>
 </html>

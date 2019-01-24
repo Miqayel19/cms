@@ -1,0 +1,517 @@
+[2019-01-24 06:33:16] local.ERROR: The "--hoat" option does not exist. {"exception":"[object] (Symfony\\Component\\Console\\Exception\\RuntimeException(code: 0): The \"--hoat\" option does not exist. at C:\\xampp\\htdocs\\cms\\vendor\\symfony\\console\\Input\\ArgvInput.php:218)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\cms\\vendor\\symfony\\console\\Input\\ArgvInput.php(152): Symfony\\Component\\Console\\Input\\ArgvInput->addLongOption('hoat', '0.0.0.0')
+#1 C:\\xampp\\htdocs\\cms\\vendor\\symfony\\console\\Input\\ArgvInput.php(82): Symfony\\Component\\Console\\Input\\ArgvInput->parseLongOption('--hoat=0.0.0.0')
+#2 C:\\xampp\\htdocs\\cms\\vendor\\symfony\\console\\Input\\Input.php(55): Symfony\\Component\\Console\\Input\\ArgvInput->parse()
+#3 C:\\xampp\\htdocs\\cms\\vendor\\symfony\\console\\Command\\Command.php(214): Symfony\\Component\\Console\\Input\\Input->bind(Object(Symfony\\Component\\Console\\Input\\InputDefinition))
+#4 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Command.php(170): Symfony\\Component\\Console\\Command\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Illuminate\\Console\\OutputStyle))
+#5 C:\\xampp\\htdocs\\cms\\vendor\\symfony\\console\\Application.php(901): Illuminate\\Console\\Command->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#6 C:\\xampp\\htdocs\\cms\\vendor\\symfony\\console\\Application.php(262): Symfony\\Component\\Console\\Application->doRunCommand(Object(Illuminate\\Foundation\\Console\\ServeCommand), Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#7 C:\\xampp\\htdocs\\cms\\vendor\\symfony\\console\\Application.php(145): Symfony\\Component\\Console\\Application->doRun(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#8 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Console\\Application.php(89): Symfony\\Component\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#9 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Console\\Kernel.php(122): Illuminate\\Console\\Application->run(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#10 C:\\xampp\\htdocs\\cms\\artisan(37): Illuminate\\Foundation\\Console\\Kernel->handle(Object(Symfony\\Component\\Console\\Input\\ArgvInput), Object(Symfony\\Component\\Console\\Output\\ConsoleOutput))
+#11 {main}
+"} 
+[2019-01-24 06:46:50] local.ERROR: Too few arguments to function App\Http\Controllers\UsersController::update(), 1 passed and exactly 2 expected {"userId":4,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Too few arguments to function App\\Http\\Controllers\\UsersController::update(), 1 passed and exactly 2 expected at C:\\xampp\\htdocs\\cms\\app\\Http\\Controllers\\UsersController.php:134)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\UsersController->update(Object(Illuminate\\Http\\Request))
+#1 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#2 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update', Array)
+#3 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\UsersController), 'update')
+#4 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#30 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#32 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\cms\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#52 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp\\htdocs\\cms\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#54 C:\\xampp\\htdocs\\cms\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#55 {main}
+"} 
+[2019-01-24 07:24:27] local.ERROR: Method App\Http\Controllers\UsersController::update_data does not exist. {"userId":4,"exception":"[object] (BadMethodCallException(code: 0): Method App\\Http\\Controllers\\UsersController::update_data does not exist. at C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php:68)
+[stacktrace]
+#0 [internal function]: Illuminate\\Routing\\Controller->__call('update_data', Array)
+#1 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#2 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update_data', Array)
+#3 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\UsersController), 'update_data')
+#4 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#30 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#32 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\cms\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#52 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp\\htdocs\\cms\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#54 C:\\xampp\\htdocs\\cms\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#55 {main}
+"} 
+[2019-01-24 07:33:47] local.ERROR: Too few arguments to function App\Http\Controllers\UsersController::update_data(), 1 passed and exactly 2 expected {"userId":4,"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): Too few arguments to function App\\Http\\Controllers\\UsersController::update_data(), 1 passed and exactly 2 expected at C:\\xampp\\htdocs\\cms\\app\\Http\\Controllers\\UsersController.php:178)
+[stacktrace]
+#0 [internal function]: App\\Http\\Controllers\\UsersController->update_data(Object(Illuminate\\Http\\Request))
+#1 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#2 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update_data', Array)
+#3 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\UsersController), 'update_data')
+#4 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#5 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Routing\\Route->run()
+#6 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#7 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#8 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#9 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#30 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#32 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\cms\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#52 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp\\htdocs\\cms\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#54 C:\\xampp\\htdocs\\cms\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#55 {main}
+"} 
+[2019-01-24 08:12:15] local.ERROR: SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect string value: '\xFF\xD8\xFF\xE0\x00\x10...' for column 'image' at row 1 (SQL: update `users` set `name` = Karen, `surname` = Karenyan, `fathername` = Kareni, `city` = Kapan, `company` = Kakalllll, `email` = kar@mail.ru, `password` = karen1992, `image` = ÿØÿà JFIF      ÿþ ;CREATOR: gd-jpeg v1.0 (using IJG JPEG v90), quality = 90
+ÿÛ C 
+
+
+ÿÛ C		ÿÀ  å " ÿÄ           	
+ÿÄ µ   } !1AQa"q2‘¡#B±ÁRÑð$3br‚	
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚáâãäåæçèéêñòóôõö÷øùúÿÄ        	
+ÿÄ µ  w !1AQaq"2B‘¡±Á	#3RðbrÑ
+$4á%ñ&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz‚ƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚâãäåæçèéêòóôõö÷øùúÿÚ   2019-01-24 08:12:15 ø®Ûìöús9¸VpL@lþ´­¨[Xé³F’2´±nTÇÞç'·þJçJ‘lÖXÔ›X
+—Vã$ŽIöæ¯èö–úÞ¥‘*÷Ž¸s´"€xUŽ¯cR}+J¹dY Dm¢Vó%Á*Ä¼r+¸ŸJ¿Ô%k‹åŽÝBÄc·	œœñÆAâ°µYtý9ã‚&¶’T!ÙÔ°d¸=3êk´Ðôht;¨/Ì²Yiö‡rÙÆà‰AQ–9¯^îÝöÇ9qoýŒWQ»·ky-óµ”n3Ï#g¡9ÆObk¥ž÷N³×aÑ¼5öË‰üAš×sÜézû·Ô85‰¼7¨¦˜u=FÙmdº.#…~gXKg¿ÀÉöÉ­M#D“Âóø†Î¢¾´¹ŽÚÚî˜‚çîóÐBkÅ­‰tbÜ¾'¢õèCŸCÇþ$éè¾,ÔR3[iÖ¾R²Ž‚úÖ¥ðYh¬&;‰£t%Žÿ ë×]®kPë^'ñ~§öX-£½²š'Fá‰ûÀ®3Á’-äÉ‚à‡Yà‘Œ§Jõð5%:I=Õ¿"åÿ ‰ãOó—–œë\G…ÛÌÒn£Ær‚£Ù†Gò4zW‰#žÞÜFÒ¼ËÂmåÏ}×‡zûaý2kÓ¹«Ø‡Q‡t`Nì`zÓü>d¬…P!Œ·Ò­\ Ü[?.Cgß5[JÌ÷p) ±óÔ#5¹bàÈ¬X 9ëõ¬Ë»¡=Á/Ÿ˜|Çý¯ZÞ½É…å? V ÷ÏJÇšå|íÛõ©žæ…h­wJè9È5Øx6Þ6¿:é­Ç‘…È“Œf¹x#;]NA@XŸ\t®›OÔZÒÙ–Š†á'ÜxaÆ1ôÏ5ÀèþËmÿ <åüè¨ÿ ´×ÒŠ ÈÖ5qy9Óíçi3…ûêxõäV¯‚`Ó—N›P»¹,ì µb¼œœçéÆ>¤W3}¦µè¶@­6¡$Šíäª©Œž}‡Zè|?¡]_L³ZùF+ØÉ¸ä é•õëÖº1@ksKDÑn<AýÄ³Ja’ñ,¢RÛpaƒÏ8ýkµÒRç^Ñµ"º…´éœYÃi¸eEp/~99Æ;Öo†¬ÚÃ@Õµ­AÞÖK4‘ì]8GbÊ…lìgo 'µ7ÀZ~­máS	ý±©ß…“{$%ø*0~bÃòÒ¾Ô£íØÐµâûo]m7|É¥ÚGäDÁK•Wkc¡ÆåükfãÄ.ž¶ÒÌb('–ïì%v:ãs1—žk±Ò|u¤ë:¶¡lò¥´!XQË‘Ë²&H+Áä‘À8çŠäo5
+ÇT½o±\^Áp#V[‘’—ûÅ<ã'¯á_+S]Ou]-~göÉµÏiñÞß=”i}h6<“Ci&÷8]êîÄ‚8¾{ÑœÙë†6Ü r»:t-€~•ô™ñX›Ã×f5ˆÞÚC)d'æá0Þzsô¯žücgŸã+£h2Û£”ãÞyïÔ×»“×¨çR5ÖçXI¼Ñ/ÉØTà9¯.Ð]í<F‘€wxHn˜e#ú×§xkQ‡P¶–ßî™ÈéŸJóKøšÇ\™Ô…xäÈÝÇ9¯¦F¯cFå\1$„pOËÏÂªÛIkf<ÄË]ï]Î>\ôÅiÍ¸M)”/ñÉÕº]6f‘mÒy 	WA'ð9¤f·‹‰IcÚ6;y‹ŽÞÕ¡¥&DÞ«ÕzU_µ9ýÊ;ì-ÀñŸJWI¡”«ƒ¹y8íõ¡£CzÏÊŠúÒGÿ Q#…x±Ô+ Ñ§°‚MN¨È€Âá~mÄŒ\
+æm¦K›DQ1H?Nj÷Ú­÷<n¹r¤ëÅdÇÚt¯î\ÿ ß&Šæü÷ÿ kò¢€/ÝÈ#¿†šFy¤o1Êí8ãíýk¹ð–ƒ4—Ý¬–.øìœŽ£Æx®vF±Ôïnn’2vS0ƒ™¸Vü3úWi¯^Mm%´Aû,J©m!Ò`~'-ùÖ˜™s'ã[”,~-Öôÿ BNAe¸Ç”ß)\w;˜è®k–Ré~#“U‚d²²¶¸1iÑ¦NÔ‰¶uá°{î¨¾hQøoÅ7~ ÷ZÎ©ma#…ÌQYM!Ûò}H\çw:Ý[¥Äw3=µ›)–A†ªûqŽ§æN?¼	¯–Å¤¡Ë{—-ŽÏÄP\ÞþêìÁ4˜Y>Ñ#•OË1ÈÉnž‡Ò¸?Ea¤jbÖ+;9"•‘šK{†#ŽyÀã=GÛŸ²év¶ö†pŒ \žXr§ƒOüzÖûß.¿áøà¾ÍtZ) ²·	ûâ1¨q´>rq‘^¼3‹”}Ösõ€¯5ê:½µÎétÛ±núq?:¯7ñ±'…×’xêÈ‹í>äYn-•Š²•ÈRT{ŒµõÞ¬IâCªøjÂËH·‘¼ë¨Úc-½À „y6e"b`du:×ŠüJ²Cá]Ý¤ˆêz=ÜÖÚù»ü¨Ã1^~SŽöü+ÛÊñqmï{mºÑ½~`·8/íÀ‚ gó6xàw¬ÿ ÛÕ¤tnìç×ŠwÙgòä’ñ²IæqÂã°5oP«ÙÉ<Ÿ-Ê¦_û­ž8üëëÍ^Å­V5’åÊ®€ÙÇ+™Ö`+’8ê+®½ŒÁq,@ŒƒnÏËúW%®ù;ŽÒIô ÍöðI2†Õ9#½-ÄÓG(gÉgá‡­K£\§œÑ‘ß‘éZ:ž—å²¹O0uöZ½¥©¡™¤ê‹öÒò«~5Û[ÛÛKfŒ&©ås\SiÉÐHîÝË¬`n c©ö®MžT–x`ŽrPHIS“ïÍDÔ^È"/QEeÿ k\ÿ ÏDü¨¬¹ ôøDÍãÖêÍäÍ\ì]ß»O™‹z`dó]ˆ®¡Õµ}N{6Am*Î`†HÕ¶D {~ÓŽ¸“Ã³I§j·C+Ç=Ü&&dù+'·­k]iV·÷ðF%†YÝ~ê„ÁÈr[×ÐÔU¿5ÐÖçe¦k‘xà×ŠWN+<Ó\ÇlÏ;§ÞŒ	nø-Œv&¼gDûvƒ­=FÉ£Žéže67m_™yï’	èÿ lK-
+=.è ·iînå‘ŽžIFr='ýó\çˆü.‘i1Ÿ·ý¾ùÁ¼³˜ÿ X–HÆG9 }+Â¯Zš¨éµ£üÅ-ÍøC¿µõ«ý>úîH¶Ú¥ôVö 1º»z±Îë#ÂæOøŽ+FQ¥b ´‘†!óƒ¸èI·V¿‚üT–ßÙrêrÝù—1,R¥‹˜$bÄ;¸#œdÙ®·[Ñ4ÍSEû©‘ÝèEœ¬6üÄ³>8#9 –è+çj×•)ºUctôºüY„jsI¦?ÁÃ6:¦‘¯Gs6”e1Áyº¤.åØÌ “¹Tz6kÈ~#Ákq¹ª›imr ElHÌÛO¾lÇæ#œ^¹ðÂOxoÂÚ¶•ªé¡e¶¼eût…]¹PãpÎGú×“|X{hu­f-21$"K$0‘†8û¼âµËù!œiÁÇmz2‘ç´úÆ™wöxmÁ‹“’w‘ŽÕ¡‡:é’^J«ªÄCì;ŠžÜ}qXZ:ÈHâvPÙ$)Æx­yîî ðýê0gYFâ­Ÿ›?­~‚jY¾2­ÂHWbË1“ÀÇ>•ÈëdrÁJàŒä{×s«¸o#1ï?gå_§zâµndqöfR'ÒšÜÆŽ ñ—×yè;×q¬Bª„ïµy°~•Ãéåÿ á&·òÏ–øÊ±85Öjw·1E#´‰)-Êã¨­j|kÐÍn:ûÀŽº\:¤·¶M¦ôÝ™±ž€Uhl!·‘gy„r\'Ëùx°jWÖe¸ðÅ²\¬)kæ+vÚD„‘ÎMa±»kß1ÎéSå)ýÑŽ+šŸ:O™èhlí³þðüèª;æÿ ž_¥¹˜³à•{qr\µ˜ÉHŠI‘Ãõì*í/‘ãÑ,,¡í—wPG*F”Wf ç±ÈsX7Ko³¯j"¶WGêòräµó]÷n¡³×–ÆîÒi°­õÄÎâE‘£Œ”U?\UT†xžËÏñ—¤<ÒX¢X3¼—€ÒùezƒÀ\r§Ò¹4IÜÛÛÒ¢$Îa…\s‘ïÅv;¸¹¾ÑmÄqˆ/­gŽêiXòÂe.AÏ  ïøƒ\µ…¬vŠ·P•'É íMÀ‚Àç¯ÌWÈbÝ¦Ú0œîìpÏ}©^Ù[©yLêaWnn¶OB 5ëmŒ–'ûvU6ºmþåGœí"US½° c>õÃÏáÙ<3u£ø‘]uK‰Ìl eÜ›É_ …9é‘ÛŠÒñ–÷
+oCbQÚ	<ÇHÛ©Þ ÜyèE,D£].Wî¿-n·FœÐ\®ÄW~#[ST0CÆŸzxÎAŽAÆwuÎ9ëYº®¥ }QÄîbºÙÒir$@T‚= #?…$ž	º—S6mme’TŽ\î’Rƒ ê³¼Oá‹Í62·¥€²…9
+:ŸåŠìÃF’«{Ð©rÔ|ËCœ³´h'x"y—œ`|¿÷×J¿¬éÞgÃåi]#º»¸óåX†QW¦°õ—í~U¼âx ¶Ws h‘MåY¼¯*àP{w¯¦‘ys$²[…™~Î€ÀVÀ<×'«ùÐL°²í$”çÓ¡¯Cñf•½¸X$mÄÒ=qÀëØW™kRÇ–Üï½úª[ƒm¹µ8î@Œûgë]êA>¥u6¿fØ9Â§òOÒ¸+³k)f Àüw®«RžXcX)¨ÜãµU[´|e¨C6´±ÚGeQª¬‰aym&ylžÔS,måÔ§7$*ï.N0Es…ˆ¸8”–=ë­ð´qb&0•‡˜Ï€N9›…¢€±ýšÿ óÞûèQWñméýýV@z±
+^ÞÚÚflxü·Ú!H=	ßüt¶4Ú*OoEu{noó7¼Œ%ÏŸ}Ê¸ôÒ¹½;‰õµÀëmÍ#‰f\o$/Ô}Íw6PCëö§Ž}‘é–"S€eï™Û<‚‹–ö Ïw-eÝßÛÍý½ÂÉs$QGs.Å1çN
+“ô5ÃYø†{+ùWìöóéÏi4RÛñó)»>õ½o¤½öƒy¦ÈìlÁ+—\0b~‡ùŠáõû!¥]ª™˜BÁTyn `FG_qú×ÌÒ„jU©Í«lâkßgCqVú£k+ù1ê‰‹hW?¸™A`H=3“Š­`ºËg‹Œ©FAÀêÍØ“Z·—}	–ÖÈÚÙI~h•ƒ³¸ÀÎ?†¹.ÚY¯®[ÉìþÎæê	JÞ`{žÃß½ç&¶×ô)_ØµÝK‡QšöKH/<å0Û Ußò¶Öä‚sšo$Fðý…Ô^ R•¤xŒ;cÞ¨:gš§¨ÜÚ\Y¶£«x­&½RDZt°‰ð€qæm&±ïüU§ßé—0®eo+G‰-A mãëWJœ¥(Íô}ùš­Î^!n–ÎÎŠòG29ükÓ>Ía«4pÀÍöˆTy‡Ì·å÷nœÃ˜ÞY0¬Wî×¥ü4Ò-ô5n¬×-3$’#gó_CÆ7Ä›¢Þ#e·”Ç_”º{\Ð¼·h³OÀüØŽz×{ñ(cñ$%vAÎG\óÅpÐQ2•!y~µª";ÿ Œ¬ZÆvvmbX/QÀÍt	çÓ-ç!#I£FùPäqX^0‘¼—F;ÈO”Šß–Ymt‹@„IˆSéÓ‘]rø-ÎRæ=ŽXá¹ûÙþ•ëía—ÁZ”·6­Ä¾^þpy|…f˜¼  ÝkÒ<"‘§Ãë·‘ŸgÚØ/‘ŒŠÉ½¯±ÏýÁùQKæZÿ zÈÑXêÛÞÜiÖ6¯LXÅ%¡*ÒFíþ»I5cÄ’ajö:€w–ÖÒÊæå–u*ò~åýñœ}k øykms£^jwp·@JÜ,Cw•SÐ’:}k”ø‘âÉàPÓMÄv’M=½´†XÉ)c Žýzû×=dÝ_w°=†§Œl¦E—dKLVf;¸#‘~z×	y¯<Ë"\*Ç …<§B³œŽ?Cõ©nþ ê°ØÁl÷6—¨Xù‘‚.pH"²áxõ‹ÿ 2òc[·<Ë@`3´àãy´0êŒœç#Zjs¥±°Ã,ˆ«,6«’Äƒ|V^¥¦êSZApÂd¶‘Šol±NNqÐqZÞ×ôßj.ÛT´ºd7A’çåÇo¥u¶w:Vâ;)-®­omoRU…ùˆ	eè8'§*Ž„›„4Þýý}ôG%§x>ÓY½ŠÕll¡hÂ¼ò8àä‘“Ï¥4x/L‚óQž-t_Cl£ì¿gˆ“'®qÐc'ð¯boéZn·6 ºx²ÛÆ¨Œ¸%ºúg§çTuõ¶ÓìõÓíá„½ eÝ†
+@9à{^u,Æu'ËÙÛ§™š“m?q§-Å¢¿Ú”0ùÂ“´’9Å^ðŠ$µšƒkI.àùà“Áþu‹_\Ù4Âmêm¾^ûŠÈ¸Ô-ZÖäÀÍ"Ê¤ºX‚01Ûšúxü(ê{GŒ	Ÿ]™³*.ß»ŸÊ¼Ë^¤ïÀŒÿ  ÖÜy·—w:„’¤³»>Õä^Â¸íb¼Ù\Êàÿ !çñ­c¹š3µ–it8Ã|Ïƒ–ïŠÞŠ=Ú]¾ÖgùòÅcêQ¬¶;‚üƒÕ‰»ÝcOM3OÒa]±J,ÕKç¹­_ð×©¡ÁÜE¶aº:Æ½ÂZ„Qø¬Ü¨wŸ8'œg9®+T·”Å±åR ŒŽœgÖ¶t­2Ò×JÓ^â!åWfùùàqIì–È}GçEGäéßôj+=Çáþ›uqe§é%Ý¢7Á¼¥8Ü†F ~*úk›ø£ªAáoÄBÙP›‰ÕVdå¸Ä†>z`ŽOá]†‰u2Ó®1WŸh¸3¹c·p™îá}Â¼óâ®†š†«£%Íä€¥©o—{çxOâ+Èçƒ”UG¸=ŽkÃ	o¬_ßêú’‹«x˜E‰“-4¥{ú(ê~•²N·¹ó5‰-í¤8‘mŸ%yáWžz¯'†¢ÿ D¶žÚr°ËÊ–Èr w#¨$àõÔøÁöq}¹ÖÚ4»ò±Íó•#‚ßZÂ½zi{Vî‘‰ÄÍáé|MýÕ…‚¥ŠŸ3,¸r &yä‘[·ßÅ¤{Fí8U”’sÈÎ‡Ò»X,mœ–)â@Aå˜ªaæ+RÎôßÞ ¸Ìq€Éœ«¯¨÷¯:®aZÉÒÙw±äÓøÄº{F±j-&õ`C; x ÷ÍP·Ö5; ²Kk©Ú”Ê´ ´‘¸ Ž„cžÈ¯l½–(î!dÃ¨q’}A¬ý[Cû^}
+"	å
+txúŒÑO2ÿ ŸZö!nxž•shñ]›ˆ&7ÇhŒ3|¹þêñYw÷ö°êkù½\™†û×Fæ-ÿ ZUÃ"Lc@b8+†½qý£–K9‘ÉïÓ§JúèrÔŠqìt·í5Üöè›ÊíÌ¯ÇcÓü÷®WR’In)´#Ü{Ö®£¨Éo$Ó"¦Q—c1Á9 tükœ»¾Úv8/¸“Ž†´‚º/g7"@TÆû‡—ë]Æ¨÷²]Fûã™Œ)Ä@Ž Ÿ~+’ðµœwÚ¢½ÑRª¿6ÿ ºx¯TñwŠ^¹ŠÒÎ$‹H³ˆ¤ ÃcÔ‚Njg;IR@cxKOðæ´—Mªý®gS°ÈN3Rø¯AÓô;{ëÄ¹Ý Y7‡Ò²må³öºHÇ(ŸÆÕWÅÎÖVÖÀÕ.$uçHË¿hß32ÄÉ¿´ûðþ”V'•?÷GåEhj}U¦,wz§ˆ$–£¶³GÈÇ
+|µÝÓ¯'ñ¯/µ×£¹ñ9»h¤6úlLÁ–yf`z€Ç__zöÍLÒì´[‹˜’5«Ù_í$n1BˆL7pÇ#ñ¯X4ý/Ç¼V©¾Ò'`¤¶w³Ùü Åy•yeÒ&¡ÒI¢És Mq&d¼‘–W`D|ŒFãn;úñF€ëknÄ0ÏV}ùÆ9þ”—w²]Ç"Æ†Ýp[ŠÎƒSk{k˜|´B!Û”{“ž¼W€¹§NQg3ÑœÒ®¾Z~íaXŽ™$šHa¸Õc’E·t Fã©>†®Ã,rÙ„µ*Ä©EÁÊŒ‚}©mmå‰ÝŸÉ•Ö0$EqµH=sÚ¸%/gs5;»×—	§l¸‘>Ò¯‚BðÃ8Èüé4é£%ÝK™&êÍ’;{U-cO¹yÓc¡8Ê¬O¼Ç§Ò4\B8`Þžµp¥Ì¹»šž]âäþÕ½E…ùËÐœœämìÃk"/³©8fefä`ÝÖ®]µû€XÈ`qß=i–w?a™å–Y%¾”b8ˆÜŸÃ5÷t}È[ÉCbŒv¶Ò³‘'œ†l‘øW-ªB‘ÊáTïcÐ•ÛMu3ÜùQ[ÆÎ –ËmZäõ‹YYœ4‘©sÒ9K×]3B¥•¯•³–ò™‡Ýàžk´µ›Íåc&Ñ´1\ÝšÉ2à¬Gîã$çŽŸoV1)‚	—•Æ úÖÓŠÜf=õã[êh0B
+ç·½i<¦ý.,cTy#Ä¤ËYšâ4×ÞFlP [‚O ­Í:ŽæõS?•ï;Æ¹žÂ0þÅ7÷m¿ïª+kû"oj+;ô%¦¤¶Z^™hR6†-!’V”í1HøgUôÃ ?í
+ò½	c–ù¤F"Yó#«Ž¼úþßøìÜi¾†H"1D-ÅÁ^U ræ!ìIÁ ówŽE
+Àíwf¼¹Æn,Æ{ž€^+i£—páJã¨\Œsù×,d0ß2¦ÙX¾Ü±ê	ì;ÕÍèþfòÎàgÀ8æ²íîÄ·ñ° –aˆø×“Nm™jê2BÛQ
+*¿(ëÅKg¨<ª¯(e‰ÎÕU3}GëU¤ýäO¶%WÝÙ²*«´ït7³Cž7qŠçP…FØsC¡±,q·Ï EåSžvãŸÒªê7M¼ˆ	™`hÊžà*ë\”£²È¤``ä­rŸµi^Ž0!920ã$p9üªð‰Õ¯8îc	¾s‡Ö!’]p¤iæa²dö£Q&ÙÃ}ÍíÔ})u¼³ùdÜÁÎvÔ¯sþo+(˜2Ž£$ãú×Õ¦Ó·c±nRÓ¶£ÌÒ»6Fwö#ëUdZi¦œÃOOÎµY#ˆå oÎÐ¿Êyn·Q4Ã*X«ŒŒŒs]«rž¦C3ì˜óüX{ûR¦ž’êeÝ˜ÛgÊ¾œ­^û:ÚÚÙÚá|ÉåÛ¼˜2yü1SÜ(Z0Æ±³¹8=HÆ)ÇcG±ÎköHšª†$áåÎ6äcŸJÑÐ$UB#ƒ¥¼k+“œõ©VÚ[Éï^ô ÈˆlÕ»=5íži”F!zvIìdXûBÿ vŠƒ/ÿ =ýñEdgâÿ <ÚF·	¤Õ>Å[¾X­í‘WuûÌqõ®:ÅÄî‰rßÝêkkâ5Í›6œ-c1Ï,2Ý]üÜ$—ð®oL˜Z^ÀËó ñú×'Ùg<¾&tòÝýšÌÆî>éËg“U4êè»ÀDMÛº‘ÇNïUŠWbË…d`ìsPi7!Í9_—a>£µr:Vƒ}É_;ù/ÝÙ@—2œ…T4¶·	m‚âÝg¸ê$fç­sÝM(Ü¹\tnôèd“'30nÇ­yžÅ:Í¬exÄrª_ª^(‚ßXÑÒ(ãX¤ˆ‚w¡²®KŽEmÒ¼IÆ
+«u|Ð[ÊªÙ‡9úV´¨ÚqqzÜ¥¹ËÝØIx¾_–Çt˜éÔg­IªIÛ¥©p»0¡ÏËŒw÷æ¥Óu»NX©ü*­ìbÖàÇ}¡:1B	Ãz}+è)JJMLê[Š÷ Â’¾Ô‘™^rÞ¹¬Ÿí}Bâç`ÀüMméó$ZiŽpâhä!FF
+ö&°gi‡Æ$yd!U:à×E6®ÍQ¥¥ÞK{¨¼7WI …K¬`g8ÕØYÙæ{§
+B(S» äsúšåü=£Eä®¬ÞyhÈ÷æºy¤n@RÛ.Zw8;¸ý8¦hö3.ck;É”•bHÆáxâŸ§[Ä¶3Iq~ìùGU+¼{U¢6Ñ4´©ê1Žµ§¤ø>}R8.íHû2FÈèý˜1õÍ'±‘Ï}žúÌÑZŸØ÷_óî?*+˜-BT—MÓåÏ%åÄ-$ªË…U/òŸL¥*ÃœzÐñ¦£ö»u%œ+²¿•n‘œƒžÝŽI¬dfÛ¸œ‘Ú†™Œ÷.êr,0Ä¹hØ [HŒd4ŸÝR3X“Ê³º#ŠÓ†u…Tr1XÕNÈÉìn‹Ä@AtAÔðØü)|¹eÙÉoR6Õ(o•“‰'±«r\1Œc"¸$¤Ý¹LÖä“)e÷ÛÐ©wÃ‰	@Tü„uüj)„€á¶ŸÂ¦»ºq§LŽÀ€½:šq÷$¢Væ&†ë&¨Ü‡ƒôªšÝì¿k?g„ó?J_j	´í)ò×nëÅQ×u[«¹Úo›Ì$™5ë¤ÝD‘¯¡kIšYmgyWÊ¹lL§…ôÅOojóÈX 6‚ûÙ‚Žx²tjçQŠðÏóN˜ÚÁx=êÕ®šå 7(êû¾Uëœ>•~Êw•Ð%;Õ¦¡eibÌ®n–>Wh\‘ZÜ®šñå„iŒt8Î~˜Ís¶ïæØ‚ÄNT¶æ BU¹¢Y˜Arû¼ÕT…$óú~4FKâ6,¾·§Ë?—	’GäÇœŸfô¯Bø¨	<;$rEó$‡o`Çµyª@‘<bUÛ4kœ°Û°ÇÞ½6Ê;oøaðÉ,’Åæì''žœu©{ÌþÖ›þ}`ÿ ¾ÅÇ}µ¿éŸýòh¬Àä%GŠB
+öcä'$qŒÓL›>‡­[¿…¼È¤äÄcUVõÏ>ùªw1ì‰²0xë[B}ˆÄ›åP9æµcÉ¸ž€kÜfUÁÇ½i'îøÜ
+ž¼ÔÍj&iÚæ.H«fôãÛ=ë:	Õ,±,¬7 :1éù×,¢“¹™jÚæFbd”sUuýU|¯&>EÉõÖ¬öxâ1×'¿µfiVÅZµÃÝH-l-ö‰$Î^ëÓð©§Nòs}ðÆšg’ïP|y0Ç•-ÑŽqÁïÉ¬­XÉy3cj7RÄ×i©\Ã4ËNUŠÞ5!PŸ0äžù®;S³7ÉÙºŒrO^+ªŒùçvlŠ¾yÂíh@ç~ñ5…šÜ\*"Vl<~µjÏK“MŸÊšˆ¸ßµ²~”Ì0¼ŠYƒGÊ£ uäW]ÓnÆ¨ô‹-) Ó‘CLÃ¤g wÏµf\GÜ0bÆC+Ÿ77N•fûT}?Nµ‚È7–/+0A‘Y±ÝÞÝI%¡… Üd2U{žkœÑìOqåù—ÿ é$È­êíïWíî"–kKžxÏËÛoÒ©Éq\Fá€Þ‚5à®zýkÃˆn-fÆŒVBõšOc#È‹þ}¤üÍ¿æKÿ <–ŠÌ)à0*äå0[å;•ÆxÁõàVeü¦e,ˆ«‚bH‹È(c;@Ï#ð¢[eteÈÝÜw|²\Ç*2ìÈ-ŒŠÕ·AFÖ³íãX.# ×! ]„sØÖ¤î…-ÉVæB¸Ž:TœŒnÉÃÇëQ…ù>l¯z°‰4 Hë†”HïŠâÕ’ÍáË›íŠ×ÙYmRy9=FzL»6ºnš4Ý5vÛ+Lå¥nœÿ :Kùæ°±†ÎG>{:@Üsœb³ã¼Hä°AÎ*è§Ïo#R¬Lg]¥”©çoÕÝVÊm
+kmf{Ãƒ-o9ã×¥dM‹–ØHÆOÊy¡«Mq`TË4²dgÏ ¢óÚº•%÷±}¬^kv?Û7«ºÜþíHà>ðÖnž|ÛåŽ5,€²wuÍhi1 ðµ´×7)n3¹ú7%Ç{v¦xv(â¿º¿•·(r±ÐñßÒ£Ê–À·5uMDY"ZL»Šä§<úV7†¥’ëPºiÐ›æã)éQë—©<òÊî #¸íSx6${K›™w4·°áaùÕÛFÍM³&Ù±½³ÐVæqq:¬V»Dp…f÷ÈäXè¾R¸ÜÆ0 œpNáÅuÞ‰@½Ü»¤¸m¤¢°`rŸÛ—_óÎÛþÿ ñ¢µÿ áƒÐQYÅØ2]fà¦Ùƒ7ÌÞ®ù†s+œŒp(¢¦¶–±Ä‘HF	-Þ­ÆÜ(¬\†õLÐ–ÑlâW»6ÍïÅkêrý…/¯•Cµ¼h#Fû œþ´QYÍ{ÑGu8¥·c‰–þ]P¤Ó±2194Á)³<ÑEzVIYòÜÊŸq¹Ž5m…³–JØMÞ[Yf ÙÇAš(®‡²2—ÄjÞÙÃýšSj¤#ž3‘Í:iÖßJ·"PFâ;ŸZ(¬ç¹ªzœwˆ H•¦ùŽÝÏÔøz,<ÚŠDe+ò¹ÊòÀZ(®‰|Øžà=ß‘,’¶N"ð£'+ÐôV-`çæ'>¼QEpÔ)}ÿ :(¢¹€ÿÙ, `updated_at` = ? where `id` = ?)  
+[2019-01-24 08:21:07] local.ERROR: Width and height of cutout needs to be defined. {"userId":4,"exception":"[object] (Intervention\\Image\\Exception\\InvalidArgumentException(code: 0): Width and height of cutout needs to be defined. at C:\\xampp\\htdocs\\cms\\vendor\\intervention\\image\\src\\Intervention\\Image\\Gd\\Commands\\CropCommand.php:24)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\cms\\vendor\\intervention\\image\\src\\Intervention\\Image\\AbstractDriver.php(92): Intervention\\Image\\Gd\\Commands\\CropCommand->execute(Object(Intervention\\Image\\Image))
+#1 C:\\xampp\\htdocs\\cms\\vendor\\intervention\\image\\src\\Intervention\\Image\\Image.php(106): Intervention\\Image\\AbstractDriver->executeCommand(Object(Intervention\\Image\\Image), 'crop', Array)
+#2 C:\\xampp\\htdocs\\cms\\app\\Http\\Controllers\\UsersController.php(212): Intervention\\Image\\Image->__call('crop', Array)
+#3 [internal function]: App\\Http\\Controllers\\UsersController->update_data(Object(Illuminate\\Http\\Request))
+#4 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#5 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('update_data', Array)
+#6 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\UsersController), 'update_data')
+#7 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#8 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Routing\\Route->run()
+#9 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#10 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#11 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#12 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Auth\\Middleware\\Authenticate.php(43): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#14 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Auth\\Middleware\\Authenticate->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#15 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken.php(75): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\VerifyCsrfToken->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\View\\Middleware\\ShareErrorsFromSession.php(49): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\View\\Middleware\\ShareErrorsFromSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#21 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Session\\Middleware\\StartSession.php(63): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Session\\Middleware\\StartSession->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#24 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse.php(37): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Cookie\\Middleware\\AddQueuedCookiesToResponse->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#27 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Cookie\\Middleware\\EncryptCookies.php(66): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Cookie\\Middleware\\EncryptCookies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#30 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#31 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#33 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#34 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#35 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#37 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\cms\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#46 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#49 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#50 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#51 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#52 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#53 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#54 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#55 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#56 C:\\xampp\\htdocs\\cms\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#57 C:\\xampp\\htdocs\\cms\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#58 {main}
+"} 
+[2019-01-24 08:21:15] local.ERROR: SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect string value: '\xFF\xD8\xFF\xE0\x00\x10...' for column 'image' at row 1 (SQL: update `users` set `name` = Karen, `surname` = Karenyan, `fathername` = Kareni, `city` = Kapan, `company` = Kakalllll, `email` = kar@mail.ru, `password` = karen1992, `image` = ÿØÿà JFIF      ÿþ ;CREATOR: gd-jpeg v1.0 (using IJG JPEG v90), quality = 90
+ÿÛ C 
+
+
+ÿÛ C		ÿÀ  ö–" ÿÄ           	
+ÿÄ µ   } !1AQa"q2‘¡#B±ÁRÑð$3br‚	
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚáâãäåæçèéêñòóôõö÷øùúÿÄ        	
+ÿÄ µ  w !1AQaq"2B‘¡±Á	#3RðbrÑ
+$4á%ñ&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz‚ƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚâãäåæçèéêòóôõö÷øùúÿÚ   2019-01-24 08:21:15 ü¬¢Š(,(¢ŠLh(¢Š‘…Q@QT‰aEQp
+(¢˜Q@Q@Q@„â–¥‚aER((¢Šbb5&)ÔSDØE¥¢Ša±=¥Á¶”:õ«¦‰ÄÐ£ ÎúäûV®‰{²CµùO¡®zÔù•Ñ½)òÊÌØŽEnOòŽh÷½3^aèèÆ´žMš~ÎhÆ(¸ÈðE*œu§w¤\Ð $´‡+ÐbéIs@XLnìÒ—mãŽ´¸ã¯4†Ÿ—­4üÝ)ä~4€sé@X@¸žh' Ôà0sžekÌü¥S<0=kHGØ‰û«˜Ð¸hâ‡2çiã›©Æ²F«gbŒï+5îeuÃ¹`8Á5f-Q£´0ŒôoJî'OfqÊªš)†)ÈúSsÏZW;Ž{÷4ÚÜÆÈž)¹K}ŒöÍ]Þè†ÑEÑ(¢ŠH(¢Š
+(¢€
+(¢˜QH,QE1X(¢Š.+RšÂQJF)*€ÍQRÀ(¢ŠE ¢”÷ Œw ¢Š*®E f˜š qJ¬Cv9¤#”èty¦ºi$v…vãû§µi>^¸ëõ®kK»û,ã4q¸>ÕÒŒºŒ6áÛŠókÂÎèï¡+«0ÍdRì4¡9®C©"29Å(N¦œÉÈ4¬N(ˆÁçâ2Éì)}(¸Xo Š{Ò° Ž2isŽ:Õ!XaSH0O# T˜ÝíHÊxç1l5Fr@ÛïYzÐ”®Ý›Pr_ÖŸwªµµì‰´2.F3SÃuõ®”ÊOA]1Œ©ÚV¹Œœj^7µŽl¨N}qS‹2m„€œŒS^Ý”³8ž8üêì?»³‹wBO¿¥w9+]ôi)É©mb	tö‚Þ)IáÉªâ0Øížœ×E<pÍe	’_)“€2OÒ©JÞÐbÞÜ	dþUœfä®vâ0£5ïYY|ô ·Ð®åMéþóqš*)õ	î›t²>çô¢®ÍœüÔŠ2ûÊQEhŽQE&(¢ŠEQ@Rš J)Ûi´š
+(¢€
+(¢€
+\â’Š \æ’Š)€QE‚ÁN+F1ŠvzPqô¥ÿ ¥.yè)>ÔI¶—Š oJ3JÃ4Úb9£8¤¢
+½}x®‹D½óáò˜üÉ€­s•=¥ËÛL[w¬êGž6.ä‘×°àæ¤)ç¦A/ÚbYA]¬2}½êO,¯¬Oqž‡Ò¼–œtg¨Åð;‘AAŒŽ}#ªNÆ×­ “|Ðä‘íS«+`*äŠF]¬0{Õ{½F8¦	·qã Õ¢ëžOQžO4Ü\wÜaRÝXÓÊò  Ó-Í(ŒƒÆ5)&ÝÄ8÷ ‚Øýø©S8g {.MKŽ ¬±y‡<9¢çBÃÊjòi#Ô˜›ùXzÕÏí{æû!¶‚~Ÿ…SÔdóogb|ÝJeŒÏÈhÂ‡Ápõ¯aÝÂÈñ9£—jèéï®4ý?÷¢ÏíSJr%œ¼ÑA½ë.öé¯bŠR'åŒ`
+¥¨Le¹q'N:tæ¯[Úý§O¶E8Ë7ô¬9yc«=zU"r8¤­ú¢-@7ö}»d”,@ý+'< yïÍnêvæ*Ýs’²JÁ ©Á­i4Ö‡:…eÍ½—ä
+p:E&h­7•¢Š*® ¢Š)
+(¢‘AEPJ½i)EÔœ  sQºàûUÈ` 0ô¦4M±I‹7Ø®@ SjwoðÅFÉŠœ_A”RÒP@QJM.Þh ÇÚqâ›@Ç 
+ñKAH4zQE°w¢Š( ¢Š({a&@â€hn))çši )AÁ ýi( ,iiWR B£8ëßÚº’Ÿ¼Hà’y'Þ¸ˆ‰RH8#}uÖ:”wVªò2ü¬;äw®,D4º;pó¼¹YgŒrIú
+'6=‡9¦îw¤lËýö8ðï@ŠF+™6®q”®µ=]Ì=\âýñœ`~•­«$I±w£<V%å»‰†K2’sšÛÒ²ö1“ÕI þUÙ[àFPO™ŽòÙ¸*ˆ=†M(…WŒ±úÔíŽãŸQH@aÜýk…ÎçBvWDaJŽ úS6mRC9æ§ÚS_îqÞšz£)§-YÉÍÌ7Wq2pÞj—t,N­éôy¤‚8ã;‰bïÎ0;ZÉ¼Óå´Ï€_æ½ˆÎ2ZléÊ:‘L¤HÀ“¸è-ÃZiHU_‚k™×¯¡«-}+D#.v‹Ú‰Ã™àñ å'»7<@ÿ è«ºdÏOQ\Ó·µ[»Õ&»‰#îTèj¦N{bŠqäƒ]bjóÇËò
+(¢´8Ê(¢X(¢Š (¢Š (¢œW Úw¿4€SÕy?…R}Gª’ÈïR™‰ˆ)û¿Îº«ïC…!Ô",$Ú¥Áï‘Ûñ®~÷Dº³‚9¦‰’6ôÉ®xÕ„ö=:¸j´:_KüŠ¿»Ú
+ŒôÆ^sAh"‚ÙÅi±ÎµZšW¤#ÐÕ#)FÃŽiO4( Í
+1Ö—8ƒÈ¨b”)=(”R•#­&( ¢ŒQ@Šµ P4`Ð;jN¦ØÒ¦XM¼Ñ´f—½f‚Xíà)\Ó5it¯ÕO1Ú¨àÒýÐ1Ö“JJÌq“‹Mò2¸FvázñHªH´ôÜy¬R™ž;uÚTu,z
+èV=Ý3ÀÛÇ§c^-H{)j{tæªFèÅ°„\ËtH<£Žç¥XÑ˜µ³¨ÏÊç#nÎÔZ+Œ–ÜsÈÆ)ðÀ»´`¦ó“ZJªwE¥ØqÓó£o=*W†8¦95Çp°Ý£š]¸ ‘‘šP	ÏË1c-
+‰$‰ÅiŠÂz-HEÜIpÑÌ ôaJÆÖ¯3B±© pã·µTÔï<é÷Œs¤6sT·dœ“Ô“^­:
+/˜ójWoÝºœò}h¨®¶r®âæ‚sIŠ1HŠ( QEõ
+(¢Š”/™À4àr · 1JNi( »J‘GÊOsLìiÊØO~•4-5=ZSÏÂ«ÖàÉn¶Ãé¸ÕBßð‚E#Œ…¹2zóoº´®!H~ê¥P©u³Q€+7\»ûGÃÙ}?´-ñÿ €ÄJðp÷râ¡öêÊÖ—Zhà&P1…Å3nÜ{Ô³—ò¦È>eúW²|ï-‘ƒ‘Q°â¦qÍD~aTŒ&µ8¢†éHIf;
+zP¼ŠN ÓqHKV}(¥@<f˜F;Qs^Qô„bF(¸¬2”ÒâŠ.¡´QKE+ŽÈ))h¢à!èi˜äÓÏJgsLÍ‹ŠQÀ4”P “JNi½éO4–Úá­eYïŸ¨ô®æÎí5x¥S»qû£ŒõÀŽ•©£êÏcçG·ÌŽEÆÃÓ9ãú×=z^Ò:ntP«ìå®Ìë×,™Æ3Ö”tÀ9Å —ùçØ¼€
+ðÚ³=¸¤ÐÒ¾äš`*2ßÝiìÛp„wª—bM3ÊÖ|…OJÒ	7ï2'uª,`àþ]é²ó¨813Tm¯_OÁwó±ûŒÞ?ç¥€É~¥jåžäE©¦¤r:¦•%ƒ9b6;	<Ÿ_éYÒ…r=ë¦×,íâ†K‡ËÈOÊuÏ^+˜`tÇzöiKš7gZ*.Èhè( tV†AEPE(¢€#¢Š( (¢Š )ã¥2ž:Pp¢Š;PX«Ö¥‰T±×Ÿz‰N*AÌ€g­RMìK¶ìö}sMûÂÝ@´ŽâhlÝY—Ýÿ ã®ï‡·	Á59úÂÕwN×.õ_‡^'—sØ¤{Û¢åð üg™Txîã{^Û•HÜZñhS•6Ô¿›ó±õXšÔñ2S¦¬¹ûŽZà|‹Žø? ¦¿ÞZšp<µãÐ~•‰‚¹ïÅz7<¹-H¥ÔKÀ©¤zTX$qZ#škQ‡šLSŠ‘IŠw0hM´ª´`žÔ NáËØr¥#àž¸Ï×5(µvp:(ÊKBJFiJ•ëK·Ö¨é©£&Ú6Ó))Vœ@P.Q­IN¤#4ˆÓH:Ó©
+æ©ØCƒF3K·ëF1EÂÃH£¨Å?ni6ÑqXolP¿)uŠR(É±ØèZ—ÛíB“™c ÷çÿ ×Z›wddqß5Ãi—¦Æö9rvƒÈÏlWqkæ\ÙÅ>À»×v‘éý+ÇÄÑå|Ñ=|5W%ÊÅŒzŠkˆ­°Ò¸E'=jÓFØ Æsë´Š†eX£c/Ê¸<:wê+Šô¬ÎÉ6•ÊWÚj*Ùe*¦@#l·ÐzÂþ×k[9-ã…¶ÌnÍ†_PJ­5ï•>ëQäÏÊ{š§4í9;‰nIç¦OZ÷)Ñ²³wG‹V³“÷U‚iK¶Y‹ÜœÔDäbœÌÌ =7º†/Q×sA´˜ô †˜½¨ {þ”¸†Ø@qE.õ¢ØaàÒR·’ƒ ¢Š(Ø¥¤ô¥íAH(¢Š¨£&¦FÀÜ:ûô?ç5
+Ô¤|3Fúm[=OT´²ƒáþ¤`Ž%r–®æ3žw`ÿ :Â¸…áé•°'kØò{ð‡üE:Îcÿ 
+ÿ S†e’%éýÖÎ*;±FÞ3 $w!pkÆ§xéµú[:iê—ü»Oçs™‘Aˆ×"–A“9æ¥‘sn §­Fçk/ æ½žkZPxõ5\V$]ÄaÁªLçœ5!Û@LÔ¡>‚—nßCNæ<„j˜÷¥ÛRmÏN)BÒ¹ª¦F«ÏJ×±^ÐÔ“šÍ	ëVí®<F2+)ê´;p±PŸ½±-Æž§}+2h6ÆnÅ*J9?2xžø¬£UÇFz5ðPª¹é˜Axæµzk.x«4e	Ò¦¥±âT¡:z4BTý)¥O­Mõ¤ažÕw1ä!ÛJ¤ÛžÔm>”\\„L¸£©JÚ¡ù‰tÈ…#T¦:a¢ä8´5h"ŒÒS"ÃqE:‘ªš 2¥tÞ½ŽiœÈ²æ"Ã?6Ê>µÌ`Ô¶ó<BVE «ÐúÖu"§™TæéÍ3Ò„DÝ!'ž`òzÂ¢ºÓíšÖQ$!@;GøTšÑ^é0˜8
+6l<ìl#Š±{p4ôó^äÉœ×Ï^q©ËØúD£8s®§q£±³’ñÿ rªÀ*ySž•f^Ú}–]‚T—–C‘šìµÝZ6ˆ4W,Á#IÏA“ý+Š•Ä¸Ï'qÉüN+Û¡)MsKCÁÄAB\¨‹QJE&+¢ç-„#4˜Å<
+J¤…ŠZ–éIŒ(¥d+ÚŠ@FFi”ðqHÕFmS¶Ð Ó»
+h§v-„¥4¥1¤*€*EÉàu¦©"¼\œ
+/¡|·Ðïä°{?\$¥9ue±¸p?Úçôªš¡)áHÎï7d@9ýqøW]©é¢/kJÑE$½ÇÊÈÅãæ?ï7Qî–=«œñ„o¥C
+™u!Q² t÷\çë^*Švÿ ü»©MAI/ùö¿3“vg´Ä`úu¢E$¨êsÍ;oîÓ¥I,d0ãÞ½cÇTï‘ÔËš„E‘Ö´¹Wº1OK"…ÍO´HÛês“ºZ‹'¹§=«Q,‰</Ôb¥]9ˆ¨Tº›C.”¾É”-Ëv§}ŒŸZÚ‹Jcœ‚
+t¶þïçX¼DNèeS{Åœð´#±4ñh@î+¡[Ôá¥–#©úÄ{?Ø³ìÎsÊ1‘V#”œgµkI¥:cV[5V2ÀV î–„_,œµ{F÷­nñŒÕiÐÉÔV°’OC8ÙÇS0ÇÍ'—W^´Ãk£šç‰ìZ+ª~4ížÕ8‹Žôñ{Ræ ßB¯—ž‚“Ë'µ]XzRý˜ç¥.t_Õ›èQhˆ*6Š´Z*‹j”Ì§†{Ø£åâ™³­[däÔe1Z)R¥b¾ÚB1R•Í&ÚÒç;i4ö^”Ý´\ŽVÍŸësiwEP¦ÉH¿8õ¯@¾KÇ‘b³6ÉÌ’|Ì8íž9úW•D1»œdb»ŸxMbðÝ(ÿ G‰¤iò@àšó±T¥uRš¹éájò§	ìsõÍä·¦;ÆKtçÓÛ’sßùÖ¦±ý©%Ã(Rç ú
+ÌaÓŒW|/Ê®yõ"”šCh¥Æi*Ìì„S€ÍbXf)TS€&‚ 9C4RQH,EHFihÍYÎ §n¤Í
+ÁÞ—ÒšzŠx‚Í(¤#šp ´µ:ÔÑðÞƒ×ð¨”óV êc9Ç?CKKØèŠüÏ¡üNtõøKâCy¹Å€³IÌ²BX÷QÏ÷¾•ç>;š+ƒpXöÀè£¨ã…hx²k˜¾éÖãR’æÞg¤·•1º©Æ®óùVUÉKÍ!/agó=Ûò@	Œtöó˜j|‘Rnþó>åFU'(q~g=›¹ Ž€ÒŠÑàsSÚ[‚AQ…úq]™¢=Ö
+)9 S­ˆPW¹ô9vS*¯–*ÿ ÜŒ;}8¸!F!W!Ð¥¸\ª1\ãvëÅ}SðOöñ§ÅX­ïe²mF|7Ûµñ¸°˜Ü—Jû¿á'ì+ào†Æ§ÒáÖõEP~ß­ õHGÊ:ÿ =ºwò6¥i8aé¹ËË¡×˜b2œrâj©Oùa«ùÉû±ôwgåÃÿ Ù›Ç?B6…áËÛø˜çˆÊD¿W8þª÷ïÿ Á3üm©²Vÿ MÑÉÆQœÊËø/ø×é_‹<Sà?„úh—Å^!µ´Ž%¶šPƒìÂ€Óñ¯›üÿ +ðŸ†<ë_xmõ™	svÂÞ#èB˜ÄV§ŒÇª©ù%Ìÿ àXLni™ÿ È§/÷™Þßø¹WÝsÏ4ø%
+2#]øÏfz˜ì¡j½{ÿ š·hÛì~:e˜té›Çã‰yß‰à§¿µ2âÃû/IÏÝh-w0WfþUÇø(Å<²øçþ½¡ÇþV£M;ÊUÜz‹ÄîÎXš0òº}‘ÝxŸþ	eã½3si¶‹­ èžc[Êà,ÿ Ç«Å|sûüAø}’êþ¼·>ôè¾dcþ¼~µì¾ÿ ‚˜|D³‘¢luH‡ÞYm•UÛ_D|9ÿ ‚Œx_Å+¯‰ts¦¼‹‡–	<Ø¹õR2ãNSÂÚÎ¬ üÕ×ÎÛ¤?Öœyêá)b¡×‘ÚI|šü™ùu©ø"îË+4FãŒ›OäkëÃÍ´á9¯ÙÏü øWûBè’j~û­Ô€°»°Ž>òvéØWÂß?e}oá–£4WVÆKlþêæ<ìaêxâ°©S…Š«;JÍt{¹N;$â)Kè×[Óžíù=Œ/ô¹"ê¿¥dOi´ôÅ{ˆ|'%¨*Ñí ‘ëšà5]?È™^zxldk[•Üò3®–í­Fh6Õ}œÖÍÌ#¨pkÙŒîÍkáye¢!HóV¢³-ÖŸoæô­‹?5€5j¨£³ö®Ì§˜XŽ?*º4PSw}k¬Ñ´	.˜m\…Ækµ‹áŽ¢`[³%€"Q¿ž:×‡[1…'iÊÇé˜>u`¤Õ¯¦¶ûÑâwFÁÊšÉžÌÆÇ?ZõígÂsY¶&Œ¡=ˆúÿ …q:¦”bãžµÙ†ÆÆ¯SÁÎ8fxMâÑÅË	â«J˜5¯ynQÈªÇšöá4ÏË±gÑCi¸ÅNWÔl¹®‹žK…ˆØf“n{T¡3NTëh¹—#{(À Ž´à¥¸ä×/—ÏCNòJûæ‹¢•÷#šŠ§'<ž•X¡µ¢±³Œ1 ™è*`ÏNqÜP¤7A¥tŠ¡iŽ¸«-ÓÇ>´ÆBMitsÊ›!Sô äúT¥6ûÒÏj.O Åt4 ×&·Ò”(¸ÔÏ­( ÑRÙ|žE(¢¶<À¢Š( §”ÚpéCSé”ê››!è šž3ÍAç®*Õ¸ø –ìóÅoëÌé§kêz¯Ž­¿²¼;eaÉ–æ8î¥vÆ¡}3ŸÒ°"hŽˆ1ap“îÁé‚¢º?‰ö¸àšÞæ)-­í­ `¬­æ3‡n0Oo?Zä¡”2 Û´ã''9ä×ÎÒŒ£E_}_æ}þQ•]÷I‰aæ ;7np£<×éGìû1øwPðÕ¿õÛ(õ+Éî^2Öás%K~ð©êxàöÅ~nøuñ:)9\‚AúŠýŠýŠµAkðOáý„ƒ÷—RÞÌ¿î£`ÿ èÁ^*_¿„%³>§:«WJXirÊSQºÞÖmëò>Ônôïé’__N°[[Ç½¥“(v…|ûFÿ ÁAõ=æ—àSý›l	Œê 6Lqžƒ¯lúb½Çöùñt¾øMei¦8õ¦GUàìQ‘úãó¯ÈŸkrÏ,­!Ï9üûW¡Š«*U¹b·¶îúœœÃø	e²ÎóûI95õŠåµÜ»ùükñ7Uñ£=Þ¡¨Oys#i$³dûžEyýÞºò9%ºç¿Z¥¨jÝ‰' ¬YgÜÜWE$V¿ðç¡šçµ*7é²Z$¼‘°ú‰~7*X¯	ÇÍXBIÍë]R¢¬|ô3)sjuÖ7¬ÞÍu:F¦ñ2°v:jó«;’¬s]~•6äR¯EYŸ¢dYƒœÖº£é¯_µßëÏczÑºÅüŽ;‚+ôÿ ÁšÆ‰ñûáÜr_ÛEp&M²ÀÜ˜ßFsŠü`ð½ï‘<lO9WèOìCñ Ö?±f“1]G¿ív¯œÂâ>£‹Tæ¯Nz5Óî;8ÿ $§Ë£›áW-zV|ÑÑÛ³k¶ç–~Ô³°ð«#ÛFÍ§Îà—gJø§Åº0¶šNú×í‡í?àø|Uð»S™£Ìºz4Éë¿Ë8¯ÇÏ‰vbÞþxŠòŸ.}q]Õ°ï.Ç{5ðÉ])›Ï‰²
+‹ïR“³—Þ½€/”É†â·µ5ùØŠÈeùëéiJèü÷0¢•V’êKg''­tº5‘ñŽaÙ óŽ+±ðü§U#ÓükS–-ŸE‘áTêGN©~?×Ü}±û þÏV|E}¯ëviy£é,8&Ig9*O®Ð?ZýŸÀ½³kY´M:Kv]»ºƒôÕã¿±_„âðgÀmž/*[ÈÞþgïó?AWi?Žr|(Òt{+Yuk÷óœâ^¿›`Vx9áð¸9âñ1æ¿~½,~oÄ8Œ~Ä“Àà&ß+pŠM¥hèå£]UÏý®?d};DÒ%ñ†-Ù,ÐžÓ‚"ç‚:qíÅ~ux§BrÊ…\1_º>×ô¿Œÿ -îÚ1-–©lc¸€òñ†Ol0?•~K~ÒŸî~xëVÒ§Œ“o;lr1½N\{0`;W"„0³†'ü:Ÿƒgé¼œâs|=|—3w¯Gg-ÚZ5òü”5{1¶ŽOZÁ–.:b»­~Õ·¶G­r7áˆÅ}§2HøìçìjµcX¶žµCš½*NGåQ¤c=+ÒRÐøyÐw±\DOj³™aÐûU»{O1ºq‘šôo…Ÿ¼GñK^ƒHðþ›.¡u)Î`"÷f'…\gœçŽa[
+Jòv=,[:òvZ-ü—wåæyÕ®•-ÁS*}æ´í¼%wvá`…¦bqµâ,×é·ÃoØá¯ÂÝ2Æûâž¯.½«N‹DÓØˆdoE	óÉÉ^rëÛê?ü4Ò41Eð†™à5W+,¶1Œä».8îTõë^$³9NN4•ßßùmó:*UÀaWÃ)®ëDß÷ov×¢?´ßÙ÷ÇšÍºËeánâ6û¯3)ú|•³û=øóF¤¼ð¦µjŠ2Æ[	PÍköÄ_þx9\k4ü®åò­fF*GQˆqÏ5Çÿ Ã]|›i~$]M+	e´¸d±!•Ï,fc¥5ÿ  MÖ\Ë;w÷ÖŸ4‘ø­{á«Ë)
+Om$Du¸?—ZÉ’ÛÊ*Ø=3_·Ëá‚ß´„[CÂÞ0iÁ5‚-òžN0N1èkãoÚ§þ	×¨|1Óî<Màéeñ‡¢ËM¦.m‡bWø”sÏl~]˜lÝ¹(b¡ÊüµGÃaq2öt›§7²Ÿ_F’Mù<yÇo­ Lwü«[QÓÎwY#*w¦8þ¹ªOÊ8¯¡SOTxóÃÎ›´—èWÚlRù@Õ…ƒ®jxmƒÅ‹†ÉÚÅ%„ž”WAk¥,¹ÆFOåEcíÑêG+›WgEW¦|QE S‡Jm8t hZu6RÍb9N[¶bÄ“£©a?J¨J–3ŒtüFj[}ã¹ØjP}‚K¨ZÔH.V ¶²°FÁŒ+Œúç“øw¯fêH#o8ƒüæ° | AüýkNÙÉ#éŽk†¬t>£VÓGg ¸óÏLcüý3_¯_²ó}Nøe§±Ú¶ž{²¬Óœ“õWã÷†CM8@2Í€>¤ýkö+öŽ8üK§Yà§xKO¶9êÝÈß÷£ó¯†ÍXš1[·þGÛçy²t¼Ûÿ É\SÍÿ à§>+û3øWCßŸ.ÚK—ý¦
+¿úWæ.¹zKJ8!ùúWÝðS­{ÎøÎ¶%÷}—J¶ zniÖ¿?u‹’Ò0"½éC›9//Á#ÙÃTúŸàh-/ÿ ð&ßåcò}ÍŒtª;°IÍ>vùÛœÕflæ½¸ÄüÇWšW,+îøÛGåUQñSÂÛ¹4ä¬*s»F„Ck©Ñîv•×%m÷…t{ŽkÌÄÅ8Ÿq“U•9óþ‘qó¡'µ}]û!j7<'N{zˆqÙpÅ³ø)¯4MîÃiärHì;þ™?…~ˆÁ<þ<š–¥ã]F&ƒNÓÚÂÎ1ºg1¥W‹ã±¯“«†öµéÁw_wWò?XÍ³ZxNÅÔªôqåK¼¥¢±÷O­V÷ÀºôM†YtùóŸ÷×ø‰ñ>ígÔ& äÔ~uû;ñ»Å±ø7á‹5‹–ýŸN“å=7²íUüIÅ~xßUûD²09<=ð?Ïá^ömWE®‘gæ¾ÍÐË3
+“Ò-Å/Tµü8Q‡<ç“Y-‚õrúMÄö5œ¤™uS¢a«ÏTÕ²\·¿¯Eø¦¶«­ÙÚ¢îi¥DêÀZó»’=kè_ÙG@ÿ „—ã?„¬6oßz	¡A<þUäfªR>Ã$«ž"NÜ‘rû“ÿ 3ö7ÂZ4~ðN‰¥ªíDŽÞÛÐ$~##ñ¯ÏÛkâ!Ö¾8êöªá­ôÀ–!Iã*ª_óg`~•úO$‘¤Zl¹ÙH÷é€˜údüTø½âÖñOŽu½Q¤,÷—R\ÛbßÖ–>Ÿûmásâü0¢«æøœÂ§Ø‹×ÎrýRgÞðOß‰o{§á‰¤%Y~Û–èG×å?¦ÿ ÁE~.£ é+¶„™Õ¾Ãs"¼2Z2ññõ"¾Wý•~'/€þ"è÷ÓI‹häU—óÌýÿ Ò¿Oþ/øF/‰¿õí&<J×vM%£/ðÊ|d~ ~f§-½||•åµú}Ú|L¿Õ~1Ãç•©U³vÛWË5ø¦~x’Ì)'i‰##ßÐ×¨E¶S^·ãëF´Ôî#xÌd;|¤tç‘ø×—ê)ûÖ'Þºð¢›>ŸŠ°ÑU}ÓTç¥Iom¼Œ’@Çõ©ž=Î ïWt»Fžå.I8Å{’¨¢®ÏËéáJÊ	nìzÁO„ÅOÚé6QþåŽû‰ŸåHâ\³O²“ojýbø)ðVËáVƒáÝ5SQÀy®gP¸ ™¤}â
+‡*™BAo•|×ö$ø)ƒ¼mul©swê××.¼“Ÿôhô^B=vÁ ÷?¶'Çù>ø-tà'Œu¤&IC†{G³¶¦Kr1ñórÌ*JSv§ÇÐÛ:ØÌT2\º7mûÞvÝ¿î¥®ç9ñ»ö™ð§ìÙ¨]Ùh±Aâï‰Ú…çÍ»p°#;ôÚ[$šø7ãíKã¿Š·3x‚îîÑØºØ¬†;xú`Ô…ÀíMyŸ‰¼C6¥q$òJÒÈå‹3òI$’yõ$Ÿ©5ÅÏw¹Žì‘^Å*R’I.XöZÁüO§T0Yöt=Wÿ /Oî½Ò]¬¶5u/ÏuËM&Gû]+]^g92¶AÎîõJwÇª15êÓ¡«$|¾/4ÄV•ç6ß«ÿ 3£°ñUæŸ*\E3¤‘°+"1¨ ñøWÚ¿²wíýâ/	ê¶^ñåä¾$ðÆÛ}÷æ\Zdà0v9eåXž:b¾	»ÆºOÛÉs¨Ä¨›Ÿ<Ž¹Æ1Yb(ÁAµ ðµeŽ¨°Õ×2•·Ý^ú§º·Mz3ëø(ì×eðÃÅqëú¿—áeŒÖÞRþî2ÃvÐqþ÷«âÉ òØã¯±¯ØÏÚ+ÃÉ®~Ç0øwZgˆ|?¡Áqq$§sÇ<PÀò{ü³&ÞÅ~A_BéÐ'>¿ç9ý+—/®š=ùNZ­âðñªõ’“ƒ}ùtOæ’)Eâ­hØií3àdÿ ŸÆ ¶L°5ÖøzËí7)z¨ê{ÿ Oå]ØŠÜ‘r}C+À¬UH¯?Ãþëÿ ³Ïìç®ü\þÑ{(-m–p
+—Ï
+2¤göü}JýIý›¾ižøW¤i·¶Ñ;˜#šq& –w]ÌÇÔ¨ÀV¢¾UÃYº‰´™8¾.§ƒ¯<6qƒµÝµ·Sùö¢Š+ô“ò ¢Š( ¥ÝŠJCÉ úp9¦¯JrÔ³Hž;T})Àô©gDYjÆkNÙú{VT¶_·o˜{×5E¡î`çÊÑèàûg‰4è $¼ñôÿ x~Â|µkø¢`§?ÚÚ^›	u¼¸£®{|«Ï½~Jü´ß<9ç7±=@9Çé_²_ §	Ì¦(åŸŒ5D”!ŽUãÐƒ|.6ŸµÌèÆû[ïoþöYÅe’¤–²ºôÖ/O•ÏÏø(F¸º×í!ãI7GlðZø´Yƒ¯Žµ0Ä“‚E~¾þÙ°Ä¦Õ¼kàù¼¿L<û½.NRô…2JÉ…Ç ƒòôÇ?•þ4ð¯á]B[[ëmn‘Ù$Šh™yùXgÛ8¯ Öy9õ#Ø†"Žo•ÑX+µJŒ—TÒ¶Û¿’<ÖaÎOZ¬Ø9­k«	†åÉ$Ž8®*«[m8)Ï§Zõã%mÏ«B§3RVùSH«)ã<T‰g#ýÄ#x«öúUË¨&3P2*jN+vi†ÃUœ´‹-ÙÄ_qôéÍtšU‹Ë N:
+ÞøoðsÅ_õ±ðîƒ¨kw$®SO¶y¶ƒÐ³(![ŠûcágìoáH­5O‹¾#³ð½¬¬4kV{û’ýÚíÏ#ˆÃ¿=¿•^§4oóéøþ‡ÚàÞiŽ«Ëäµ“òQZþKÌñÙ»ö|×þ2x®ÛOÒí\[+«\^8T	žY¦ÀÁÜxîHý\ð&ƒ¢xGA¶ð¾‚Hðï†Ø-åçé7ƒ¬~ìå¿Ú*:‚+ˆµ¸Ð<àUÓ´›I>x;Ìò¸F]cS“¦ÈÔ+º³wcº\ Œá†7Ä/ŒzÀ_AâY.‘
+FÐøgÁj@–y@ÏŸp ¿{%rÁ¹Žß/Êê¹EÝÚÍôWÙ/'Õõz.§žæøÎ!<.›4ýØõrîíÖÝ5PWmÝžgÿ øç•á½+áõ´»oõž©þaŒªŒž‡$ã£¥~dëÚ›M#n9$òGNƒÿ ¯]'Å‰Z¯Äjzþ³to5+ùši¦# ’pŽ@  :ß’|òîv˜ðNuÙ×«í_¢ô>ã
+y.W¶‹»ÞMu“ßîÛäV¹›s…œÑ,lFi¨@é^„R±óu%';´kX7Ì+ì_ø'í‚ŸŠºŽµ ýÞ£ÜÝ†þìµÿ B5ñÆŸþ°óŠûãöÐÅ·üQ©ºo}gYÒ¼?	™æËø-x9’~ÉÛËñv=Éâ=†Y_ûË—ÿ µÿ Ï¼þ2x¨øCáŒ/Œ…HðÃœƒÿ -%VU?_~uøµ¬^ù·³d÷9ôúqûgxÝm~|@¹Žm‹«x‚ßF‹œïHBy€{nŽAù×å£}›—9ú}?Îk|Buœ¯Ap+Y~WV«ÑÔ¨—þó•ŽÇÂúá±¼Š|‚ËœŒõ¯Øÿ ÙCâ
+ü@ø3¥M$¾uÎžZÖnr~O»Ÿªà×âï—'·úÿ Íø¬?á+Ö<%s òuQu
+±ë,gü³ôJÃ|&:-¤´~‡±Æ4cpõIGø”’îÕí/Îÿ #Àm¯ |kñ-‚ÇåÚÉpomÎ0s|ü{.¿…|§©¨ó5ú‹ÿ Mø|§MðŒ<9it«©1Ô‘æEü¦¯Ì-b/*ïo]£ŸcéøWb£õlDé­“ÓÓsŠïí\—‰oÞ²„¼œtüRF.ÌH¥wß<>¾$ø… iìn¯¡§.+‚s†Ï½zÂy<+ã½Vv;;¸f9ô	ý3[âœ½Œ­½;-‚–'•÷ülíù#÷áæŽedÈ·Žmä',`„”qŸÀ×ä—íOñïâÅoj÷Ì’Ý4p!è§ÊŠ=°?ZýŠðµÍ¦°ÜÚ²Ég¨iñÏlè~VÊüØ?î²ýwWâ÷Ç_^x?ÆÚ¾•t–·ÄAHb8=ú^õâÓ‹†ŒeµÝÿ úœ¼ÖÄæj•%Ý{Òæ·ásÃ59~rTœzV$Ò–5»¨[°È#OZÄ–­Ò¾’›G6c¼Íµ¹Y=©a›â§#
+W¦}jÅ¥«Hp¼·¥usE#ÃTŸ,Ußõ¡£M&Å‚qŒã×Ÿó× M}—û|¶µX¾%ø²ÍfÑ­.E¶§\ ?µõJÆ	þÊ–sþÃÐŠá?d¿ÙŠëãÇŒÖÞâC§ø_N_´ë»à%¼8' ž°ýÐ?[xÓ\Ó|G©ØYhª¾ð­žŸåéÀùZNŽñ”ÿ Ë{‚¿.Fíž^q¹|ögŒöt_&ý<Ï¡Âak}[žÓ’¼šÞ1{¯ñ>R»Ý¢¯ÇÏ‰VzÁßjŸl{‹kø_B°¹˜m}BæiD×÷{êª?*¢˜¯Ì‹™<Ë™õs“õ8¯lý¦>5Çñ/Ä–ö:4FÇÂ,Mg¤X†È	Ÿšwõ–FË1ú@øcI½ÉÆ+\§:ª|RÔâÄû:1T(Ç–)èºè­¯wmÙnÈôÉ5è~	ý»`q"˜duïí^ye ®÷Âw"ÞTçæ$1Zcîé»v>Ç† ¥ˆŒ]¬î¾ý?S÷»@´´ñ¿‚4Ia““[ÅpŽ‡ å?úôW~Ã-5Ï†‘ø{T¸Qy¥Dd?~,ñÏû9ñW¡ƒÅá*Pƒœ’v?Î²œV[˜×Â¸7Ë'gmÕÛOn©Ÿ‚´QÚŠ÷Ï (¢Š )­-š U9õ¨ÇáÈ¡—>œšŒS±ÍKØÕ=K1¿lFáYÉÚ®Úòâ¹¦´=|4¬Ò>†ý‘4†Ö~5xZ%‡Ûb,=ì“ù_¬ÿ ³ Žïá÷ÃûÇá®ÛXÖ‹±í-Ëß\\
+ü·ýˆ¦gÄ=GZu=G¿Ô˜žÂ;Yqÿ 2×éWÂ-Oþßƒz"åÉ¡ü9kÇ'øLªÿ høÇgšÇ›owð»ýO¯Ïaí2êÛë¼¯ÌŸäŽÿ öjøÒŸ~Z]M!mFÞæKiÂžá‹!<÷Qôãè+Ì~#üDø]ã_j~	ø§iÚ'ˆíd1í«6ÒxÏ)$7JQÕ\`™NIN+ó»àçí-â‚>!·—N»itá,WéîÀGpW¨Î	S×‘ÒºßÛ/öŒðŸÇ›_	ø‹K‚çMñŠÚËi«Á"/hpÐáº¾7ÉÏ²•|E'‡ªÝþËÞêý{Xô«pæ™O	KØÉ;8K–P“Õ7µôíª>Ÿñ?üãÁºìgPÐ4µ9Wz'Äl>›|Øœ~d×'ì7àM"#­áZ²òe>$Ó%ü[iÿ Çkáo~ÐÞ7øy*Ÿø—QÓB»itÈŸŠŽ?Jö-/þ
+OñnÒÕ`½Õí5xÀÁ†Ÿ¥¾§h&¡àq+E6¾fR­ˆk–8¥%æ¹_Þ”¢þG¼§ì§ðšÜºÃá§ºe6¡ñÂß_/$Vþð¿á÷ƒå·6>øOëÈ:Ž¹¯\ƒÿ \cM¯ôÈ¯›¤ÿ ‚xôÉ£øR#×rhq†üy¢_ø)—ÅÆ’ÏTÓôßCi¥[®?ï¥4GŒ^ëwG½ªoš¼[}–Ÿ‚ü¼ôEñ&³
+Úé÷~2ºÓB*ÇÁ>‡Ãšz{‰®™u|õàæ´[NÓ~C.«âøcáŒ³.ùîÞñµ­náGPn.9Ï!bp;WæŠÿ mÿ ‹þ/ÒûÇºÒÅ'­ÏÙ”LD¼‹TñÅö¯póÝÜÏspç-4Òÿ À›&»~©)¤¥ÐÇêT“½jëþÝMßÿ ·êÑ_‰¿·—~]O/Ã=x¢XÞñŠM0ãÊÛöòxZ>R+á¿ˆß5ÿ ‰ž%º×<AªMªê—+ÜNÙ%GEûª3ÂŽy´ú´’1&BsþÑ?ÌÔKtd<‘øW\0¶Véý_•SŠÃ`½Ü$,ßÚnò>‹ÉYXèEÃ_9l¾ü¸ü€QùVÍ§‚µ›T¹[IÌÊ¸Cƒôãœ{V7‡]t|ÃpãÖ¿sf¿ø+âÇÃ].ûH°ÓÒÕ-£·ŸJ6Ñ“m"‚<gŽ¾•ÅZSXÑ§¼¶}úøèåøEŽ¯FU!{>V’MõoV~"]xnx8xœg³åY’ém9F8>˜¯Üoˆÿ ¾ø›T“I×ôNÕdQ'—‚Òàƒü[”†Ç×µ|ïñ/þ	¥j–òÝü?ñ)Bùe³Ô×zg‚H£ø·5§-zMÆQæôzýÁë%Å(ºŽt/³œ}×é%îÛÌüÆ³€¥Ä/†?úÿ ~˜~ÉºTøgðio
+Á©âKÄS»­¼Xþçð¯~'þÌž:ø;yÿ ui
+1õPÉlätÃ¨#ÓÞ¾ÆÔí_Ã>ð¾ƒ™&Ð¾]]BÜ]´Pƒ‘ë¾nG¿5çâjs|JÖµþNçNkFÂÂ…:ŠJ£né¦¾-¿Ä¾gžþÚ~+–?ÙïáŸq¹.uÉ/¼Mpï7ï†ÇÒ¾»º,üžøúWØ?ðRm@Z|ZÑ<+¤ÚøoÃ¶V".ÈçsŸÇa‹ô¯‹®‰yçù×}8¦×’_‘–¬¨åÔ—ó^NÝnÛ_…/0sÞ½ÏöXøŒß~1øO[óÄ0ÚßF'cÐDçË|ûms_<Ã.dæºOjMÐ° “ÓñüqSˆ¤ùy—F{yn*æèUÚiÅú4×êÜÛÁCâ/ìóâý2„×‘ZhÚÉß	…“+ÿ 5øwâ5ÿ Kv9ÿ ?óüëöïà¯Ä¨> üðOˆ/˜Íj¶—Èíœ°Ì3‡?îÿ ð
+üsøùà™>üRñ7‡Ÿ;tËù­‘÷£û³ø¦Ó]5e•#$÷ÿ #ãxv¤ðØ|^WUk	Ý|›‹‚3Êæ}¸úžµ±£_4,‹Ã§¨¬;Æ?->Îä¯«YÇž;hb=…tßK~êWìû[ißØ–ü[|,Í£íÑõ9Ž+õ.Iù@$…'ŽÙé^‰ûk~Éò|NI<eáhDºÂ§úm’rÓªŒN>ðP8ç#Zü˜Ð¼A%„ªÑ±H9S_Æ¾Þýš¿à ZïÃû{mÄ€ëº~kŸ´@½‚1<ÙMyMÆœ›ƒÕ5¼_§S×ymo­¬ã!’UÜé½ï¿+èßTúü6gÈž,ðmÞ‘y$76òA*±².öú×.šÛ¹C¥~ÅëÞøû`Y}¦ÖþÏMñã$¶"¹ÝâRy#¿Õó·Ä_ø&gŠt£4ž»ƒXµ^SªäºH?ÎœX-<{Å¦þku÷µ3³?g‹¾³Þ5.®ÿ »+ZÇç²ià°ù#ÖºŸx"ûÅzý–›§[=ÕýìÉoŽd‘Ø*¯âN=³žÕë¾,ý•<wàÖs¨xrú‰PòÞéßÖ¾šÿ ‚üÿ „PÖ~$jöq£²ipIòù—LÛK‚F2<ýò{Qõ•R\›o{§²ßþ®+‡Ê°“ÆÎQ—*ÑFQ|Íéo}ÏEéÿ þÁð×M·‚EW~&0WÖ/e`¶úzÎÖ`»ÿ éš(n«ãÿ Ú›â´š:ßx2ËQMCS¹¹7>$Ôí†êíNÑùã@èH&½ûâ§Å	ü)aâG0ºÕgyíô™ü°M2ì–íz|ÁXÇÊâ¿?µ»i®î^i·<ŒNXŒ÷â¼\O¯WöÓøÃéßõ~g-ÅaèJ¼µ”ìÛþóZùû».ûý“»bížG±ª ÜŽ+zm-@#­R{zŸ¥}z«Ôðk`jÅóI\†—žõÓh×¾S©ã9®{ÊÚ*Å¬¦6«
+«Ú&zY}W…«C|4ø™sá˜¥Xn^È(Äw¢¼sOÕJF@lt¢¾V¦]6ì~»K4ÀW§Ö¤¥+Zþš#ÅOAIHN1@9¯ÔOâáh¢Š (¢Š 0OJpã­6“© §Ž¢˜†œC5[’¡ã5~Ô‘'ãÖ¨Dx«Ö˜ó2zw®y£ÔÃ¿y\ú¿öR¶K_ |`Õ£ð´öhOfžDˆÖ¾ùñ¢ÚÃO¯@ð]†–‡ÜÛÌÇÿ F¯é_~ÍvE¿g¯ŠN€	.çÒlWßuâ’>‡h¯­þ7k†Çàgí;© 
+n¼Aa¤/®ÁöD+ù3WÁ¦ç™zs~Hý3BøzIïx[æé/ÖLü³ñ-éŠúEÉ dãƒŠç®µ&‘BôUéRk—Ý¹Ý»æl{sXæLŽNkìiS´QòÙ¦=Õ¯Q÷oóÿ €Jó“MûIüª»¿¥G»Ö¢|ã¬ÖÅátÍÔæƒp}j˜GJUbhpÄËk—|óJ'$c UMÆ€sÔÒå4v¶-ïä`ÕˆdÇzÏVÀ=êh\ÔÉhtÒ«fŽ—I¸Úùn’:×Ò³?í­|ñ4öö„qhÍ„™Ú÷Æq_-ZÜýNq[Ú}ðµÚ½ÈÅxxÌ*¯§è¹.cN’*©Jœ•¤ž«^¶ü¼ÏÛ/øcÂ?¶¯ÂKm_@¾ŠjÝ7[\2¨xf#Ü´ãßÈÎ9ø-þ,|Rýšü[w¡WPÒîì$5•Ë—…€8±²¤0äÔc§AÏþÈß´ÍïÁÚM$ÒË¢ÞÈ°ê6åŽ	ûÀg‡›°Ï­~ˆþÖ_³ö™ûIü0ƒÄ^Iâ[+_µØO3wR|’{ä#ßêkÉ‰“æ÷jG¯t¿U±èaqPáºË/ÄZ®½ù\’~Î]bî’o£ÙÜòƒßðPè|}{¦øgÇþ‡PþÓžqae‘äuA¾ÈÆHçô¯¨<AðãÀŸ'ñ$6WÅ®Okm¤jÙËûØ¢¼èáØ~UcÐr>œ~QþÊ¾mkö•ð&›tGª%ëÇ.r¦Ý^|Na#ßðû+áNºÚÇãÕ^V€ëž9ÔoÚVéöK@Ž¶÷ã92ÅN“äœUDûîºtòîx¼C“á0õÜð1t\"¤ÒÕs6ÞÍÙ^1oO#Ã?ooÙïâÇÅxâm"]GÃ÷Ó$ÞiàÊ!‰bŽ$Y|Ë\Ö¾"¿Ò¥…È(Wçu}ûðÃþ
+]â=W–ÇÆ‘ø«B–V>nV+”˜ásÂ¶8lgÖ½sZø!ðöÊÑnu?ßÛxoÅ<ÖHâòäGô–rAþò©Íz0”\ïI·³-ÉìÏGÚVÁa©áóZV„#ª´ýè«-9Öñß¢?$ž,¨nXŒœv«vR}š_\ŒpzûŸJúãŸìyã¯‚—2kJgÒÕŽÍRÇ2Ú·üø{pØ¯	ŸJžÆ]¬Œ $rZÝÔŒ“„®½Mc„”q¦§´¢î¾küìÏÑÿ ø'¯ŽŠ¾xçÁSHÆ{MZÒ2y1°)0‚ÅëÂ?à¡žøY?‹C§Š4k{™æî¡	°;«	?ïUØÇ£ÀŸ´‡^g	c©;iW
+O&_üˆ#ü¯¡?n/‡¢ûà+Ý¨3^ø;Ä·sœ¥µÀÂŸ¡o$ý+Érp­}6ûµ_}íò8ñTÖ9S“²­ôþòq|¢¯ê~b_Œmõôª"]¸Íjê‘0#0ÏåX¬0pké)ûÈñqœÔê2ô7¾QÖ±ÖZ3Ã¡&¹‚zsŠ’)ü³Ö”è©¢°ÙJVg§èž=¼Ó™bt9ë_Bü1ýº¾#ø¡H|A5íªkãæÇLGàGã_A{€pjä£GŒù×•<Sæƒå}ÖŸ‘öÏ¡‰‡²ÆÓH¿æIþzýÍ«>ÿ ‚PE½áxç™ÆÁ%Œ»I~ß)Îrkì]kÆzd‹¬[›%‘`š[sB4­²5 c,\?à„ž¢¿Ÿí#ÄòÙMÉ!W•Õƒ`‚A•{Æ“ûlxö4ò5QüEfe&Dî-*Çå£n]¤m8Î2õ©u1tiÊ)©7ÝeexùÓ–ÔWÚI»½z&ÚV?I|I£~Îÿ ®¡±¼Õteº²o)!ŽóììÜcŒþuÌkðOï„^,RÚ.±w¶H\Ç:äý~S\øªêì¼þ{I¹‹>HÈcÉéV4Ÿ‰º®:Éi{-«¯FŠB„~9¬›¿F½¯øå<²XH¨àóZ]£GõgÞ6ÿ ‚]jq‰Ãzõ¥ûŒ•‚èùLG¦yæ¾Zø«û(xëá|Íýµáû¨ Éqù°Ÿûh€¯á×Úº‡Ÿ·'ÄŸ<K‰.¯-Ó¹»—ÎV„6F+ë_…ÿ ðQíÅVñéþ=ÐâH&{ož<wÝdXsÓÆ?Ÿ4~z_î=çôcz§¦·ä\•-ß_ò·‘ùƒ¨øz[&Ã¡å¶ñY[ùG€qêkõ³â·ì‡ðïöÐ$ñ?Ã+Û;{éÌû=¹L‡
+2‡ û}+ó_â—ÂícáÏˆ.tÍ^Â[+˜X†ˆŽ?ßë]p¬á%Jv»Ùô~ŸðL ðyÕÁ7ÁûÐ’´â»¾ëÍl'hLE%Ò°9ÚUr@µè¤¬y¤¢ìž‡›ÐÇ(¢¾Œü4nêuP$QE
+(¢€)h¢ƒDJ‡jíëEGe&î}»û2®Ï„z\<õ/éPÌ=U[v??é^ÍûBëCû"|BºcºMcâUÔrŸúå¿oþˆZ(¯‚Â¤ñÓo£—õø®ã…õ‡õø#óT}ó;Œ±5œÜQE}ÔR±ùn)·RM÷de&sEgœÛ½(8¢ŠdŽV§š(¤kÇŽÖ¥Œð(¢³‘ÓOrÌ2míš»Û©ÁÁQ\Ó=Ü<åY›ºMü‘0u8`@Ò¿Z?àŸ¿îõß…–þ½É5…øµ·—‚<§¢’N~] téÅW‹÷'‘Ñ®§ÛJ„1¹=juõQ´—“]Wõ¯R;ÿ …Oƒ¿lÛ?i1­¥¦±á­S^[5År¨"”@Æà·Só<yõÙtÏ­ØŸLøo¯k‰Ïü·¼¾`ÇðëEâ×“U¢ÓÜäÃÎXŒ]Wwzkä¹×ä~w\j2A(ÚÍ œ1Åt~ñî©áZË»›;¨Nèîm¦håCÜ† ÑE}%HFTõG§‡ÄU§ˆ´e¦ÞVó[?š>ñøÿ Ö^+oüDÒÅZ}Á[o¶"(œ«pŠHI©8üs^ËñŸþ	Ýà¯‰štšÿ åÔgˆÜP½“’2 QÌ]þîG</©ErÐ›«?cSXÿ ]w<Þ!o!«G–þîS~ò_õ‹¼~yËá[ï…ž8ž/>¢Ý$ŒÐ1*$FÊ”b##¸ú%ñ®òè5·(Â×Æž·Ö„N0!UŠ±äóû¤Ï^h¢¼LCjk?…ÆßyöKJŽ]]/znIú{“ù{Úþ‘úÝ°ÞAiù†:óÏõý+™»µæŠ+é°òvGÎfôãÍSMŒéxÒsEê#á'¸›Ê·:\½Si9Ê/FYŠé—¥Loº8ôÍW<’¹éS«5Ô–=B@€dûûÑöÆÏ#4QYr£Ðjy#¾qŒ|¿JÖÓõ™ `A9¢ŠÂ¤bÖÇ·‚¯V3\²höï?´g‰þø‚ÛQÒn¥ ð%%\ò¬3‚8¯ÐŸÚáÎƒûP~Ïö¿á²M+XŽÐMºQÉQŒ©#=;}h¢¼gÕ‚Û–ÿ 4÷]™ígS•9`si[Ú(suq“Ö2é%êŸ©ù'â-4Ùj2G¸mF±¢Š+¶Œå*qmôEcèÓ†.¬b´R™ÿÙ, `updated_at` = ? where `id` = ?)  
+[2019-01-24 08:26:19] local.ERROR: SQLSTATE[22007]: Invalid datetime format: 1366 Incorrect string value: '\xFF\xD8\xFF\xE0\x00\x10...' for column 'image' at row 1 (SQL: update `users` set `name` = Karen, `surname` = Karenyan, `fathername` = Kareni, `city` = Kapan, `company` = Kakalllll, `email` = kar@mail.ru, `password` = karen1992, `image` = ÿØÿà JFIF      ÿþ ;CREATOR: gd-jpeg v1.0 (using IJG JPEG v90), quality = 90
+ÿÛ C 
+
+
+ÿÛ C		ÿÀ  ö–" ÿÄ           	
+ÿÄ µ   } !1AQa"q2‘¡#B±ÁRÑð$3br‚	
+%&'()*456789:CDEFGHIJSTUVWXYZcdefghijstuvwxyzƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚáâãäåæçèéêñòóôõö÷øùúÿÄ        	
+ÿÄ µ  w !1AQaq"2B‘¡±Á	#3RðbrÑ
+$4á%ñ&'()*56789:CDEFGHIJSTUVWXYZcdefghijstuvwxyz‚ƒ„…†‡ˆ‰Š’“”•–—˜™š¢£¤¥¦§¨©ª²³´µ¶·¸¹ºÂÃÄÅÆÇÈÉÊÒÓÔÕÖ×ØÙÚâãäåæçèéêòóôõö÷øùúÿÚ   2019-01-24 08:26:19 ü¬¢Š(,(¢ŠLh(¢Š‘…Q@QT‰aEQp
+(¢˜Q@Q@Q@„â–¥‚aER((¢Šbb5&)ÔSDØE¥¢Ša±=¥Á¶”:õ«¦‰ÄÐ£ ÎúäûV®‰{²CµùO¡®zÔù•Ñ½)òÊÌØŽEnOòŽh÷½3^aèèÆ´žMš~ÎhÆ(¸ÈðE*œu§w¤\Ð $´‡+ÐbéIs@XLnìÒ—mãŽ´¸ã¯4†Ÿ—­4üÝ)ä~4€sé@X@¸žh' Ôà0sžekÌü¥S<0=kHGØ‰û«˜Ð¸hâ‡2çiã›©Æ²F«gbŒï+5îeuÃ¹`8Á5f-Q£´0ŒôoJî'OfqÊªš)†)ÈúSsÏZW;Ž{÷4ÚÜÆÈž)¹K}ŒöÍ]Þè†ÑEÑ(¢ŠH(¢Š
+(¢€
+(¢˜QH,QE1X(¢Š.+RšÂQJF)*€ÍQRÀ(¢ŠE ¢”÷ Œw ¢Š*®E f˜š qJ¬Cv9¤#”èty¦ºi$v…vãû§µi>^¸ëõ®kK»û,ã4q¸>ÕÒŒºŒ6áÛŠókÂÎèï¡+«0ÍdRì4¡9®C©"29Å(N¦œÉÈ4¬N(ˆÁçâ2Éì)}(¸Xo Š{Ò° Ž2isŽ:Õ!XaSH0O# T˜ÝíHÊxç1l5Fr@ÛïYzÐ”®Ý›Pr_ÖŸwªµµì‰´2.F3SÃuõ®”ÊOA]1Œ©ÚV¹Œœj^7µŽl¨N}qS‹2m„€œŒS^Ý”³8ž8üêì?»³‹wBO¿¥w9+]ôi)É©mb	tö‚Þ)IáÉªâ0Øížœ×E<pÍe	’_)“€2OÒ©JÞÐbÞÜ	dþUœfä®vâ0£5ïYY|ô ·Ð®åMéþóqš*)õ	î›t²>çô¢®ÍœüÔŠ2ûÊQEhŽQE&(¢ŠEQ@Rš J)Ûi´š
+(¢€
+(¢€
+\â’Š \æ’Š)€QE‚ÁN+F1ŠvzPqô¥ÿ ¥.yè)>ÔI¶—Š oJ3JÃ4Úb9£8¤¢
+½}x®‹D½óáò˜üÉ€­s•=¥ËÛL[w¬êGž6.ä‘×°àæ¤)ç¦A/ÚbYA]¬2}½êO,¯¬Oqž‡Ò¼–œtg¨Åð;‘AAŒŽ}#ªNÆ×­ “|Ðä‘íS«+`*äŠF]¬0{Õ{½F8¦	·qã Õ¢ëžOQžO4Ü\wÜaRÝXÓÊò  Ó-Í(ŒƒÆ5)&ÝÄ8÷ ‚Øýø©S8g {.MKŽ ¬±y‡<9¢çBÃÊjòi#Ô˜›ùXzÕÏí{æû!¶‚~Ÿ…SÔdóogb|ÝJeŒÏÈhÂ‡Ápõ¯aÝÂÈñ9£—jèéï®4ý?÷¢ÏíSJr%œ¼ÑA½ë.öé¯bŠR'åŒ`
+¥¨Le¹q'N:tæ¯[Úý§O¶E8Ë7ô¬9yc«=zU"r8¤­ú¢-@7ö}»d”,@ý+'< yïÍnêvæ*Ýs’²JÁ ©Á­i4Ö‡:…eÍ½—ä
+p:E&h­7•¢Š*® ¢Š)
+(¢‘AEPJ½i)EÔœ  sQºàûUÈ` 0ô¦4M±I‹7Ø®@ SjwoðÅFÉŠœ_A”RÒP@QJM.Þh ÇÚqâ›@Ç 
+ñKAH4zQE°w¢Š( ¢Š({a&@â€hn))çši )AÁ ýi( ,iiWR B£8ëßÚº’Ÿ¼Hà’y'Þ¸ˆ‰RH8#}uÖ:”wVªò2ü¬;äw®,D4º;pó¼¹YgŒrIú
+'6=‡9¦îw¤lËýö8ðï@ŠF+™6®q”®µ=]Ì=\âýñœ`~•­«$I±w£<V%å»‰†K2’sšÛÒ²ö1“ÕI þUÙ[àFPO™ŽòÙ¸*ˆ=†M(…WŒ±úÔíŽãŸQH@aÜýk…ÎçBvWDaJŽ úS6mRC9æ§ÚS_îqÞšz£)§-YÉÍÌ7Wq2pÞj—t,N­éôy¤‚8ã;‰bïÎ0;ZÉ¼Óå´Ï€_æ½ˆÎ2ZléÊ:‘L¤HÀ“¸è-ÃZiHU_‚k™×¯¡«-}+D#.v‹Ú‰Ã™àñ å'»7<@ÿ è«ºdÏOQ\Ó·µ[»Õ&»‰#îTèj¦N{bŠqäƒ]bjóÇËò
+(¢´8Ê(¢X(¢Š (¢Š (¢œW Úw¿4€SÕy?…R}Gª’ÈïR™‰ˆ)û¿Îº«ïC…!Ô",$Ú¥Áï‘Ûñ®~÷Dº³‚9¦‰’6ôÉ®xÕ„ö=:¸j´:_KüŠ¿»Ú
+ŒôÆ^sAh"‚ÙÅi±ÎµZšW¤#ÐÕ#)FÃŽiO4( Í
+1Ö—8ƒÈ¨b”)=(”R•#­&( ¢ŒQ@Šµ P4`Ð;jN¦ØÒ¦XM¼Ñ´f—½f‚Xíà)\Ó5it¯ÕO1Ú¨àÒýÐ1Ö“JJÌq“‹Mò2¸FvázñHªH´ôÜy¬R™ž;uÚTu,z
+èV=Ý3ÀÛÇ§c^-H{)j{tæªFèÅ°„\ËtH<£Žç¥XÑ˜µ³¨ÏÊç#nÎÔZ+Œ–ÜsÈÆ)ðÀ»´`¦ó“ZJªwE¥ØqÓó£o=*W†8¦95Çp°Ý£š]¸ ‘‘šP	ÏË1c-
+‰$‰ÅiŠÂz-HEÜIpÑÌ ôaJÆÖ¯3B±© pã·µTÔï<é÷Œs¤6sT·dœ“Ô“^­:
+/˜ójWoÝºœò}h¨®¶r®âæ‚sIŠ1HŠ( QEõ
+(¢Š”/™À4àr · 1JNi( »J‘GÊOsLìiÊØO~•4-5=ZSÏÂ«ÖàÉn¶Ãé¸ÕBßð‚E#Œ…¹2zóoº´®!H~ê¥P©u³Q€+7\»ûGÃÙ}?´-ñÿ €ÄJðp÷râ¡öêÊÖ—Zhà&P1…Å3nÜ{Ô³—ò¦È>eúW²|ï-‘ƒ‘Q°â¦qÍD~aTŒ&µ8¢†éHIf;
+zP¼ŠN ÓqHKV}(¥@<f˜F;Qs^Qô„bF(¸¬2”ÒâŠ.¡´QKE+ŽÈ))h¢à!èi˜äÓÏJgsLÍ‹ŠQÀ4”P “JNi½éO4–Úá­eYïŸ¨ô®æÎí5x¥S»qû£ŒõÀŽ•©£êÏcçG·ÌŽEÆÃÓ9ãú×=z^Ò:ntP«ìå®Ìë×,™Æ3Ö”tÀ9Å —ùçØ¼€
+ðÚ³=¸¤ÐÒ¾äš`*2ßÝiìÛp„wª—bM3ÊÖ|…OJÒ	7ï2'uª,`àþ]é²ó¨813Tm¯_OÁwó±ûŒÞ?ç¥€É~¥jåžäE©¦¤r:¦•%ƒ9b6;	<Ÿ_éYÒ…r=ë¦×,íâ†K‡ËÈOÊuÏ^+˜`tÇzöiKš7gZ*.Èhè( tV†AEPE(¢€#¢Š( (¢Š )ã¥2ž:Pp¢Š;PX«Ö¥‰T±×Ÿz‰N*AÌ€g­RMìK¶ìö}sMûÂÝ@´ŽâhlÝY—Ýÿ ã®ï‡·	Á59úÂÕwN×.õ_‡^'—sØ¤{Û¢åð üg™Txîã{^Û•HÜZñhS•6Ô¿›ó±õXšÔñ2S¦¬¹ûŽZà|‹Žø? ¦¿ÞZšp<µãÐ~•‰‚¹ïÅz7<¹-H¥ÔKÀ©¤zTX$qZ#škQ‡šLSŠ‘IŠw0hM´ª´`žÔ NáËØr¥#àž¸Ï×5(µvp:(ÊKBJFiJ•ëK·Ö¨é©£&Ú6Ó))Vœ@P.Q­IN¤#4ˆÓH:Ó©
+æ©ØCƒF3K·ëF1EÂÃH£¨Å?ni6ÑqXolP¿)uŠR(É±ØèZ—ÛíB“™c ÷çÿ ×Z›wddqß5Ãi—¦Æö9rvƒÈÏlWqkæ\ÙÅ>À»×v‘éý+ÇÄÑå|Ñ=|5W%ÊÅŒzŠkˆ­°Ò¸E'=jÓFØ Æsë´Š†eX£c/Ê¸<:wê+Šô¬ÎÉ6•ÊWÚj*Ùe*¦@#l·ÐzÂþ×k[9-ã…¶ÌnÍ†_PJ­5ï•>ëQäÏÊ{š§4í9;‰nIç¦OZ÷)Ñ²³wG‹V³“÷U‚iK¶Y‹ÜœÔDäbœÌÌ =7º†/Q×sA´˜ô †˜½¨ {þ”¸†Ø@qE.õ¢ØaàÒR·’ƒ ¢Š(Ø¥¤ô¥íAH(¢Š¨£&¦FÀÜ:ûô?ç5
+Ô¤|3Fúm[=OT´²ƒáþ¤`Ž%r–®æ3žw`ÿ :Â¸…áé•°'kØò{ð‡üE:Îcÿ 
+ÿ S†e’%éýÖÎ*;±FÞ3 $w!pkÆ§xéµú[:iê—ü»Oçs™‘Aˆ×"–A“9æ¥‘sn §­Fçk/ æ½žkZPxõ5\V$]ÄaÁªLçœ5!Û@LÔ¡>‚—nßCNæ<„j˜÷¥ÛRmÏN)BÒ¹ª¦F«ÏJ×±^ÐÔ“šÍ	ëVí®<F2+)ê´;p±PŸ½±-Æž§}+2h6ÆnÅ*J9?2xžø¬£UÇFz5ðPª¹é˜Axæµzk.x«4e	Ò¦¥±âT¡:z4BTý)¥O­Mõ¤ažÕw1ä!ÛJ¤ÛžÔm>”\\„L¸£©JÚ¡ù‰tÈ…#T¦:a¢ä8´5h"ŒÒS"ÃqE:‘ªš 2¥tÞ½ŽiœÈ²æ"Ã?6Ê>µÌ`Ô¶ó<BVE «ÐúÖu"§™TæéÍ3Ò„DÝ!'ž`òzÂ¢ºÓíšÖQ$!@;GøTšÑ^é0˜8
+6l<ìl#Š±{p4ôó^äÉœ×Ï^q©ËØúD£8s®§q£±³’ñÿ rªÀ*ySž•f^Ú}–]‚T—–C‘šìµÝZ6ˆ4W,Á#IÏA“ý+Š•Ä¸Ï'qÉüN+Û¡)MsKCÁÄAB\¨‹QJE&+¢ç-„#4˜Å<
+J¤…ŠZ–éIŒ(¥d+ÚŠ@FFi”ðqHÕFmS¶Ð Ó»
+h§v-„¥4¥1¤*€*EÉàu¦©"¼\œ
+/¡|·Ðïä°{?\$¥9ue±¸p?Úçôªš¡)áHÎï7d@9ýqøW]©é¢/kJÑE$½ÇÊÈÅãæ?ï7Qî–=«œñ„o¥C
+™u!Q² t÷\çë^*Švÿ ü»©MAI/ùö¿3“vg´Ä`úu¢E$¨êsÍ;oîÓ¥I,d0ãÞ½cÇTï‘ÔËš„E‘Ö´¹Wº1OK"…ÍO´HÛês“ºZ‹'¹§=«Q,‰</Ôb¥]9ˆ¨Tº›C.”¾É”-Ëv§}ŒŸZÚ‹Jcœ‚
+t¶þïçX¼DNèeS{Åœð´#±4ñh@î+¡[Ôá¥–#©úÄ{?Ø³ìÎsÊ1‘V#”œgµkI¥:cV[5V2ÀV î–„_,œµ{F÷­nñŒÕiÐÉÔV°’OC8ÙÇS0ÇÍ'—W^´Ãk£šç‰ìZ+ª~4ížÕ8‹Žôñ{Ræ ßB¯—ž‚“Ë'µ]XzRý˜ç¥.t_Õ›èQhˆ*6Š´Z*‹j”Ì§†{Ø£åâ™³­[däÔe1Z)R¥b¾ÚB1R•Í&ÚÒç;i4ö^”Ý´\ŽVÍŸësiwEP¦ÉH¿8õ¯@¾KÇ‘b³6ÉÌ’|Ì8íž9úW•D1»œdb»ŸxMbðÝ(ÿ G‰¤iò@àšó±T¥uRš¹éájò§	ìsõÍä·¦;ÆKtçÓÛ’sßùÖ¦±ý©%Ã(Rç ú
+ÌaÓŒW|/Ê®yõ"”šCh¥Æi*Ìì„S€ÍbXf)TS€&‚ 9C4RQH,EHFihÍYÎ §n¤Í
+ÁÞ—ÒšzŠx‚Í(¤#šp ´µ:ÔÑðÞƒ×ð¨”óV êc9Ç?CKKØèŠüÏ¡üNtõøKâCy¹Å€³IÌ²BX÷QÏ÷¾•ç>;š+ƒpXöÀè£¨ã…hx²k˜¾éÖãR’æÞg¤·•1º©Æ®óùVUÉKÍ!/agó=Ûò@	Œtöó˜j|‘Rnþó>åFU'(q~g=›¹ Ž€ÒŠÑàsSÚ[‚AQ…úq]™¢=Ö
+)9 S­ˆPW¹ô9vS*¯–*ÿ ÜŒ;}8¸!F!W!Ð¥¸\ª1\ãvëÅ}SðOöñ§ÅX­ïe²mF|7Ûµñ¸°˜Ü—Jû¿á'ì+ào†Æ§ÒáÖõEP~ß­ õHGÊ:ÿ =ºwò6¥i8aé¹ËË¡×˜b2œrâj©Oùa«ùÉû±ôwgåÃÿ Ù›Ç?B6…áËÛø˜çˆÊD¿W8þª÷ïÿ Á3üm©²Vÿ MÑÉÆQœÊËø/ø×é_‹<Sà?„úh—Å^!µ´Ž%¶šPƒìÂ€Óñ¯›üÿ +ðŸ†<ë_xmõ™	svÂÞ#èB˜ÄV§ŒÇª©ù%Ìÿ àXLni™ÿ È§/÷™Þßø¹WÝsÏ4ø%
+2#]øÏfz˜ì¡j½{ÿ š·hÛì~:e˜té›Çã‰yß‰à§¿µ2âÃû/IÏÝh-w0WfþUÇø(Å<²øçþ½¡ÇþV£M;ÊUÜz‹ÄîÎXš0òº}‘ÝxŸþ	eã½3si¶‹­ èžc[Êà,ÿ Ç«Å|sûüAø}’êþ¼·>ôè¾dcþ¼~µì¾ÿ ‚˜|D³‘¢luH‡ÞYm•UÛ_D|9ÿ ‚Œx_Å+¯‰ts¦¼‹‡–	<Ø¹õR2ãNSÂÚÎ¬ üÕ×ÎÛ¤?Öœyêá)b¡×‘ÚI|šü™ùu©ø"îË+4FãŒ›OäkëÃÍ´á9¯ÙÏü øWûBè’j~û­Ô€°»°Ž>òvéØWÂß?e}oá–£4WVÆKlþêæ<ìaêxâ°©S…Š«;JÍt{¹N;$â)Kè×[Óžíù=Œ/ô¹"ê¿¥dOi´ôÅ{ˆ|'%¨*Ñí ‘ëšà5]?È™^zxldk[•Üò3®–í­Fh6Õ}œÖÍÌ#¨pkÙŒîÍkáye¢!HóV¢³-ÖŸoæô­‹?5€5j¨£³ö®Ì§˜XŽ?*º4PSw}k¬Ñ´	.˜m\…Ækµ‹áŽ¢`[³%€"Q¿ž:×‡[1…'iÊÇé˜>u`¤Õ¯¦¶ûÑâwFÁÊšÉžÌÆÇ?ZõígÂsY¶&Œ¡=ˆúÿ …q:¦”bãžµÙ†ÆÆ¯SÁÎ8fxMâÑÅË	â«J˜5¯ynQÈªÇšöá4ÏË±gÑCi¸ÅNWÔl¹®‹žK…ˆØf“n{T¡3NTëh¹—#{(À Ž´à¥¸ä×/—ÏCNòJûæ‹¢•÷#šŠ§'<ž•X¡µ¢±³Œ1 ™è*`ÏNqÜP¤7A¥tŠ¡iŽ¸«-ÓÇ>´ÆBMitsÊ›!Sô äúT¥6ûÒÏj.O Åt4 ×&·Ò”(¸ÔÏ­( ÑRÙ|žE(¢¶<À¢Š( §”ÚpéCSé”ê››!è šž3ÍAç®*Õ¸ø –ìóÅoëÌé§kêz¯Ž­¿²¼;eaÉ–æ8î¥vÆ¡}3ŸÒ°"hŽˆ1ap“îÁé‚¢º?‰ö¸àšÞæ)-­í­ `¬­æ3‡n0Oo?Zä¡”2 Û´ã''9ä×ÎÒŒ£E_}_æ}þQ•]÷I‰aæ ;7np£<×éGìû1øwPðÕ¿õÛ(õ+Éî^2Öás%K~ð©êxàöÅ~nøuñ:)9\‚AúŠýŠýŠµAkðOáý„ƒ÷—RÞÌ¿î£`ÿ èÁ^*_¿„%³>§:«WJXirÊSQºÞÖmëò>Ônôïé’__N°[[Ç½¥“(v…|ûFÿ ÁAõ=æ—àSý›l	Œê 6Lqžƒ¯lúb½Çöùñt¾øMei¦8õ¦GUàìQ‘úãó¯ÈŸkrÏ,­!Ï9üûW¡Š«*U¹b·¶îúœœÃø	e²ÎóûI95õŠåµÜ»ùükñ7Uñ£=Þ¡¨Oys#i$³dûžEyýÞºò9%ºç¿Z¥¨jÝ‰' ¬YgÜÜWE$V¿ðç¡šçµ*7é²Z$¼‘°ú‰~7*X¯	ÇÍXBIÍë]R¢¬|ô3)sjuÖ7¬ÞÍu:F¦ñ2°v:jó«;’¬s]~•6äR¯EYŸ¢dYƒœÖº£é¯_µßëÏczÑºÅüŽ;‚+ôÿ ÁšÆ‰ñûáÜr_ÛEp&M²ÀÜ˜ßFsŠü`ð½ï‘<lO9WèOìCñ Ö?±f“1]G¿ív¯œÂâ>£‹Tæ¯Nz5Óî;8ÿ $§Ë£›áW-zV|ÑÑÛ³k¶ç–~Ô³°ð«#ÛFÍ§Îà—gJø§Åº0¶šNú×í‡í?àø|Uð»S™£Ìºz4Éë¿Ë8¯ÇÏ‰vbÞþxŠòŸ.}q]Õ°ï.Ç{5ðÉ])›Ï‰²
+‹ïR“³—Þ½€/”É†â·µ5ùØŠÈeùëéiJèü÷0¢•V’êKg''­tº5‘ñŽaÙ óŽ+±ðü§U#ÓükS–-ŸE‘áTêGN©~?×Ü}±û þÏV|E}¯ëviy£é,8&Ig9*O®Ð?ZýŸÀ½³kY´M:Kv]»ºƒôÕã¿±_„âðgÀmž/*[ÈÞþgïó?AWi?Žr|(Òt{+Yuk÷óœâ^¿›`Vx9áð¸9âñ1æ¿~½,~oÄ8Œ~Ä“Àà&ß+pŠM¥hèå£]UÏý®?d};DÒ%ñ†-Ù,ÐžÓ‚"ç‚:qíÅ~ux§BrÊ…\1_º>×ô¿Œÿ -îÚ1-–©lc¸€òñ†Ol0?•~K~ÒŸî~xëVÒ§Œ“o;lr1½N\{0`;W"„0³†'ü:Ÿƒgé¼œâs|=|—3w¯Gg-ÚZ5òü”5{1¶ŽOZÁ–.:b»­~Õ·¶G­r7áˆÅ}§2HøìçìjµcX¶žµCš½*NGåQ¤c=+ÒRÐøyÐw±\DOj³™aÐûU»{O1ºq‘šôo…Ÿ¼GñK^ƒHðþ›.¡u)Î`"÷f'…\gœçŽa[
+Jòv=,[:òvZ-ü—wåæyÕ®•-ÁS*}æ´í¼%wvá`…¦bqµâ,×é·ÃoØá¯ÂÝ2Æûâž¯.½«N‹DÓØˆdoE	óÉÉ^rëÛê?ü4Ò41Eð†™à5W+,¶1Œä».8îTõë^$³9NN4•ßßùmó:*UÀaWÃ)®ëDß÷ov×¢?´ßÙ÷ÇšÍºËeánâ6û¯3)ú|•³û=øóF¤¼ð¦µjŠ2Æ[	PÍköÄ_þx9\k4ü®åò­fF*GQˆqÏ5Çÿ Ã]|›i~$]M+	e´¸d±!•Ï,fc¥5ÿ  MÖ\Ë;w÷ÖŸ4‘ø­{á«Ë)
+Om$Du¸?—ZÉ’ÛÊ*Ø=3_·Ëá‚ß´„[CÂÞ0iÁ5‚-òžN0N1èkãoÚ§þ	×¨|1Óî<Màéeñ‡¢ËM¦.m‡bWø”sÏl~]˜lÝ¹(b¡ÊüµGÃaq2öt›§7²Ÿ_F’Mù<yÇo­ Lwü«[QÓÎwY#*w¦8þ¹ªOÊ8¯¡SOTxóÃÎ›´—èWÚlRù@Õ…ƒ®jxmƒÅ‹†ÉÚÅ%„ž”WAk¥,¹ÆFOåEcíÑêG+›WgEW¦|QE S‡Jm8t hZu6RÍb9N[¶bÄ“£©a?J¨J–3ŒtüFj[}ã¹ØjP}‚K¨ZÔH.V ¶²°FÁŒ+Œúç“øw¯fêH#o8ƒüæ° | AüýkNÙÉ#éŽk†¬t>£VÓGg ¸óÏLcüý3_¯_²ó}Nøe§±Ú¶ž{²¬Óœ“õWã÷†CM8@2Í€>¤ýkö+öŽ8üK§Yà§xKO¶9êÝÈß÷£ó¯†ÍXš1[·þGÛçy²t¼Ûÿ É\SÍÿ à§>+û3øWCßŸ.ÚK—ý¦
+¿úWæ.¹zKJ8!ùúWÝðS­{ÎøÎ¶%÷}—J¶ zniÖ¿?u‹’Ò0"½éC›9//Á#ÙÃTúŸàh-/ÿ ð&ßåcò}ÍŒtª;°IÍ>vùÛœÕflæ½¸ÄüÇWšW,+îøÛGåUQñSÂÛ¹4ä¬*s»F„Ck©Ñîv•×%m÷…t{ŽkÌÄÅ8Ÿq“U•9óþ‘qó¡'µ}]û!j7<'N{zˆqÙpÅ³ø)¯4MîÃiärHì;þ™?…~ˆÁ<þ<š–¥ã]F&ƒNÓÚÂÎ1ºg1¥W‹ã±¯“«†öµéÁw_wWò?XÍ³ZxNÅÔªôqåK¼¥¢±÷O­V÷ÀºôM†YtùóŸ÷×ø‰ñ>ígÔ& äÔ~uû;ñ»Å±ø7á‹5‹–ýŸN“å=7²íUüIÅ~xßUûD²09<=ð?Ïá^ömWE®‘gæ¾ÍÐË3
+“Ò-Å/Tµü8Q‡<ç“Y-‚õrúMÄö5œ¤™uS¢a«ÏTÕ²\·¿¯Eø¦¶«­ÙÚ¢îi¥DêÀZó»’=kè_ÙG@ÿ „—ã?„¬6oßz	¡A<þUäfªR>Ã$«ž"NÜ‘rû“ÿ 3ö7ÂZ4~ðN‰¥ªíDŽÞÛÐ$~##ñ¯ÏÛkâ!Ö¾8êöªá­ôÀ–!Iã*ª_óg`~•úO$‘¤Zl¹ÙH÷é€˜údüTø½âÖñOŽu½Q¤,÷—R\ÛbßÖ–>Ÿûmásâü0¢«æøœÂ§Ø‹×ÎrýRgÞðOß‰o{§á‰¤%Y~Û–èG×å?¦ÿ ÁE~.£ é+¶„™Õ¾Ãs"¼2Z2ññõ"¾Wý•~'/€þ"è÷ÓI‹häU—óÌýÿ Ò¿Oþ/øF/‰¿õí&<J×vM%£/ðÊ|d~ ~f§-½||•åµú}Ú|L¿Õ~1Ãç•©U³vÛWË5ø¦~x’Ì)'i‰##ßÐ×¨E¶S^·ãëF´Ôî#xÌd;|¤tç‘ø×—ê)ûÖ'Þºð¢›>ŸŠ°ÑU}ÓTç¥Iom¼Œ’@Çõ©ž=Î ïWt»Fžå.I8Å{’¨¢®ÏËéáJÊ	nìzÁO„ÅOÚé6QþåŽû‰ŸåHâ\³O²“ojýbø)ðVËáVƒáÝ5SQÀy®gP¸ ™¤}â
+‡*™BAo•|×ö$ø)ƒ¼mul©swê××.¼“Ÿôhô^B=vÁ ÷?¶'Çù>ø-tà'Œu¤&IC†{G³¶¦Kr1ñórÌ*JSv§ÇÐÛ:ØÌT2\º7mûÞvÝ¿î¥®ç9ñ»ö™ð§ìÙ¨]Ùh±Aâï‰Ú…çÍ»p°#;ôÚ[$šø7ãíKã¿Š·3x‚îîÑØºØ¬†;xú`Ô…ÀíMyŸ‰¼C6¥q$òJÒÈå‹3òI$’yõ$Ÿ©5ÅÏw¹Žì‘^Å*R’I.XöZÁüO§T0Yöt=Wÿ /Oî½Ò]¬¶5u/ÏuËM&Gû]+]^g92¶AÎîõJwÇª15êÓ¡«$|¾/4ÄV•ç6ß«ÿ 3£°ñUæŸ*\E3¤‘°+"1¨ ñøWÚ¿²wíýâ/	ê¶^ñåä¾$ðÆÛ}÷æ\Zdà0v9eåXž:b¾	»ÆºOÛÉs¨Ä¨›Ÿ<Ž¹Æ1Yb(ÁAµ ðµeŽ¨°Õ×2•·Ý^ú§º·Mz3ëø(ì×eðÃÅqëú¿—áeŒÖÞRþî2ÃvÐqþ÷«âÉ òØã¯±¯ØÏÚ+ÃÉ®~Ç0øwZgˆ|?¡Áqq$§sÇ<PÀò{ü³&ÞÅ~A_BéÐ'>¿ç9ý+—/®š=ùNZ­âðñªõ’“ƒ}ùtOæ’)Eâ­hØií3àdÿ ŸÆ ¶L°5ÖøzËí7)z¨ê{ÿ Oå]ØŠÜ‘r}C+À¬UH¯?Ãþëÿ ³Ïìç®ü\þÑ{(-m–p
+—Ï
+2¤göü}JýIý›¾ižøW¤i·¶Ñ;˜#šq& –w]ÌÇÔ¨ÀV¢¾UÃYº‰´™8¾.§ƒ¯<6qƒµÝµ·Sùö¢Š+ô“ò ¢Š( ¥ÝŠJCÉ úp9¦¯JrÔ³Hž;T})Àô©gDYjÆkNÙú{VT¶_·o˜{×5E¡î`çÊÑèàûg‰4è $¼ñôÿ x~Â|µkø¢`§?ÚÚ^›	u¼¸£®{|«Ï½~Jü´ß<9ç7±=@9Çé_²_ §	Ì¦(åŸŒ5D”!ŽUãÐƒ|.6ŸµÌèÆû[ïoþöYÅe’¤–²ºôÖ/O•ÏÏø(F¸º×í!ãI7GlðZø´Yƒ¯Žµ0Ä“‚E~¾þÙ°Ä¦Õ¼kàù¼¿L<û½.NRô…2JÉ…Ç ƒòôÇ?•þ4ð¯á]B[[ëmn‘Ù$Šh™yùXgÛ8¯ Öy9õ#Ø†"Žo•ÑX+µJŒ—TÒ¶Û¿’<ÖaÎOZ¬Ø9­k«	†åÉ$Ž8®*«[m8)Ï§Zõã%mÏ«B§3RVùSH«)ã<T‰g#ýÄ#x«öúUË¨&3P2*jN+vi†ÃUœ´‹-ÙÄ_qôéÍtšU‹Ë N:
+ÞøoðsÅ_õ±ðîƒ¨kw$®SO¶y¶ƒÐ³(![ŠûcágìoáH­5O‹¾#³ð½¬¬4kV{û’ýÚíÏ#ˆÃ¿=¿•^§4oóéøþ‡ÚàÞiŽ«Ëäµ“òQZþKÌñÙ»ö|×þ2x®ÛOÒí\[+«\^8T	žY¦ÀÁÜxîHý\ð&ƒ¢xGA¶ð¾‚Hðï†Ø-åçé7ƒ¬~ìå¿Ú*:‚+ˆµ¸Ð<àUÓ´›I>x;Ìò¸F]cS“¦ÈÔ+º³wcº\ Œá†7Ä/ŒzÀ_AâY.‘
+FÐøgÁj@–y@ÏŸp ¿{%rÁ¹Žß/Êê¹EÝÚÍôWÙ/'Õõz.§žæøÎ!<.›4ýØõrîíÖÝ5PWmÝžgÿ øç•á½+áõ´»oõž©þaŒªŒž‡$ã£¥~dëÚ›M#n9$òGNƒÿ ¯]'Å‰Z¯Äjzþ³to5+ùši¦# ’pŽ@  :ß’|òîv˜ðNuÙ×«í_¢ô>ã
+y.W¶‹»ÞMu“ßîÛäV¹›s…œÑ,lFi¨@é^„R±óu%';´kX7Ì+ì_ø'í‚ŸŠºŽµ ýÞ£ÜÝ†þìµÿ B5ñÆŸþ°óŠûãöÐÅ·üQ©ºo}gYÒ¼?	™æËø-x9’~ÉÛËñv=Éâ=†Y_ûË—ÿ µÿ Ï¼þ2x¨øCáŒ/Œ…HðÃœƒÿ -%VU?_~uøµ¬^ù·³d÷9ôúqûgxÝm~|@¹Žm‹«x‚ßF‹œïHBy€{nŽAù×å£}›—9ú}?Îk|Buœ¯Ap+Y~WV«ÑÔ¨—þó•ŽÇÂúá±¼Š|‚ËœŒõ¯Øÿ ÙCâ
+ü@ø3¥M$¾uÎžZÖnr~O»Ÿªà×âï—'·úÿ Íø¬?á+Ö<%s òuQu
+±ë,gü³ôJÃ|&:-¤´~‡±Æ4cpõIGø”’îÕí/Îÿ #Àm¯ |kñ-‚ÇåÚÉpomÎ0s|ü{.¿…|§©¨ó5ú‹ÿ Mø|§MðŒ<9it«©1Ô‘æEü¦¯Ì-b/*ïo]£ŸcéøWb£õlDé­“ÓÓsŠïí\—‰oÞ²„¼œtüRF.ÌH¥wß<>¾$ø… iìn¯¡§.+‚s†Ï½zÂy<+ã½Vv;;¸f9ô	ý3[âœ½Œ­½;-‚–'•÷ülíù#÷áæŽedÈ·Žmä',`„”qŸÀ×ä—íOñïâÅoj÷Ì’Ý4p!è§ÊŠ=°?ZýŠðµÍ¦°ÜÚ²Ég¨iñÏlè~VÊüØ?î²ýwWâ÷Ç_^x?ÆÚ¾•t–·ÄAHb8=ú^õâÓ‹†ŒeµÝÿ úœ¼ÖÄæj•%Ý{Òæ·ásÃ59~rTœzV$Ò–5»¨[°È#OZÄ–­Ò¾’›G6c¼Íµ¹Y=©a›â§#
+W¦}jÅ¥«Hp¼·¥usE#ÃTŸ,Ußõ¡£M&Å‚qŒã×Ÿó× M}—û|¶µX¾%ø²ÍfÑ­.E¶§\ ?µõJÆ	þÊ–sþÃÐŠá?d¿ÙŠëãÇŒÖÞâC§ø_N_´ë»à%¼8' ž°ýÐ?[xÓ\Ó|G©ØYhª¾ð­žŸåéÀùZNŽñ”ÿ Ë{‚¿.Fíž^q¹|ögŒöt_&ý<Ï¡Âak}[žÓ’¼šÞ1{¯ñ>R»Ý¢¯ÇÏ‰VzÁßjŸl{‹kø_B°¹˜m}BæiD×÷{êª?*¢˜¯Ì‹™<Ë™õs“õ8¯lý¦>5Çñ/Ä–ö:4FÇÂ,Mg¤X†È	Ÿšwõ–FË1ú@øcI½ÉÆ+\§:ª|RÔâÄû:1T(Ç–)èºè­¯wmÙnÈôÉ5è~	ý»`q"˜duïí^ye ®÷Âw"ÞTçæ$1Zcîé»v>Ç† ¥ˆŒ]¬î¾ý?S÷»@´´ñ¿‚4Ia““[ÅpŽ‡ å?úôW~Ã-5Ï†‘ø{T¸Qy¥Dd?~,ñÏû9ñW¡ƒÅá*Pƒœ’v?Î²œV[˜×Â¸7Ë'gmÕÛOn©Ÿ‚´QÚŠ÷Ï (¢Š )­-š U9õ¨ÇáÈ¡—>œšŒS±ÍKØÕ=K1¿lFáYÉÚ®Úòâ¹¦´=|4¬Ò>†ý‘4†Ö~5xZ%‡Ûb,=ì“ù_¬ÿ ³ Žïá÷ÃûÇá®ÛXÖ‹±í-Ëß\\
+ü·ýˆ¦gÄ=GZu=G¿Ô˜žÂ;Yqÿ 2×éWÂ-Oþßƒz"åÉ¡ü9kÇ'øLªÿ høÇgšÇ›owð»ýO¯Ïaí2êÛë¼¯ÌŸäŽÿ öjøÒŸ~Z]M!mFÞæKiÂžá‹!<÷Qôãè+Ì~#üDø]ã_j~	ø§iÚ'ˆíd1í«6ÒxÏ)$7JQÕ\`™NIN+ó»àçí-â‚>!·—N»itá,WéîÀGpW¨Î	S×‘ÒºßÛ/öŒðŸÇ›_	ø‹K‚çMñŠÚËi«Á"/hpÐáº¾7ÉÏ²•|E'‡ªÝþËÞêý{Xô«pæ™O	KØÉ;8K–P“Õ7µôíª>Ÿñ?üãÁºìgPÐ4µ9Wz'Äl>›|Øœ~d×'ì7àM"#­áZ²òe>$Ó%ü[iÿ Çkáo~ÐÞ7øy*Ÿø—QÓB»itÈŸŠŽ?Jö-/þ
+OñnÒÕ`½Õí5xÀÁ†Ÿ¥¾§h&¡àq+E6¾fR­ˆk–8¥%æ¹_Þ”¢þG¼§ì§ðšÜºÃá§ºe6¡ñÂß_/$Vþð¿á÷ƒå·6>øOëÈ:Ž¹¯\ƒÿ \cM¯ôÈ¯›¤ÿ ‚xôÉ£øR#×rhq†üy¢_ø)—ÅÆ’ÏTÓôßCi¥[®?ï¥4GŒ^ëwG½ªoš¼[}–Ÿ‚ü¼ôEñ&³
+Úé÷~2ºÓB*ÇÁ>‡Ãšz{‰®™u|õàæ´[NÓ~C.«âøcáŒ³.ùîÞñµ­náGPn.9Ï!bp;WæŠÿ mÿ ‹þ/ÒûÇºÒÅ'­ÏÙ”LD¼‹TñÅö¯póÝÜÏspç-4Òÿ À›&»~©)¤¥ÐÇêT“½jëþÝMßÿ ·êÑ_‰¿·—~]O/Ã=x¢XÞñŠM0ãÊÛöòxZ>R+á¿ˆß5ÿ ‰ž%º×<AªMªê—+ÜNÙ%GEûª3ÂŽy´ú´’1&BsþÑ?ÌÔKtd<‘øW\0¶Véý_•SŠÃ`½Ü$,ßÚnò>‹ÉYXèEÃ_9l¾ü¸ü€QùVÍ§‚µ›T¹[IÌÊ¸Cƒôãœ{V7‡]t|ÃpãÖ¿sf¿ø+âÇÃ].ûH°ÓÒÕ-£·ŸJ6Ñ“m"‚<gŽ¾•ÅZSXÑ§¼¶}úøèåøEŽ¯FU!{>V’MõoV~"]xnx8xœg³åY’ém9F8>˜¯Üoˆÿ ¾ø›T“I×ôNÕdQ'—‚Òàƒü[”†Ç×µ|ïñ/þ	¥j–òÝü?ñ)Bùe³Ô×zg‚H£ø·5§-zMÆQæôzýÁë%Å(ºŽt/³œ}×é%îÛÌüÆ³€¥Ä/†?úÿ ~˜~ÉºTøgðio
+Á©âKÄS»­¼Xþçð¯~'þÌž:ø;yÿ ui
+1õPÉlätÃ¨#ÓÞ¾ÆÔí_Ã>ð¾ƒ™&Ð¾]]BÜ]´Pƒ‘ë¾nG¿5çâjs|JÖµþNçNkFÂÂ…:ŠJ£né¦¾-¿Ä¾gžþÚ~+–?ÙïáŸq¹.uÉ/¼Mpï7ï†ÇÒ¾»º,üžøúWØ?ðRm@Z|ZÑ<+¤ÚøoÃ¶V".ÈçsŸÇa‹ô¯‹®‰yçù×}8¦×’_‘–¬¨åÔ—ó^NÝnÛ_…/0sÞ½ÏöXøŒß~1øO[óÄ0ÚßF'cÐDçË|ûms_<Ã.dæºOjMÐ° “ÓñüqSˆ¤ùy—F{yn*æèUÚiÅú4×êÜÛÁCâ/ìóâý2„×‘ZhÚÉß	…“+ÿ 5øwâ5ÿ Kv9ÿ ?óüëöïà¯Ä¨> üðOˆ/˜Íj¶—Èíœ°Ì3‡?îÿ ð
+üsøùà™>üRñ7‡Ÿ;tËù­‘÷£û³ø¦Ó]5e•#$÷ÿ #ãxv¤ðØ|^WUk	Ý|›‹‚3Êæ}¸úžµ±£_4,‹Ã§¨¬;Æ?->Îä¯«YÇž;hb=…tßK~êWìû[ißØ–ü[|,Í£íÑõ9Ž+õ.Iù@$…'ŽÙé^‰ûk~Éò|NI<eáhDºÂ§úm’rÓªŒN>ðP8ç#Zü˜Ð¼A%„ªÑ±H9S_Æ¾Þýš¿à ZïÃû{mÄ€ëº~kŸ´@½‚1<ÙMyMÆœ›ƒÕ5¼_§S×ymo­¬ã!’UÜé½ï¿+èßTúü6gÈž,ðmÞ‘y$76òA*±².öú×.šÛ¹C¥~ÅëÞøû`Y}¦ÖþÏMñã$¶"¹ÝâRy#¿Õó·Ä_ø&gŠt£4ž»ƒXµ^SªäºH?ÎœX-<{Å¦þku÷µ3³?g‹¾³Þ5.®ÿ »+ZÇç²ià°ù#ÖºŸx"ûÅzý–›§[=ÕýìÉoŽd‘Ø*¯âN=³žÕë¾,ý•<wàÖs¨xrú‰PòÞéßÖ¾šÿ ‚üÿ „PÖ~$jöq£²ipIòù—LÛK‚F2<ýò{Qõ•R\›o{§²ßþ®+‡Ê°“ÆÎQ—*ÑFQ|Íéo}ÏEéÿ þÁð×M·‚EW~&0WÖ/e`¶úzÎÖ`»ÿ éš(n«ãÿ Ú›â´š:ßx2ËQMCS¹¹7>$Ôí†êíNÑùã@èH&½ûâ§Å	ü)aâG0ºÕgyíô™ü°M2ì–íz|ÁXÇÊâ¿?µ»i®î^i·<ŒNXŒ÷â¼\O¯WöÓøÃéßõ~g-ÅaèJ¼µ”ìÛþóZùû».ûý“»bížG±ª ÜŽ+zm-@#­R{zŸ¥}z«Ôðk`jÅóI\†—žõÓh×¾S©ã9®{ÊÚ*Å¬¦6«
+«Ú&zY}W…«C|4ø™sá˜¥Xn^È(Äw¢¼sOÕJF@lt¢¾V¦]6ì~»K4ÀW§Ö¤¥+Zþš#ÅOAIHN1@9¯ÔOâáh¢Š (¢Š 0OJpã­6“© §Ž¢˜†œC5[’¡ã5~Ô‘'ãÖ¨Dx«Ö˜ó2zw®y£ÔÃ¿y\ú¿öR¶K_ |`Õ£ð´öhOfžDˆÖ¾ùñ¢ÚÃO¯@ð]†–‡ÜÛÌÇÿ F¯é_~ÍvE¿g¯ŠN€	.çÒlWßuâ’>‡h¯­þ7k†Çàgí;© 
+n¼Aa¤/®ÁöD+ù3WÁ¦ç™zs~Hý3BøzIïx[æé/ÖLü³ñ-éŠúEÉ dãƒŠç®µ&‘BôUéRk—Ý¹Ý»æl{sXæLŽNkìiS´QòÙ¦=Õ¯Q÷oóÿ €Jó“MûIüª»¿¥G»Ö¢|ã¬ÖÅátÍÔæƒp}j˜GJUbhpÄËk—|óJ'$c UMÆ€sÔÒå4v¶-ïä`ÕˆdÇzÏVÀ=êh\ÔÉhtÒ«fŽ—I¸Úùn’:×Ò³?í­|ñ4öö„qhÍ„™Ú÷Æq_-ZÜýNq[Ú}ðµÚ½ÈÅxxÌ*¯§è¹.cN’*©Jœ•¤ž«^¶ü¼ÏÛ/øcÂ?¶¯ÂKm_@¾ŠjÝ7[\2¨xf#Ü´ãßÈÎ9ø-þ,|Rýšü[w¡WPÒîì$5•Ë—…€8±²¤0äÔc§AÏþÈß´ÍïÁÚM$ÒË¢ÞÈ°ê6åŽ	ûÀg‡›°Ï­~ˆþÖ_³ö™ûIü0ƒÄ^Iâ[+_µØO3wR|’{ä#ßêkÉ‰“æ÷jG¯t¿U±èaqPáºË/ÄZ®½ù\’~Î]bî’o£ÙÜòƒßðPè|}{¦øgÇþ‡PþÓžqae‘äuA¾ÈÆHçô¯¨<AðãÀŸ'ñ$6WÅ®Okm¤jÙËûØ¢¼èáØ~UcÐr>œ~QþÊ¾mkö•ð&›tGª%ëÇ.r¦Ý^|Na#ßðû+áNºÚÇãÕ^V€ëž9ÔoÚVéöK@Ž¶÷ã92ÅN“äœUDûîºtòîx¼C“á0õÜð1t\"¤ÒÕs6ÞÍÙ^1oO#Ã?ooÙïâÇÅxâm"]GÃ÷Ó$ÞiàÊ!‰bŽ$Y|Ë\Ö¾"¿Ò¥…È(Wçu}ûðÃþ
+]â=W–ÇÆ‘ø«B–V>nV+”˜ásÂ¶8lgÖ½sZø!ðöÊÑnu?ßÛxoÅ<ÖHâòäGô–rAþò©Íz0”\ïI·³-ÉìÏGÚVÁa©áóZV„#ª´ýè«-9Öñß¢?$ž,¨nXŒœv«vR}š_\ŒpzûŸJúãŸìyã¯‚—2kJgÒÕŽÍRÇ2Ú·üø{pØ¯	ŸJžÆ]¬Œ $rZÝÔŒ“„®½Mc„”q¦§´¢î¾küìÏÑÿ ø'¯ŽŠ¾xçÁSHÆ{MZÒ2y1°)0‚ÅëÂ?à¡žøY?‹C§Š4k{™æî¡	°;«	?ïUØÇ£ÀŸ´‡^g	c©;iW
+O&_üˆ#ü¯¡?n/‡¢ûà+Ý¨3^ø;Ä·sœ¥µÀÂŸ¡o$ý+Érp­}6ûµ_}íò8ñTÖ9S“²­ôþòq|¢¯ê~b_Œmõôª"]¸Íjê‘0#0ÏåX¬0pké)ûÈñqœÔê2ô7¾QÖ±ÖZ3Ã¡&¹‚zsŠ’)ü³Ö”è©¢°ÙJVg§èž=¼Ó™bt9ë_Bü1ýº¾#ø¡H|A5íªkãæÇLGàGã_A{€pjä£GŒù×•<Sæƒå}ÖŸ‘öÏ¡‰‡²ÆÓH¿æIþzýÍ«>ÿ ‚PE½áxç™ÆÁ%Œ»I~ß)Îrkì]kÆzd‹¬[›%‘`š[sB4­²5 c,\?à„ž¢¿Ÿí#ÄòÙMÉ!W•Õƒ`‚A•{Æ“ûlxö4ò5QüEfe&Dî-*Çå£n]¤m8Î2õ©u1tiÊ)©7ÝeexùÓ–ÔWÚI»½z&ÚV?I|I£~Îÿ ®¡±¼Õteº²o)!ŽóììÜcŒþuÌkðOï„^,RÚ.±w¶H\Ç:äý~S\øªêì¼þ{I¹‹>HÈcÉéV4Ÿ‰º®:Éi{-«¯FŠB„~9¬›¿F½¯øå<²XH¨àóZ]£GõgÞ6ÿ ‚]jq‰Ãzõ¥ûŒ•‚èùLG¦yæ¾Zø«û(xëá|Íýµáû¨ Éqù°Ÿûh€¯á×Úº‡Ÿ·'ÄŸ<K‰.¯-Ó¹»—ÎV„6F+ë_…ÿ ðQíÅVñéþ=ÐâH&{ož<wÝdXsÓÆ?Ÿ4~z_î=çôcz§¦·ä\•-ß_ò·‘ùƒ¨øz[&Ã¡å¶ñY[ùG€qêkõ³â·ì‡ðïöÐ$ñ?Ã+Û;{éÌû=¹L‡
+2‡ û}+ó_â—ÂícáÏˆ.tÍ^Â[+˜X†ˆŽ?ßë]p¬á%Jv»Ùô~ŸðL ðyÕÁ7ÁûÐ’´â»¾ëÍl'hLE%Ò°9ÚUr@µè¤¬y¤¢ìž‡›ÐÇ(¢¾Œü4nêuP$QE
+(¢€)h¢ƒDJ‡jíëEGe&î}»û2®Ï„z\<õ/éPÌ=U[v??é^ÍûBëCû"|BºcºMcâUÔrŸúå¿oþˆZ(¯‚Â¤ñÓo£—õø®ã…õ‡õø#óT}ó;Œ±5œÜQE}ÔR±ùn)·RM÷de&sEgœÛ½(8¢ŠdŽV§š(¤kÇŽÖ¥Œð(¢³‘ÓOrÌ2míš»Û©ÁÁQ\Ó=Ü<åY›ºMü‘0u8`@Ò¿Z?àŸ¿îõß…–þ½É5…øµ·—‚<§¢’N~] téÅW‹÷'‘Ñ®§ÛJ„1¹=juõQ´—“]Wõ¯R;ÿ …Oƒ¿lÛ?i1­¥¦±á­S^[5År¨"”@Æà·Só<yõÙtÏ­ØŸLøo¯k‰Ïü·¼¾`ÇðëEâ×“U¢ÓÜäÃÎXŒ]Wwzkä¹×ä~w\j2A(ÚÍ œ1Åt~ñî©áZË»›;¨Nèîm¦håCÜ† ÑE}%HFTõG§‡ÄU§ˆ´e¦ÞVó[?š>ñøÿ Ö^+oüDÒÅZ}Á[o¶"(œ«pŠHI©8üs^ËñŸþ	Ýà¯‰štšÿ åÔgˆÜP½“’2 QÌ]þîG</©ErÐ›«?cSXÿ ]w<Þ!o!«G–þîS~ò_õ‹¼~yËá[ï…ž8ž/>¢Ý$ŒÐ1*$FÊ”b##¸ú%ñ®òè5·(Â×Æž·Ö„N0!UŠ±äóû¤Ï^h¢¼LCjk?…ÆßyöKJŽ]]/znIú{“ù{Úþ‘úÝ°ÞAiù†:óÏõý+™»µæŠ+é°òvGÎfôãÍSMŒéxÒsEê#á'¸›Ê·:\½Si9Ê/FYŠé—¥Loº8ôÍW<’¹éS«5Ô–=B@€dûûÑöÆÏ#4QYr£Ðjy#¾qŒ|¿JÖÓõ™ `A9¢ŠÂ¤bÖÇ·‚¯V3\²höï?´g‰þø‚ÛQÒn¥ ð%%\ò¬3‚8¯ÐŸÚáÎƒûP~Ïö¿á²M+XŽÐMºQÉQŒ©#=;}h¢¼gÕ‚Û–ÿ 4÷]™ígS•9`si[Ú(suq“Ö2é%êŸ©ù'â-4Ùj2G¸mF±¢Š+¶Œå*qmôEcèÓ†.¬b´R™ÿÙ, `updated_at` = ? where `id` = ?)  
+[2019-01-24 10:08:05] local.ERROR: syntax error, unexpected ')' {"exception":"[object] (Symfony\\Component\\Debug\\Exception\\FatalThrowableError(code: 0): syntax error, unexpected ')' at C:\\xampp\\htdocs\\cms\\app\\Http\\Controllers\\UsersController.php:176)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\cms\\vendor\\composer\\ClassLoader.php(322): Composer\\Autoload\\includeFile('C:\\\\xampp\\\\htdocs...')
+#1 [internal function]: Composer\\Autoload\\ClassLoader->loadClass('App\\\\Http\\\\Contro...')
+#2 [internal function]: spl_autoload_call('App\\\\Http\\\\Contro...')
+#3 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(779): ReflectionClass->__construct('App\\\\Http\\\\Contro...')
+#4 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(658): Illuminate\\Container\\Container->build('App\\\\Http\\\\Contro...')
+#5 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Container\\Container.php(609): Illuminate\\Container\\Container->resolve('App\\\\Http\\\\Contro...', Array)
+#6 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Application.php(735): Illuminate\\Container\\Container->make('App\\\\Http\\\\Contro...', Array)
+#7 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(233): Illuminate\\Foundation\\Application->make('App\\\\Http\\\\Contro...')
+#8 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(833): Illuminate\\Routing\\Route->getController()
+#9 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(794): Illuminate\\Routing\\Route->controllerMiddleware()
+#10 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(695): Illuminate\\Routing\\Route->gatherMiddleware()
+#11 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(675): Illuminate\\Routing\\Router->gatherRouteMiddleware(Object(Illuminate\\Routing\\Route))
+#12 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#13 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#14 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#15 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\cms\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#18 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#19 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#21 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#22 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#24 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#25 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#26 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#28 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#34 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\cms\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\cms\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#37 {main}
+"} 
+[2019-01-24 10:20:12] local.ERROR: SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cms.students' doesn't exist (SQL: select * from `students`) {"exception":"[object] (Illuminate\\Database\\QueryException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cms.students' doesn't exist (SQL: select * from `students`) at C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:664, PDOException(code: 42S02): SQLSTATE[42S02]: Base table or view not found: 1146 Table 'cms.students' doesn't exist at C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php:326)
+[stacktrace]
+#0 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(624): Illuminate\\Database\\Connection->runQueryCallback('select * from `...', Array, Object(Closure))
+#1 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Connection.php(333): Illuminate\\Database\\Connection->run('select * from `...', Array, Object(Closure))
+#2 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2095): Illuminate\\Database\\Connection->select('select * from `...', Array, true)
+#3 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2083): Illuminate\\Database\\Query\\Builder->runSelect()
+#4 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2569): Illuminate\\Database\\Query\\Builder->Illuminate\\Database\\Query\\{closure}()
+#5 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Query\\Builder.php(2084): Illuminate\\Database\\Query\\Builder->onceWithColumns(Array, Object(Closure))
+#6 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(516): Illuminate\\Database\\Query\\Builder->get(Array)
+#7 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Database\\Eloquent\\Builder.php(500): Illuminate\\Database\\Eloquent\\Builder->getModels(Array)
+#8 C:\\xampp\\htdocs\\cms\\app\\Http\\Controllers\\StudentsController.php(43): Illuminate\\Database\\Eloquent\\Builder->get()
+#9 [internal function]: App\\Http\\Controllers\\StudentsController->create()
+#10 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Controller.php(54): call_user_func_array(Array, Array)
+#11 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\ControllerDispatcher.php(45): Illuminate\\Routing\\Controller->callAction('create', Array)
+#12 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(219): Illuminate\\Routing\\ControllerDispatcher->dispatch(Object(Illuminate\\Routing\\Route), Object(App\\Http\\Controllers\\StudentsController), 'create')
+#13 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Route.php(176): Illuminate\\Routing\\Route->runController()
+#14 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(682): Illuminate\\Routing\\Route->run()
+#15 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Routing\\Router->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#16 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\SubstituteBindings.php(41): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#17 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Routing\\Middleware\\SubstituteBindings->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#18 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#19 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Middleware\\ThrottleRequests.php(58): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#20 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Routing\\Middleware\\ThrottleRequests->handle(Object(Illuminate\\Http\\Request), Object(Closure), 60, '1')
+#21 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#22 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#23 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(684): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#24 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(659): Illuminate\\Routing\\Router->runRouteWithinStack(Object(Illuminate\\Routing\\Route), Object(Illuminate\\Http\\Request))
+#25 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(625): Illuminate\\Routing\\Router->runRoute(Object(Illuminate\\Http\\Request), Object(Illuminate\\Routing\\Route))
+#26 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Router.php(614): Illuminate\\Routing\\Router->dispatchToRoute(Object(Illuminate\\Http\\Request))
+#27 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(176): Illuminate\\Routing\\Router->dispatch(Object(Illuminate\\Http\\Request))
+#28 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(30): Illuminate\\Foundation\\Http\\Kernel->Illuminate\\Foundation\\Http\\{closure}(Object(Illuminate\\Http\\Request))
+#29 C:\\xampp\\htdocs\\cms\\vendor\\fideloper\\proxy\\src\\TrustProxies.php(57): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#30 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Fideloper\\Proxy\\TrustProxies->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#31 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#32 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#33 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#34 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#35 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest.php(31): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#36 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\TransformsRequest->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#37 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#38 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize.php(27): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#39 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\ValidatePostSize->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#40 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#41 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode.php(62): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#42 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(151): Illuminate\\Foundation\\Http\\Middleware\\CheckForMaintenanceMode->handle(Object(Illuminate\\Http\\Request), Object(Closure))
+#43 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Routing\\Pipeline.php(53): Illuminate\\Pipeline\\Pipeline->Illuminate\\Pipeline\\{closure}(Object(Illuminate\\Http\\Request))
+#44 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Pipeline\\Pipeline.php(104): Illuminate\\Routing\\Pipeline->Illuminate\\Routing\\{closure}(Object(Illuminate\\Http\\Request))
+#45 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(151): Illuminate\\Pipeline\\Pipeline->then(Object(Closure))
+#46 C:\\xampp\\htdocs\\cms\\vendor\\laravel\\framework\\src\\Illuminate\\Foundation\\Http\\Kernel.php(116): Illuminate\\Foundation\\Http\\Kernel->sendRequestThroughRouter(Object(Illuminate\\Http\\Request))
+#47 C:\\xampp\\htdocs\\cms\\public\\index.php(55): Illuminate\\Foundation\\Http\\Kernel->handle(Object(Illuminate\\Http\\Request))
+#48 C:\\xampp\\htdocs\\cms\\server.php(21): require_once('C:\\\\xampp\\\\htdocs...')
+#49 {main}
+"} 

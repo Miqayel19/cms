@@ -305,8 +305,8 @@ $data->text = 'Your verification code:'.$verify_code;
 if(\App\User::where('phone', $_POST['phone'])->first()){
     \App\User::where('phone', $_POST['phone'])->update(['verify_code'=>$verify_code]);
 //    $sms = $sms_ru->send_one($data); // Отправка сообщения и возврат данных в переменную
-
-}else{
+        
+    }else{
     $data = [
         'phone' => $_POST['phone'],
         'verify_code' => $verify_code

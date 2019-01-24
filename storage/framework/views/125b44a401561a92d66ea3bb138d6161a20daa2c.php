@@ -43,7 +43,14 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Sign in</p>
+        <?php if($errors->any()): ?>
+            <div class="alert alert-danger">
+                <ul>
+                    <li><?php echo e($errors->first()); ?></li>
+                </ul>
+            </div>
+        <?php endif; ?>
         <?php echo Form::open(['url'=> '/login']); ?>
 
             <div class="form-group has-feedback">
@@ -63,9 +70,7 @@
 
 
         <!-- /.social-auth-links -->
-
         <a href="signup" class="text-center">Register a new user</a>
-
     </div>
     <!-- /.login-box-body -->
 </div>

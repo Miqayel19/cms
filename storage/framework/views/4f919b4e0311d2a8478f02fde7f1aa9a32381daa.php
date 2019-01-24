@@ -45,7 +45,7 @@
         <?php echo Form::open(['url'=> '/send']); ?>
 
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="Phone" name="phone">
+                <input type="text" class="form-control" placeholder="Please enter the number ex. +374XXXXXX" name="phone">
             </div>
             <div class="row">
                 <!-- /.col -->

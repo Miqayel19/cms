@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\User;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Http\Request;
@@ -101,16 +102,14 @@ class RegisterController extends Controller
     {
         $phone = $request->get('phone');
         $verify_code = $request->get('verify_code');
-        $user = User::where('phone',$phone)->get()->first();
+        $user = User::where('phone',$phone)->first();
         $code = $user->verify_code;
         if($verify_code == $code){
-
-            return redirect()->to('users/profile');
+            Auth::loginUsingId($user->id);
+            return redirect()->to('/admin/users/profile');
         }
         else
             $error = 'Please fill the correct Verification code';
             return redirect()->back()->withErrors($error);
-
-
     }
 }

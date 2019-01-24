@@ -3,11 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
 use App\User;
 use App\News;
 use App\Tickets;
 use Illuminate\Support\Facades\View;
+use Intervention\Image\Facades\Image;
 
 class UsersController extends Controller
 {
@@ -35,6 +38,11 @@ class UsersController extends Controller
         return view('admin.users.create');
     }
 
+    public function show_new_user()
+    {
+        return view('admin.new_user');
+    }
+
 
     /**
      * Store a newly created resource in storage.
@@ -44,63 +52,58 @@ class UsersController extends Controller
      */
     public function store(Request $request)
     {
-
-        dd($request->all());
         $data = [
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
             'fathername' => $request->get('fathername'),
             'city' => $request->get('city'),
             'company' => $request->get('company'),
-            'phone' => $request->get('phone'),
             'email' => $request->get('email'),
-            'password' => $request->get('password'),
-            'image' => $request->image->path()
+            'phone' => $request->get('phone'),
+            'image' => $request->file('image')
         ];
-
         $rules = [
             'name' => 'required|min:5',
             'surname' => 'required',
             'fathername' => 'required',
             'city' => 'required|min:4',
             'company' => 'required|min:5',
-            'phone' => 'required|numeric|unique:users',
             'email' => 'required|email|unique:users',
-            'password' => 'required',
-            'image' => 'required'
-
+            'phone' => 'required|numeric|unique:users|digits:11',
+            'image' => 'required|mimes:jpeg,png,jpg,gif,svg'
         ];
 
         $validator = Validator::make($data,$rules);
         if ($validator->fails()) {
-                dd($validator->errors());
-            return redirect()->back()->withErrors($validator)->withInput();
-
+            return redirect()->back()->withErrors($validator);
         }
         if($request->hasFile('image')) {
-            $image = $request->file('image');
-            $data['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/images'), $data['image']);
-        } else {
-
-            $data['image']='no-image.png';
+            $file = $request->file('image');
+            $filename = time().$file->getClientOriginalName();
+            $data['image'] = Image::make($request->file('image')->getRealPath());
+            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
+            $path = ('images/'.$filename);
+            $data['image']->save($path);
+            $data['image']=$filename;
         }
 
-        $users = User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'surname' => $data['surname'],
-            'fathername' => $data['fathername'],
-            'city' => $data['city'],
-            'phone' => $data['phone'],
+        $newData = [
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => Hash::make($request->get('password')),
+            'surname' => $request->get('surname'),
+            'fathername' => $request->get('fathername'),
+            'phone' => $request->get('phone'),
+            'city' => $request->get('city'),
             'image' => $data['image'],
-            'company' => $data['company'],
-        ])->orderBy('id', 'DESC')->get()->all();;
+            'company' => $request->get('company'),
+        ];
 
-        return view('admin.users.index',compact('users'));
+        $user = User::create($newData);
+        Auth::loginUsingId($user->id);
+        return redirect()->to('/admin/users');
+
     }
-
 
     /**
      * Display the specified resource.
@@ -112,7 +115,6 @@ class UsersController extends Controller
     {
         $user = User::where('id', $id)->first();
         return view('admin.users.show',compact('user'));
-
     }
 
     /**
@@ -136,6 +138,7 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
+
         $data = [
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
@@ -145,7 +148,7 @@ class UsersController extends Controller
             'phone' => $request->get('phone'),
             'email' => $request->get('email'),
             'password' => $request->get('password'),
-            'image' => $request->image->path()
+            'image' => $request->file('image')
         ];
 
         $rules = [
@@ -157,25 +160,79 @@ class UsersController extends Controller
             'phone' => 'required|numeric',
             'email' => 'required|email',
             'password' => 'required',
-            'image' => 'required'
-
+            'image' => 'required|max:2048|mimes:jpeg,png'
         ];
 
         $validator = Validator::make($data,$rules);
         if ($validator->fails()) {
-            return redirect()->back()->withErrors($validator)->withInput();
-
+            dd($validator->errors());
+            return redirect()->back()->withErrors($validator);
         }
 
         if($request->hasFile('image')) {
-            $image = $request->file('image');
-            $data['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/images'), $data['image']);
-        } else {
-
-            $data['image']='no-image.png';
+            $file = $request->file('image');
+            $filename = time().$file->getClientOriginalName();
+            $data['image'] = Image::make($request->file('image')->getRealPath());
+            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
+            $path = ('images/'.$filename);
+            $data['image']->save($path);
         }
 
+        $newData = [
+            'name' => $request->get('name'),
+            'email' => $request->get('email'),
+            'password' => Hash::make($request->get('password')),
+            'surname' => $request->get('surname'),
+            'fathername' => $request->get('fathername'),
+            'phone' => $request->get('phone'),
+            'city' => $request->get('city'),
+            'image' => $request->get('image'),
+            'company' => $request->get('company'),
+        ];
+        User::where('id',$id)->update($newData);
+        return redirect()->to('/admin/users');
+    }
+
+    public function update_data(Request $request)
+    {
+        $data = [
+            'name' => $request->get('name'),
+            'surname' => $request->get('surname'),
+            'fathername' => $request->get('fathername'),
+            'city' => $request->get('city'),
+            'company' => $request->get('company'),
+            'email' => $request->get('email'),
+            'password' => $request->get('password'),
+            'image' => $request->file('image')
+        ];
+
+        $rules = [
+            'name' => 'required|min:5',
+            'surname' => 'required',
+            'fathername' => 'required',
+            'city' => 'required|min:4',
+            'company' => 'required|min:5',
+            'email' => 'required|email',
+            'password' => 'required',
+            'image' => 'required|max:2048|mimes:jpeg,png'
+        ];
+
+        $validator = Validator::make($data,$rules);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
+
+        if($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = time().$file->getClientOriginalName();
+            $data['image'] = Image::make($request->file('image')->getRealPath());
+            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
+            $path = ('images/'.$filename);
+            $old_image =
+            $data['image']->save($path);
+        }
+        $id = Auth::user()->id;
+        $data['image']=$filename;
         User::where('id',$id)->update($data);
         return redirect()->to('/admin/users');
     }
@@ -210,87 +267,17 @@ class UsersController extends Controller
         $user = User::where('id',$id)->first();
         return View::make('admin.users.modals.delete',compact('user'));
     }
-    public function news()
-    {
-        $news = News::with('user')->orderBy('id', 'DESC')->get();
-        return view('admin.news',compact('news'));
-    }
 
-    public function show_news($id)
-    {
-        $new = News::where('id', $id)->first();
-        return view('admin.show_news',compact('new'));
-
-    }
     public function send_sms()
     {
         return view('admin.auth.send');
 
     }
 
-    public function new_user(Request $request)
-    {
-
-        $data = [
-            'name' => $request->get('name'),
-            'surname' => $request->get('surname'),
-            'fathername' => $request->get('fathername'),
-            'city' => $request->get('city'),
-            'company' => $request->get('company'),
-            'phone' => $request->get('phone'),
-            'email' => $request->get('email'),
-            'password' => $request->get('password'),
-            'image' => $request->image->path()
-        ];
-
-        $rules = [
-            'name' => 'required|min:5',
-            'surname' => 'required',
-            'fathername' => 'required',
-            'city' => 'required|min:4',
-            'company' => 'required|min:5',
-            'phone' => 'required|numeric|unique:users',
-            'email' => 'required|email|unique:users',
-            'password' => 'required',
-            'image' => 'required'
-
-        ];
-
-        $validator = Validator::make($data,$rules);
-        if ($validator->fails()) {
-            dd($validator->errors());
-            return redirect()->back()->withErrors($validator)->withInput();
-
-        }
-        if($request->hasFile('image')) {
-            $image = $request->file('image');
-            $data['image'] = time().'.'.$image->getClientOriginalName();
-            $image->move(public_path('/images'), $data['image']);
-        } else {
-
-            $data['image']='no-image.png';
-        }
-
-            $users = User::create([
-                'name' => $data['name'],
-                'email' => $data['email'],
-                'password' => bcrypt($data['password']),
-                'surname' => $data['surname'],
-                'fathername' => $data['fathername'],
-                'city' => $data['city'],
-                'phone' => $data['phone'],
-                'image' => $data['image'],
-                'company' => $data['company'],
-            ])->orderBy('id', 'DESC')->get()->all();;
-
-        return view('admin.users.index',compact('users'));
-
-    }
     public function getTicketsByAjax(Request $request)
     {
         $id = $request->get('id');
         $ticket = Tickets::where('id',$id)->first();
-//        dd($ticket);
         return View::make('admin.users.modals.delete_tickets',compact('ticket'));
     }
 

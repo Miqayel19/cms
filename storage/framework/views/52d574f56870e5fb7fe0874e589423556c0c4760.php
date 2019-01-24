@@ -8,7 +8,7 @@
     </section>
     <section class="content">
         <div class="row">
-            <?php echo Form::open(['url'=> 'admin/users','files' => true, 'enctype'=>'multipart/form-data']); ?>
+            <?php echo Form::open(['url'=> 'admin/users','files' => true, 'method' => 'put']); ?>
 
             <?php echo e(csrf_field()); ?>
 
@@ -21,76 +21,156 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Name</label>
-                                <input class="form-control" type="text" placeholder="User name" name="name" required>
+                                <input class="form-control" type="text" placeholder="User name" name="name"
+                                <?php if($errors->has('name')): ?>
+                                    style="border-color: red"
+                                <?php endif; ?>
+                                >
+                                <?php if($errors->has('name')): ?>
+                                    <span style="color: red">
+                                        <?php echo e($errors->first('name')); ?>
+
+                                    </span>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Surname</label>
-                                <input class="form-control" type="text" placeholder="User surname" name="surname" required>
+                                <input class="form-control" type="text" placeholder="User surname" name="surname"
+                                <?php if($errors->has('surname')): ?>
+                                    style="border-color: red"
+                                <?php endif; ?>
+                                >
+                                <?php if($errors->has('surname')): ?>
+                                    <span style="color: red"><?php echo e($errors->first('surname')); ?></span>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Father name</label>
-                                <input class="form-control" type="text" placeholder="User father name" name="fathername" required>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Phone</label>
-                                <input class="form-control" type="text" placeholder="User phone " name="phone" required>
+                                <input class="form-control" type="text" placeholder="User father name"
+                                       name="fathername"
+                                <?php if($errors->has('fathername')): ?>
+                                    style="border-color: red"
+                                <?php endif; ?>
+                                >
+                                <?php if($errors->has('fathername')): ?>
+                                   <span style="color: red"><?php echo e($errors->first('fathername')); ?></span>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>City</label>
-                                <input class="form-control" type="text" placeholder="User city" name="city" required>
+                                <input class="form-control" type="text" placeholder="User city" name="city"
+                                       <?php if($errors->has('city')): ?>
+                                       style="border-color: red"
+                                        <?php endif; ?>
+                                >
+                                <?php if($errors->has('city')): ?>
+                                    <span style="color: red"><?php echo e($errors->first('city')); ?></span>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Email</label>
-                                <input class="form-control" type="text" placeholder="User email" name="email" required>
+                                <input class="form-control" type="text" placeholder="User email" name="email"
+                                <?php if($errors->has('email')): ?>
+                                    style="border-color: red"
+                                <?php endif; ?>>
+                                <?php if($errors->has('email')): ?>
+                                    <span style="color: red"><?php echo e($errors->first('email')); ?></span>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Password</label>
-                                <input class="form-control" type="text" placeholder="User password" name="password" required>
+                                <input class="form-control" type="text" placeholder="User password" name="password"
+                                       <?php if($errors->has('password')): ?>
+                                       style="border-color: red"
+                                        <?php endif; ?>>
+                                <?php if($errors->has('password')): ?>
+                                    <span style="color: red"><?php echo e($errors->first('password')); ?></span>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Company Name</label>
-                                <input class="form-control" type="text" placeholder="User company name" name="company" required>
+                                <input class="form-control" type="text" placeholder="User company name" name="company"
+                                       <?php if($errors->has('company')): ?>
+                                       style="border-color: red"
+                                        <?php endif; ?>
+                                >
+                                <?php if($errors->has('company')): ?>
+                                    <span style="color: red"><?php echo e($errors->first('company')); ?></span>
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Choose image</label>
                                 <div class="input-group">
-                                    <input id="file" type="file" name="image">
-                                    <img id="result" name="crop">
+                                    <input type="file" name="image" id="image"
+                                    <?php if($errors->has('image')): ?>
+                                         style="color: red"
+                                    <?php endif; ?>
+                                    >
+                                    <input type="hidden" name="x1" value=""/>
+                                    <input type="hidden" name="y1" value=""/>
+                                    <input type="hidden" name="w" value=""/>
+                                    <input type="hidden" name="h" value=""/><br><br>
+                                    <p><img id="previewimage" style="display:none;"/></p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="row" style="text-align: right">
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <button class="btn btn-danger" type="button" onclick="window.history.back()">Cancel</button>
-                                <button class="btn btn-success" type="submit">Save</button>
+                        <div class="row" style="text-align: right">
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <button class="btn btn-danger" type="button" onclick="window.history.back()">
+                                        Cancel
+                                    </button>
+                                    <button class="btn btn-success" type="submit">Save</button>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </div><!-- /.box-body -->
             </div>
-               <!-- /.box-body -->
-        </div>
     </section>
-            <?php echo Form::close(); ?>
+    <?php echo Form::close(); ?>
 
+    <script>
+
+        jQuery(function ($) {
+
+            var p = $("#previewimage");
+            $("body").on("change", "#image", function () {
+
+                var imageReader = new FileReader();
+                imageReader.readAsDataURL(document.getElementById("image").files[0]);
+
+                imageReader.onload = function (oFREvent) {
+                    p.attr('src', oFREvent.target.result).fadeIn();
+                };
+            });
+
+            $('#previewimage').imgAreaSelect({
+                onSelectEnd: function (img, selection) {
+                    $('input[name="x1"]').val(selection.x1);
+                    $('input[name="y1"]').val(selection.y1);
+                    $('input[name="w"]').val(selection.width);
+                    $('input[name="h"]').val(selection.height);
+                }
+            });
+        });
+
+    </script>
 <?php $__env->stopSection(); ?>
 
 <?php echo $__env->make('admin.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

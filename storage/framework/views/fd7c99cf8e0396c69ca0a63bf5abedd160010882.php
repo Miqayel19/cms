@@ -10,6 +10,17 @@
     <section class="content">
         <div class="row">
                 <!-- /.box-header -->
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Create News</h3>
+                    <div class="box-tools" style='right:0px;top:3px'>
+                        <a class="input-group input-group-sm" href="<?php echo e(url('admin/user/news')); ?>"
+                           style="text-align: right">
+                            <button type="button" name="table_search" class="btn btn-success ">Create</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover table-responsive table-striped ">
                         <tr>

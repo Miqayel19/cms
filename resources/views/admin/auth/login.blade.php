@@ -43,7 +43,14 @@
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
-        <p class="login-box-msg">Sign in to start your session</p>
+        <p class="login-box-msg">Sign in</p>
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                <ul>
+                    <li>{{ $errors->first() }}</li>
+                </ul>
+            </div>
+        @endif
         {!! Form::open(['url'=> '/login']) !!}
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" name='phone' placeholder="Phone">
@@ -61,9 +68,7 @@
     {!! Form::close() !!}
 
         <!-- /.social-auth-links -->
-
         <a href="signup" class="text-center">Register a new user</a>
-
     </div>
     <!-- /.login-box-body -->
 </div>

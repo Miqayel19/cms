@@ -10,6 +10,17 @@
     </section>
     <section class="content">
         <div class="row">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Create User</h3>
+                    <div class="box-tools" style='right:0px;top:3px'>
+                        <a class="input-group input-group-sm" href="{{url('admin/users/new-user')}}"
+                           style="text-align: right">
+                            <button type="button" name="table_search" class="btn btn-success ">Create</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover table-responsive table-striped ">
