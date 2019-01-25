@@ -52,6 +52,7 @@
                                     <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$user->id}}" id="{{$user->id}}">
                                         <i class="fa fa-fw fa-remove"></i>
                                     </a>
+                                    <a href="{{url('admin/users/'.$user->id.'/news')}}" class="edit"><i class="fa fa-fw fa-newspaper-o"></i></a>
                                 </td>
                             </tr>
                         @endforeach

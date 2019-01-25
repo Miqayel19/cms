@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
 use App\News;
 use App\User;
@@ -11,8 +12,9 @@ class NewsController extends Controller
 
     public function index()
     {
-        $news = News::with('user')->orderBy('id', 'DESC')->get();
-        return view('admin.news.index',compact('news'));
+        $auth_user=Auth::user();
+        $news = News::orderBy('id', 'DESC')->get();
+        return view('admin.news.index',compact('news','auth_user'));
     }
 
     public function create()
@@ -43,15 +45,14 @@ class NewsController extends Controller
             $file = $request->file('image');
             $filename = time().$file->getClientOriginalName();
             $data['image'] = Image::make($request->file('image')->getRealPath());
-            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
             $path = ('images/'.$filename);
             $data['image']->save($path);
             $data['image']=$filename;
         }
-
-        $news = News::create($data)->with('user')->get();
-//        Auth::loginUsingId($user->id);
-        return redirect()->to('/admin/user/news',compact('news'));
+            dd($data);
+        $news = News::create($data);
+        dd($news);
+        return redirect()->to('/user/news',compact('news'));
 
     }
 

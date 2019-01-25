@@ -44,19 +44,27 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in</p>
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    <li>{{ $errors->first() }}</li>
-                </ul>
-            </div>
-        @endif
         {!! Form::open(['url'=> '/login']) !!}
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" name='phone' placeholder="Phone">
+                <input type="text" class="form-control" name='phone' placeholder="Please enter the number ex +374XXXXXX"
+                       @if ($errors->has('phone'))
+                       style="border-color: red"
+                        @endif
+                >
+                @if ($errors->has('phone'))
+                    <span style="color: red">{{ $errors->first('phone') }}</span>
+                @endif
             </div>
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" name='password' placeholder="Password">
+                <input type="text" class="form-control" name='password' placeholder="Password"
+
+                       @if ($errors->has('password'))
+                       style="border-color: red"
+                        @endif
+                >
+                @if ($errors->has('password'))
+                    <span style="color: red">{{ $errors->first('password') }}</span>
+                @endif
             </div>
             <div class="row">
                 <!-- /.col -->

@@ -51,6 +51,7 @@
                                     <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="<?php echo e($user->id); ?>" id="<?php echo e($user->id); ?>">
                                         <i class="fa fa-fw fa-remove"></i>
                                     </a>
+                                    <a href="<?php echo e(url('admin/users/'.$user->id.'/news')); ?>" class="edit"><i class="fa fa-fw fa-newspaper-o"></i></a>
                                 </td>
                             </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>

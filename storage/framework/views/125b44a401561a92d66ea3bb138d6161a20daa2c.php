@@ -44,20 +44,28 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in</p>
-        <?php if($errors->any()): ?>
-            <div class="alert alert-danger">
-                <ul>
-                    <li><?php echo e($errors->first()); ?></li>
-                </ul>
-            </div>
-        <?php endif; ?>
         <?php echo Form::open(['url'=> '/login']); ?>
 
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" name='phone' placeholder="Phone">
+                <input type="text" class="form-control" name='phone' placeholder="Please enter the number ex +374XXXXXX"
+                       <?php if($errors->has('phone')): ?>
+                       style="border-color: red"
+                        <?php endif; ?>
+                >
+                <?php if($errors->has('phone')): ?>
+                    <span style="color: red"><?php echo e($errors->first('phone')); ?></span>
+                <?php endif; ?>
             </div>
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" name='password' placeholder="Password">
+                <input type="text" class="form-control" name='password' placeholder="Password"
+
+                       <?php if($errors->has('password')): ?>
+                       style="border-color: red"
+                        <?php endif; ?>
+                >
+                <?php if($errors->has('password')): ?>
+                    <span style="color: red"><?php echo e($errors->first('password')); ?></span>
+                <?php endif; ?>
             </div>
             <div class="row">
                 <!-- /.col -->

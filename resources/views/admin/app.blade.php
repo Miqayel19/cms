@@ -8,7 +8,9 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
 
-    <link href="{{asset('css/imgareaselect.css')}}" rel="stylesheet"/>
+    {{--<link href="{{asset('css/imgareaselect.css')}}" rel="stylesheet"/>--}}
+
+    <link href="{{asset('css/iEdit.css')}}" rel="stylesheet"/>
 
     <link rel="stylesheet" href="{{asset('css/bootstrap.min.css')}}">
     <!-- Font Awesome -->
@@ -52,6 +54,7 @@
 
 </div>
 
+<script src="{{asset('js/iEdit.js')}}"></script>
 
 <script src="{{asset('js/bootstrap.min.js')}}"></script>
 <!-- FastClick -->
@@ -73,7 +76,7 @@
 <!-- AdminLTE for demo purposes -->
 <script src="{{asset('js/demo.js')}}"></script>
 
-<script src="{{asset('js/jquery.imgareaselect.min.js')}}"></script>
+{{--<script src="{{asset('js/jquery.imgareaselect.min.js')}}"></script>--}}
 
 </body>
 </html>

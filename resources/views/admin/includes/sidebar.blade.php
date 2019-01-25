@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li>
-                <a href="/admin/user/news">
+                <a href="/user/news">
                     <i class="fa fa-pie-chart"></i>
                     <span>News</span>
                 </a>

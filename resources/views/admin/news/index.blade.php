@@ -16,7 +16,7 @@
                 <div class="box-header">
                     <h3 class="box-title">Create News</h3>
                     <div class="box-tools" style='right:0px;top:3px'>
-                        <a class="input-group input-group-sm" href="{{url('admin/user/news/create')}}"
+                        <a class="input-group input-group-sm" href="{{url('user/news/create')}}"
                            style="text-align: right">
                             <button type="button" name="table_search" class="btn btn-success ">Create</button>
                         </a>
@@ -32,8 +32,7 @@
                             <th>Image</th>
                             <th>Summary</th>
                             <th>User</th>
-                            <th>Date</th>
-                            <th style="text-align: right">Actions</th>
+                            <th style="text-align: right">Date</th>
                         </tr>
                         @if($news)
                         @foreach($news as $new)
@@ -42,14 +41,8 @@
                                 <td>{{$new->header}}</td>
                                 <td>{{$new->description}}</td>
                                 <td>{{$new->image}}</td>
-                                <td>{{$new->user->name}}</td>
-                                <td>{{$new->date}}</td>
-                                <td style="text-align: right">
-                                    <a href="{{url('admin/users/'.$new->id.'/edit')}}" class="edit"><i class="fa fa-fw fa-edit"></i></a>
-                                    <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$new->id}}" id="{{$new->id}}">
-                                        <i class="fa fa-fw fa-remove"></i>
-                                    </a>
-                                </td>
+                                <td>{{$auth_uphpser}}</td>
+                                <td style="text-align: right">{{$new->date}}</td>
                             </tr>
                         @endforeach
                         @endif

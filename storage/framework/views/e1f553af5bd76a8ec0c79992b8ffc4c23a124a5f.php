@@ -1,5 +1,4 @@
-@extends('admin.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
 
     <section class="content-header" style="padding:7px 15px 0 15px">
         <ol class="breadcrumb" style="float:left;position:static">
@@ -9,8 +8,10 @@
     </section>
     <section class="content">
         <div class="row">
-            {!! Form::open(['url'=> '/admin/users','files' => true, 'enctype'=>'multipart/form-data']) !!}
-            {{ csrf_field() }}
+            <?php echo Form::open(['url'=> '/admin/users','files' => true, 'enctype'=>'multipart/form-data']); ?>
+
+            <?php echo e(csrf_field()); ?>
+
             <div class="box box-success">
                 <div class="box-header with-border">
                     <h3 class="box-title">User Create</h3>
@@ -21,75 +22,80 @@
                             <div class="form-group">
                                 <label>Name</label>
                                 <input class="form-control" type="text" placeholder="User name" name="name"
-                                       @if ($errors->has('name'))
+                                       <?php if($errors->has('name')): ?>
                                        style="border-color: red"
-                                        @endif
+                                        <?php endif; ?>
                                 >
-                                @if ($errors->has('name'))
+                                <?php if($errors->has('name')): ?>
                                     <span style="color: red">
-                                        {{ $errors->first('name') }}
+                                        <?php echo e($errors->first('name')); ?>
+
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Surname</label>
                                 <input class="form-control" type="text" placeholder="User surname" name="surname"
-                                       @if ($errors->has('surname'))
+                                       <?php if($errors->has('surname')): ?>
                                        style="border-color: red"
-                                        @endif
+                                        <?php endif; ?>
                                 >
-                                @if ($errors->has('surname'))
+                                <?php if($errors->has('surname')): ?>
                                     <span style="color: red">
-                                        {{ $errors->first('surname') }}
+                                        <?php echo e($errors->first('surname')); ?>
+
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Father name</label>
                                 <input class="form-control" type="text" placeholder="User father name" name="fathername"
-                                       @if ($errors->has('fathername'))
+                                       <?php if($errors->has('fathername')): ?>
                                        style="border-color: red"
-                                        @endif
+                                        <?php endif; ?>
                                 >
-                                @if ($errors->has('fathername'))
+                                <?php if($errors->has('fathername')): ?>
                                     <span style="color: red">
-                                        {{ $errors->first('fathername') }}
+                                        <?php echo e($errors->first('fathername')); ?>
+
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input class="form-control" type="text" placeholder="Please enter the phone number +374XXXXXX " name="phone"
-                                       @if ($errors->has('phone'))
+                                       <?php if($errors->has('phone')): ?>
                                        style="border-color: red"
-                                        @endif
+                                        <?php endif; ?>
                                 >
-                                @if ($errors->has('phone'))
+                                <?php if($errors->has('phone')): ?>
                                     <span style="color: red">
-                                        {{ $errors->first('phone') }}
+                                        <?php echo e($errors->first('phone')); ?>
+
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>City</label>
                                 <input class="form-control" type="text" placeholder="User city" name="city"
-                                       @if ($errors->has('city'))
+                                       <?php if($errors->has('city')): ?>
                                        style="border-color: red"
-                                        @endif
+                                        <?php endif; ?>
                                 >
-                                @if ($errors->has('city'))
+                                <?php if($errors->has('city')): ?>
                                     <span style="color: red">
-                                        {{ $errors->first('city') }}
+                                        <?php echo e($errors->first('city')); ?>
+
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -97,30 +103,32 @@
                                 <label>Email</label>
                                 <input class="form-control" type="text" placeholder="User email" name="email"
 
-                                       @if ($errors->has('email'))
+                                       <?php if($errors->has('email')): ?>
                                        style="border-color: red"
-                                        @endif
+                                        <?php endif; ?>
                                 >
-                                @if ($errors->has('email'))
+                                <?php if($errors->has('email')): ?>
                                     <span style="color: red">
-                                        {{ $errors->first('email') }}
+                                        <?php echo e($errors->first('email')); ?>
+
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Password</label>
                                 <input class="form-control" type="text" placeholder="User password" name="password"
-                                       @if ($errors->has('password'))
+                                       <?php if($errors->has('password')): ?>
                                        style="border-color: red"
-                                        @endif
+                                        <?php endif; ?>
                                 >
-                                @if ($errors->has('password'))
+                                <?php if($errors->has('password')): ?>
                                     <span style="color: red">
-                                        {{ $errors->first('password') }}
+                                        <?php echo e($errors->first('password')); ?>
+
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-12">
@@ -128,31 +136,28 @@
                                 <label>Company Name</label>
                                 <input class="form-control" type="text" placeholder="User company name" name="company"
 
-                                       @if ($errors->has('company'))
+                                       <?php if($errors->has('company')): ?>
                                        style="border-color: red"
-                                        @endif
+                                        <?php endif; ?>
                                 >
-                                @if ($errors->has('company'))
+                                <?php if($errors->has('company')): ?>
                                     <span style="color: red">
-                                        {{ $errors->first('company') }}
+                                        <?php echo e($errors->first('company')); ?>
+
                                     </span>
-                                @endif
+                                <?php endif; ?>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Choose image</label>
                                 <div class="input-group">
-                                    <input type="file" name="image" id="image"
-                                           @if ($errors->has('image'))
+                                    <input type="file" name="image" id="file"
+                                           <?php if($errors->has('image')): ?>
                                            style="color: red"
-                                            @endif
+                                            <?php endif; ?>
                                     >
-                                    <input type="hidden" name="x1" value=""/>
-                                    <input type="hidden" name="y1" value=""/>
-                                    <input type="hidden" name="w" value=""/>
-                                    <input type="hidden" name="h" value=""/><br><br>
-                                    <p><img id="previewimage" style="display:none;"/></p>
+                                    <p><img id="result" style="display:none;"/></p>
                                 </div>
                             </div>
                         </div>
@@ -171,31 +176,53 @@
             <!-- /.box-body -->
         </div>
     </section>
-    {!! Form::close() !!}
+    <?php echo Form::close(); ?>
+
+    
+
+        
+
+            
+            
+
+                
+                
+
+                
+                    
+                
+            
+
+            
+                
+                    
+                    
+                    
+                    
+                
+            
+        
+
+    
     <script>
 
-        jQuery(function ($) {
+        $(document).ready(function(){
+            $("#file").change(function(e){
+                var img = e.target.files[0];
 
-            var p = $("#previewimage");
-            $("body").on("change", "#image", function () {
+                if(!iEdit.open(img, true, function(res){
 
-                var imageReader = new FileReader();
-                imageReader.readAsDataURL(document.getElementById("image").files[0]);
+                        $("#result").attr("src", res);
 
-                imageReader.onload = function (oFREvent) {
-                    p.attr('src', oFREvent.target.result).fadeIn();
-                };
-            });
-
-            $('#previewimage').imgAreaSelect({
-                onSelectEnd: function (img, selection) {
-                    $('input[name="x1"]').val(selection.x1);
-                    $('input[name="y1"]').val(selection.y1);
-                    $('input[name="w"]').val(selection.width);
-                    $('input[name="h"]').val(selection.height);
+                    })){
+                    alert("Whoops! That is not an image!");
                 }
+
             });
         });
 
+
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
+
+<?php echo $__env->make('admin.app', \Illuminate\Support\Arr::except(get_defined_vars(), array('__data', '__path')))->render(); ?>

@@ -40,7 +40,7 @@ class UsersController extends Controller
 
     public function show_new_user()
     {
-        return view('admin.new_user');
+        return view('admin.users.new_user');
     }
 
 
@@ -81,7 +81,6 @@ class UsersController extends Controller
             $file = $request->file('image');
             $filename = time().$file->getClientOriginalName();
             $data['image'] = Image::make($request->file('image')->getRealPath());
-            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
             $path = ('images/'.$filename);
             $data['image']->save($path);
             $data['image']=$filename;
@@ -173,7 +172,6 @@ class UsersController extends Controller
             $file = $request->file('image');
             $filename = time().$file->getClientOriginalName();
             $data['image'] = Image::make($request->file('image')->getRealPath());
-            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
             $path = ('images/'.$filename);
             $data['image']->save($path);
         }
@@ -226,9 +224,8 @@ class UsersController extends Controller
             $file = $request->file('image');
             $filename = time().$file->getClientOriginalName();
             $data['image'] = Image::make($request->file('image')->getRealPath());
-            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
+//            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
             $path = ('images/'.$filename);
-            $old_image =
             $data['image']->save($path);
         }
         $id = Auth::user()->id;

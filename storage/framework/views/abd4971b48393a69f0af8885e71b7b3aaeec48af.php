@@ -8,7 +8,7 @@
     </section>
     <section class="content">
         <div class="row">
-            <?php echo Form::open(['url'=> 'admin/user/news']); ?>
+            <?php echo Form::open(['url'=> 'user/news']); ?>
 
             <?php echo e(csrf_field()); ?>
 
@@ -46,7 +46,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Description</label>
-                                <input class="form-control" type="text" placeholder="News description" name="description"
+                                <textarea class="form-control" type="text" placeholder="Description" name="description"
                                        <?php if($errors->has('description')): ?>
                                        style="border-color: red"
                                         <?php endif; ?>
@@ -54,22 +54,19 @@
                                 <?php if($errors->has('description')): ?>
                                     <span style="color: red"><?php echo e($errors->first('description')); ?></span>
                                 <?php endif; ?>
+                                </textarea>
                             </div>
                         </div>
                         <div class="col-md-4">
                             <div class="form-group">
                                 <label>Choose image</label>
                                 <div class="input-group">
-                                    <input type="file" name="image" id="image"
+                                    <input type="file" name="image" id="file"
                                            <?php if($errors->has('image')): ?>
                                            style="color: red"
                                             <?php endif; ?>
                                     >
-                                    <input type="hidden" name="x1" value=""/>
-                                    <input type="hidden" name="y1" value=""/>
-                                    <input type="hidden" name="w" value=""/>
-                                    <input type="hidden" name="h" value=""/><br><br>
-                                    <p><img id="previewimage" style="display:none;"/></p>
+                                    <img id="result" style="display: block">
                                 </div>
                             </div>
                         </div>
@@ -90,28 +87,46 @@
     </section>
     <?php echo Form::close(); ?>
 
+    
+
+        
+
+            
+            
+
+                
+                
+
+                
+                    
+                
+            
+
+            
+                
+                    
+                    
+                    
+                    
+                
+            
+        
+
+    
     <script>
 
-        jQuery(function ($) {
+        $(document).ready(function(){
+            $("#file").change(function(e){
+                var img = e.target.files[0];
 
-            var p = $("#previewimage");
-            $("body").on("change", "#image", function () {
+                if(!iEdit.open(img, true, function(res){
 
-                var imageReader = new FileReader();
-                imageReader.readAsDataURL(document.getElementById("image").files[0]);
+                        $("#result").attr("src", res);
 
-                imageReader.onload = function (oFREvent) {
-                    p.attr('src', oFREvent.target.result).fadeIn();
-                };
-            });
-
-            $('#previewimage').imgAreaSelect({
-                onSelectEnd: function (img, selection) {
-                    $('input[name="x1"]').val(selection.x1);
-                    $('input[name="y1"]').val(selection.y1);
-                    $('input[name="w"]').val(selection.width);
-                    $('input[name="h"]').val(selection.height);
+                    })){
+                    alert("Whoops! That is not an image!");
                 }
+
             });
         });
 

@@ -20,10 +20,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/users', 'UsersController@store');
     Route::post('admin/users/get-by-ajax','UsersController@getByAjax');
 
-    Route::get('admin/user/news', 'NewsController@index');
-    Route::get('admin/user/news/create', 'NewsController@create');
-    Route::post('admin/user/news', 'NewsController@store');
+    Route::get('user/news', 'NewsController@index');
+    Route::get('user/news/create', 'NewsController@create');
+    Route::post('user/news', 'NewsController@store');
 
+    Route::get('admin/user/news/{id}', 'NewsController@show');
     Route::get('admin/user/news/{id}', 'NewsController@show');
 
     Route::put('admin/users/{id}', 'UsersController@update');
@@ -33,7 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/tickets/get-by-ajax','UsersController@getTicketsByAjax');
     Route::delete('admin/tickets/{id}','UsersController@destroy_ticket');
 
-    Route::get('user/support', 'SupportController@index');
+    Route::get('admin/user/support', 'SupportController@index');
     Route::get('user/support/new_ticket', 'SupportController@create');
     Route::post('user/support', 'SupportController@store');
 
