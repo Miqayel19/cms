@@ -5,15 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Validator;
+use Intervention\Image\Facades\Image;
 use App\News;
-use App\User;
+
 class NewsController extends Controller
 {
 
     public function index()
     {
-        $auth_user=Auth::user();
-        $news = News::orderBy('id', 'DESC')->get();
+        $auth_user=Auth::user()->name;
+        $news = News::where('user_id',Auth::user()->id)->orderBy('id', 'DESC')->get();
         return view('admin.news.index',compact('news','auth_user'));
     }
 
@@ -24,6 +25,7 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
+
         $data = [
             'header' => $request->get('header'),
             'description' => $request->get('description'),
@@ -49,18 +51,27 @@ class NewsController extends Controller
             $data['image']->save($path);
             $data['image']=$filename;
         }
-            dd($data);
-        $news = News::create($data);
-        dd($news);
-        return redirect()->to('/user/news',compact('news'));
+        $data['user_id'] = Auth::user()->id;
+        News::create($data);
+
+
+        return redirect()->to('user/news');
 
     }
 
-    public function show($id)
-    {
-        $new = News::where('id', $id)->first();
-        return view('admin.news.show',compact('new'));
+//    public function show($id)
+//    {
+//
+//        $new = News::where('id', $id)->first();
+//        return view('admin.news.show',compact('new'));
+//
+//    }
 
+    public function show_user_news($id)
+    {
+
+        $new= News::where('user_id',$id)->first();
+        return  view('admin.news.show',compact('new'));
     }
 
 

@@ -24,6 +24,12 @@
                     <span>News</span>
                 </a>
             </li>
+            <li>
+                <a href="/user/support">
+                    <i class="fa fa-pie-chart"></i>
+                    <span>Support</span>
+                </a>
+            </li>
         </ul>
     </section>
     <!-- /.sidebar -->

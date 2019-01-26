@@ -34,18 +34,17 @@
                             <th>User</th>
                             <th style="text-align: right">Date</th>
                         </tr>
-                        @if($news)
                         @foreach($news as $new)
                             <tr>
                                 <td>{{$new->id}}</td>
                                 <td>{{$new->header}}</td>
                                 <td>{{$new->description}}</td>
                                 <td>{{$new->image}}</td>
-                                <td>{{$auth_uphpser}}</td>
-                                <td style="text-align: right">{{$new->date}}</td>
+                                <td>{{$new->summary}}</td>
+                                <td>{{$auth_user}}</td>
+                                <td style="text-align: right">{{$new->created_at}}</td>
                             </tr>
                         @endforeach
-                        @endif
                     </table>
                 </div>
                 <!-- /.box-body -->

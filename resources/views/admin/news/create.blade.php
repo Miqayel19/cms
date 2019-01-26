@@ -9,7 +9,7 @@
     </section>
     <section class="content">
         <div class="row">
-            {!! Form::open(['url'=> 'user/news']) !!}
+            {!! Form::open(['url'=> 'user/news','method'=>'post','files' => true]) !!}
             {{ csrf_field() }}
             <div class="box box-success">
                 <div class="box-header with-border">
@@ -33,7 +33,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Summary</label>
-                                <input class="form-control" type="text" placeholder="news summary" name="summary"
+                                <input class="form-control" type="text" placeholder="News summary" name="summary"
                                        @if ($errors->has('summary'))
                                        style="border-color: red"
                                         @endif>
@@ -45,15 +45,16 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea class="form-control" type="text" placeholder="Description" name="description"
-                                       @if ($errors->has('description'))
-                                       style="border-color: red"
-                                        @endif
-                                >
+
+                                    <textarea class="form-control" type="text" minlength="8" placeholder="Description"
+                                              name="description"
+                                    @if ($errors->has('description'))
+                                        style="border-color: red"
+                                            @endif
+                                    ></textarea>
                                 @if ($errors->has('description'))
                                     <span style="color: red">{{ $errors->first('description') }}</span>
                                 @endif
-                                </textarea>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -85,43 +86,18 @@
         </div>
     </section>
     {!! Form::close() !!}
-    {{--<script>--}}
 
-        {{--jQuery(function ($) {--}}
-
-            {{--var p = $("#previewimage");--}}
-            {{--$("body").on("change", "#image", function () {--}}
-
-                {{--var imageReader = new FileReader();--}}
-                {{--imageReader.readAsDataURL(document.getElementById("image").files[0]);--}}
-
-                {{--imageReader.onload = function (oFREvent) {--}}
-                    {{--p.attr('src', oFREvent.target.result).fadeIn();--}}
-                {{--};--}}
-            {{--});--}}
-
-            {{--$('#previewimage').imgAreaSelect({--}}
-                {{--onSelectEnd: function (img, selection) {--}}
-                    {{--$('input[name="x1"]').val(selection.x1);--}}
-                    {{--$('input[name="y1"]').val(selection.y1);--}}
-                    {{--$('input[name="w"]').val(selection.width);--}}
-                    {{--$('input[name="h"]').val(selection.height);--}}
-                {{--}--}}
-            {{--});--}}
-        {{--});--}}
-
-    {{--</script>--}}
     <script>
 
-        $(document).ready(function(){
-            $("#file").change(function(e){
+        $(document).ready(function () {
+            $("#file").change(function (e) {
                 var img = e.target.files[0];
 
-                if(!iEdit.open(img, true, function(res){
+                if (!iEdit.open(img, true, function (res) {
 
                         $("#result").attr("src", res);
 
-                    })){
+                    })) {
                     alert("Whoops! That is not an image!");
                 }
 

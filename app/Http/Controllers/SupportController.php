@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use App\Tickets;
+use App\Support;
 
 
 class SupportController extends Controller
@@ -12,7 +13,7 @@ class SupportController extends Controller
     public function index()
 
     {
-        $tickets=Tickets::orderBy('id','DESC')->get();
+        $tickets=Support::orderBy('id','DESC')->get();
         return view('admin.support.index',compact('tickets'));
     }
     public function create()
@@ -26,13 +27,12 @@ class SupportController extends Controller
     {
         $data =[
 
-            'title'=>$request->get('title'),
-            'summary'=>$request->get('summary'),
+            'theme'=>$request->get('theme'),
+
 
         ];
         $rules = [
-            'title' => 'required',
-            'summary' => 'required',
+            'theme' => 'required',
 
         ];
         $validator = Validator::make($data,$rules);
@@ -40,8 +40,14 @@ class SupportController extends Controller
 
             return redirect()->back()->withErrors($validator->errors());
         }
-        $tickets=Tickets::create($data)->orderBy('id','DESC')->get();
-        return view('admin.support.index',compact('tickets'));
+
+        $result = Support::create($data)->get();
+        dd($data);
+//        dd($tickets);
+//        $support = Support::with('');
+//        dd($support);
+//        return redirect()->to('user/support');;
+        return view('admin.support.index',compact('result'));
     }
 }
 

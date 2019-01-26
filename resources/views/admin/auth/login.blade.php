@@ -44,7 +44,7 @@
     <!-- /.login-logo -->
     <div class="login-box-body">
         <p class="login-box-msg">Sign in</p>
-        {!! Form::open(['url'=> '/login']) !!}
+        {!! Form::open(['url'=> '/login','method' =>'post']) !!}
             <div class="form-group has-feedback">
                 <input type="text" class="form-control" name='phone' placeholder="Please enter the number ex +374XXXXXX"
                        @if ($errors->has('phone'))

@@ -27,7 +27,7 @@
                                 <td>{{$ticket->id}}</td>
                                 <td>{{$ticket->title}}</td>
                                 <td>{{$ticket->summary}}</td>
-                                <td>{{ $ticket->created_at->format('d/m/Y') }}</td>
+                                <td>{{ $ticket->created_at }}</td>
                                 <td style="text-align: right">
                                     <a href="{{url('admin/tickets/'.$ticket->id.'/edit')}}" class="edit"><i class="fa fa-fw fa-edit"></i></a>
                                     <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$ticket->id}}" id="{{$ticket->id}}">

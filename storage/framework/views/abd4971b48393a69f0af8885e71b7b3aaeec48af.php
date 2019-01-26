@@ -8,7 +8,7 @@
     </section>
     <section class="content">
         <div class="row">
-            <?php echo Form::open(['url'=> 'user/news']); ?>
+            <?php echo Form::open(['url'=> 'user/news','method'=>'post','files' => true]); ?>
 
             <?php echo e(csrf_field()); ?>
 
@@ -34,7 +34,7 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Summary</label>
-                                <input class="form-control" type="text" placeholder="news summary" name="summary"
+                                <input class="form-control" type="text" placeholder="News summary" name="summary"
                                        <?php if($errors->has('summary')): ?>
                                        style="border-color: red"
                                         <?php endif; ?>>
@@ -46,15 +46,16 @@
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Description</label>
-                                <textarea class="form-control" type="text" placeholder="Description" name="description"
-                                       <?php if($errors->has('description')): ?>
-                                       style="border-color: red"
-                                        <?php endif; ?>
-                                >
+
+                                    <textarea class="form-control" type="text" minlength="8" placeholder="Description"
+                                              name="description"
+                                    <?php if($errors->has('description')): ?>
+                                        style="border-color: red"
+                                            <?php endif; ?>
+                                    ></textarea>
                                 <?php if($errors->has('description')): ?>
                                     <span style="color: red"><?php echo e($errors->first('description')); ?></span>
                                 <?php endif; ?>
-                                </textarea>
                             </div>
                         </div>
                         <div class="col-md-4">
@@ -87,43 +88,18 @@
     </section>
     <?php echo Form::close(); ?>
 
-    
 
-        
-
-            
-            
-
-                
-                
-
-                
-                    
-                
-            
-
-            
-                
-                    
-                    
-                    
-                    
-                
-            
-        
-
-    
     <script>
 
-        $(document).ready(function(){
-            $("#file").change(function(e){
+        $(document).ready(function () {
+            $("#file").change(function (e) {
                 var img = e.target.files[0];
 
-                if(!iEdit.open(img, true, function(res){
+                if (!iEdit.open(img, true, function (res) {
 
                         $("#result").attr("src", res);
 
-                    })){
+                    })) {
                     alert("Whoops! That is not an image!");
                 }
 

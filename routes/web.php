@@ -24,8 +24,8 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('user/news/create', 'NewsController@create');
     Route::post('user/news', 'NewsController@store');
 
-    Route::get('admin/user/news/{id}', 'NewsController@show');
-    Route::get('admin/user/news/{id}', 'NewsController@show');
+    Route::get('admin/users/{id}/news', 'NewsController@show_user_news');
+
 
     Route::put('admin/users/{id}', 'UsersController@update');
     Route::delete('admin/users/{id}','UsersController@destroy');
@@ -34,7 +34,7 @@ Route::group(['middleware' => 'auth'], function () {
     Route::post('admin/tickets/get-by-ajax','UsersController@getTicketsByAjax');
     Route::delete('admin/tickets/{id}','UsersController@destroy_ticket');
 
-    Route::get('admin/user/support', 'SupportController@index');
+    Route::get('user/support', 'SupportController@index');
     Route::get('user/support/new_ticket', 'SupportController@create');
     Route::post('user/support', 'SupportController@store');
 

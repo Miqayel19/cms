@@ -8,26 +8,20 @@
     </section>
     <section class="content">
         <div class="row">
-            <?php echo Form::open(['url'=> 'user/support']); ?>
+            <?php echo Form::open(['url'=> 'user/support','method' =>'post']); ?>
 
             <?php echo e(csrf_field()); ?>
 
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Ticket Create</h3>
+                    <h3 class="box-title">Theme Create</h3>
                 </div>
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Title</label>
-                                <input class="form-control" type="text" placeholder="Ticket title" name="title" required>
-                            </div>
-                        </div>
-                        <div class="col-md-12">
-                            <div class="form-group">
-                                <label>Summary</label>
-                                <textarea class="form-control" type="text" placeholder="Ticket summary" name="summary" required></textarea>
+                                <label>Theme</label>
+                                <input class="form-control" type="text" placeholder="Ticket theme" name="theme" required>
                             </div>
                         </div>
                     </div>

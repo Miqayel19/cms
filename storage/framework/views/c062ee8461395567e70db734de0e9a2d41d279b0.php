@@ -9,32 +9,34 @@
     </section>
     <section class="content">
         <div class="row">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Create Support theme</h3>
+                    <div class="box-tools" style='right:0px;top:3px'>
+                        <a class="input-group input-group-sm" href="<?php echo e(url('user/support/new_ticket')); ?>"
+                           style="text-align: right">
+                            <button type="button" name="table_search" class="btn btn-success ">Create</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover table-responsive table-striped ">
                         <tr>
                             <th>ID</th>
-                            <th>Title</th>
-                            <th>Summary</th>
+                            <th>Theme</th>
                             <th>Date</th>
-                            <th style="text-align: right">Actions</th>
                         </tr>
-                        <?php if($tickets): ?>
-                        <?php $__currentLoopData = $tickets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $ticket): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
+
+                        <?php $__currentLoopData = $tickets; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
-                                <td><?php echo e($ticket->id); ?></td>
-                                <td><?php echo e($ticket->title); ?></td>
-                                <td><?php echo e($ticket->summary); ?></td>
-                                <td><?php echo e($ticket->created_at->format('d/m/Y')); ?></td>
-                                <td style="text-align: right">
-                                    <a href="<?php echo e(url('admin/tickets/'.$ticket->id.'/edit')); ?>" class="edit"><i class="fa fa-fw fa-edit"></i></a>
-                                    <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="<?php echo e($ticket->id); ?>" id="<?php echo e($ticket->id); ?>">
-                                        <i class="fa fa-fw fa-remove"></i>
-                                    </a>
-                                </td>
+                                <td><?php echo e($res->id); ?></td>
+                                <td><?php echo e($res->theme); ?></td>
+                                <td><?php echo e($res->created_at); ?></td>
                             </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <?php endif; ?>
+
                     </table>
                 </div>
                 <!-- /.box-body -->

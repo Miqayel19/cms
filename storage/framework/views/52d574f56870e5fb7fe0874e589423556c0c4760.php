@@ -120,11 +120,7 @@
                                          style="color: red"
                                     <?php endif; ?>
                                     >
-                                    
-                                    
-                                    
-                                    
-                                    <img id="result" style="display: block"/>
+                                    <img id="result" style="display: block">
                                 </div>
                             </div>
                         </div>

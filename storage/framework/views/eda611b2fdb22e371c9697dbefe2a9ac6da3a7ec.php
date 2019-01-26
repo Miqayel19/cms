@@ -15,27 +15,26 @@
                         <tr>
                             <th>ID</th>
                             <th>Header</th>
+                            <th>Summary</th>
                             <th>Description</th>
                             <th>Image</th>
-                            <th>Summary</th>
                             <th>User</th>
                             <th>Date</th>
-                            <th style="text-align: right">Actions</th>
                         </tr>
                         <?php if($new): ?>
                             <tr>
                                 <td><?php echo e($new->id); ?></td>
                                 <td><?php echo e($new->header); ?></td>
+                                <td><?php echo e($new->summary); ?></td>
                                 <td><?php echo e($new->description); ?></td>
                                 <td><?php echo e($new->image); ?></td>
-                                <td><?php echo e($new->user->id); ?></td>
-                                <td><?php echo e($new->date); ?></td>
-                                <td style="text-align: right">
-                                    <a href="<?php echo e(url('admin/news/'.$new->id.'/edit')); ?>" class="edit"><i class="fa fa-fw fa-edit"></i></a>
-                                    <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="<?php echo e($new->id); ?>" id="<?php echo e($new->id); ?>">
-                                        <i class="fa fa-fw fa-remove"></i>
-                                    </a>
+                                <td>
+                                    <?php if($new->user): ?>
+                                        <?php echo e($new->user->name); ?>
+
+                                    <?php endif; ?>
                                 </td>
+                                <td><?php echo e($new->created_at); ?></td>
                             </tr>
                         <?php endif; ?>
                     </table>

@@ -118,10 +118,6 @@
                                          style="color: red"
                                     @endif
                                     >
-                                    {{--<input type="hidden" name="x1" value=""/>--}}
-                                    {{--<input type="hidden" name="y1" value=""/>--}}
-                                    {{--<input type="hidden" name="w" value=""/>--}}
-                                    {{--<input type="hidden" name="h" value=""/><br><br>--}}
                                     <img id="result" style="display: block">
                                 </div>
                             </div>

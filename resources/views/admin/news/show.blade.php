@@ -17,27 +17,25 @@
                         <tr>
                             <th>ID</th>
                             <th>Header</th>
+                            <th>Summary</th>
                             <th>Description</th>
                             <th>Image</th>
-                            <th>Summary</th>
                             <th>User</th>
                             <th>Date</th>
-                            <th style="text-align: right">Actions</th>
                         </tr>
                         @if($new)
                             <tr>
                                 <td>{{$new->id}}</td>
                                 <td>{{$new->header}}</td>
+                                <td>{{$new->summary}}</td>
                                 <td>{{$new->description}}</td>
                                 <td>{{$new->image}}</td>
-                                <td>{{$new->user->id}}</td>
-                                <td>{{$new->date}}</td>
-                                <td style="text-align: right">
-                                    <a href="{{url('admin/news/'.$new->id.'/edit')}}" class="edit"><i class="fa fa-fw fa-edit"></i></a>
-                                    <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$new->id}}" id="{{$new->id}}">
-                                        <i class="fa fa-fw fa-remove"></i>
-                                    </a>
+                                <td>
+                                    @if($new->user)
+                                        {{$new->user->name}}
+                                    @endif
                                 </td>
+                                <td>{{ $new->created_at}}</td>
                             </tr>
                         @endif
                     </table>

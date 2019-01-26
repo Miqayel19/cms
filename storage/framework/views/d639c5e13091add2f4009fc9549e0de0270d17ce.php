@@ -32,18 +32,17 @@
                             <th>User</th>
                             <th style="text-align: right">Date</th>
                         </tr>
-                        <?php if($news): ?>
                         <?php $__currentLoopData = $news; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $new): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <td><?php echo e($new->id); ?></td>
                                 <td><?php echo e($new->header); ?></td>
                                 <td><?php echo e($new->description); ?></td>
                                 <td><?php echo e($new->image); ?></td>
-                                <td><?php echo e($auth_uphpser); ?></td>
-                                <td style="text-align: right"><?php echo e($new->date); ?></td>
+                                <td><?php echo e($new->summary); ?></td>
+                                <td><?php echo e($auth_user); ?></td>
+                                <td style="text-align: right"><?php echo e($new->created_at); ?></td>
                             </tr>
                         <?php endforeach; $__env->popLoop(); $loop = $__env->getLastLoop(); ?>
-                        <?php endif; ?>
                     </table>
                 </div>
                 <!-- /.box-body -->

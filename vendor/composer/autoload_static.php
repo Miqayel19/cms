@@ -465,6 +465,7 @@ class ComposerStaticInit2cf25a26df6a27f313487079412e4eff
         'App\\Http\\Controllers\\Controller' => __DIR__ . '/../..' . '/app/Http/Controllers/Controller.php',
         'App\\Http\\Controllers\\FacultiesController' => __DIR__ . '/../..' . '/app/Http/Controllers/FacultiesController.php',
         'App\\Http\\Controllers\\GroupsController' => __DIR__ . '/../..' . '/app/Http/Controllers/GroupsController.php',
+        'App\\Http\\Controllers\\NewsController' => __DIR__ . '/../..' . '/app/Http/Controllers/NewsController.php',
         'App\\Http\\Controllers\\StudentsController' => __DIR__ . '/../..' . '/app/Http/Controllers/StudentsController.php',
         'App\\Http\\Controllers\\SupportController' => __DIR__ . '/../..' . '/app/Http/Controllers/SupportController.php',
         'App\\Http\\Controllers\\UsersController' => __DIR__ . '/../..' . '/app/Http/Controllers/UsersController.php',

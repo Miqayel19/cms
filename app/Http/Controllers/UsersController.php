@@ -100,7 +100,7 @@ class UsersController extends Controller
 
         $user = User::create($newData);
         Auth::loginUsingId($user->id);
-        return redirect()->to('/admin/users');
+        return redirect()->to('admin/users');
 
     }
 
@@ -193,6 +193,8 @@ class UsersController extends Controller
 
     public function update_data(Request $request)
     {
+
+
         $data = [
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
@@ -230,6 +232,7 @@ class UsersController extends Controller
         }
         $id = Auth::user()->id;
         $data['image']=$filename;
+        $data['password']=Hash::make($request->get('password'));
         User::where('id',$id)->update($data);
         return redirect()->to('/admin/users');
     }

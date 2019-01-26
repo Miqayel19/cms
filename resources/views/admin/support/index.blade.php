@@ -11,32 +11,34 @@
     </section>
     <section class="content">
         <div class="row">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Create Support theme</h3>
+                    <div class="box-tools" style='right:0px;top:3px'>
+                        <a class="input-group input-group-sm" href="{{url('user/support/new_ticket')}}"
+                           style="text-align: right">
+                            <button type="button" name="table_search" class="btn btn-success ">Create</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
                 <!-- /.box-header -->
                 <div class="box-body table-responsive no-padding">
                     <table class="table table-hover table-responsive table-striped ">
                         <tr>
                             <th>ID</th>
-                            <th>Title</th>
-                            <th>Summary</th>
+                            <th>Theme</th>
                             <th>Date</th>
-                            <th style="text-align: right">Actions</th>
                         </tr>
-                        @if($tickets)
-                        @foreach($tickets as $ticket)
+
+                        @foreach($tickets as $res)
                             <tr>
-                                <td>{{$ticket->id}}</td>
-                                <td>{{$ticket->title}}</td>
-                                <td>{{$ticket->summary}}</td>
-                                <td>{{ $ticket->created_at->format('d/m/Y') }}</td>
-                                <td style="text-align: right">
-                                    <a href="{{url('admin/tickets/'.$ticket->id.'/edit')}}" class="edit"><i class="fa fa-fw fa-edit"></i></a>
-                                    <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$ticket->id}}" id="{{$ticket->id}}">
-                                        <i class="fa fa-fw fa-remove"></i>
-                                    </a>
-                                </td>
+                                <td>{{$res->id}}</td>
+                                <td>{{$res->theme}}</td>
+                                <td>{{$res->created_at}}</td>
                             </tr>
                         @endforeach
-                        @endif
+
                     </table>
                 </div>
                 <!-- /.box-body -->
