@@ -57,20 +57,20 @@ class RegisterController extends Controller
         return view('admin.auth.register');
     }
 
-    protected function validator(array $data)
-    {
-        return Validator::make($data, [
-            'name' => ['required', 'string', 'max:255'],
-            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:6', 'confirmed'],
-            'surname' => ['required', 'string', 'max:255'],
-            'city' => ['required', 'string', 'max:255'],
-            'phone' => ['required', 'integer', 'max:255'],
-            'image' => ['required', 'string', 'max:255'],
-            'company' => ['required', 'string', 'max:255'],
-
-        ]);
-    }
+//    protected function validator(array $data)
+//    {
+//        return Validator::make($data, [
+//            'name' => ['required', 'string', 'max:255'],
+//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+//            'password' => ['required', 'string', 'min:6', 'confirmed'],
+//            'surname' => ['required', 'string', 'max:255'],
+//            'city' => ['required', 'string', 'max:255'],
+//            'phone' => ['required', 'integer', 'max:255'],
+//            'image' => ['required', 'string', 'max:255'],
+//            'company' => ['required', 'string', 'max:255'],
+//
+//        ]);
+//    }
 
     /**
      * Create a new user instance after a valid registration.
@@ -78,23 +78,10 @@ class RegisterController extends Controller
      * @param  array $data
      * @return \App\User
      */
-    protected function register(array $data)
-    {
-        return User::create([
-            'name' => $data['name'],
-            'email' => $data['email'],
-            'password' => bcrypt($data['password']),
-            'surname' => $data['surname'],
-            'city' => $data['city'],
-            'phone' => $data['phone'],
-            'image' => $data->image->path(),
-            'company' => $data['company']
-        ]);
-    }
+
 
     public function verify()
     {
-
         return view('admin.auth.verify');
     }
 

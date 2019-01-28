@@ -23,20 +23,25 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('user/news', 'NewsController@index');
     Route::get('user/news/create', 'NewsController@create');
     Route::post('user/news', 'NewsController@store');
+    Route::get('admin/users/{id}/news', 'NewsController@show');
 
-    Route::get('admin/users/{id}/news', 'NewsController@show_user_news');
 
 
     Route::put('admin/users/{id}', 'UsersController@update');
     Route::delete('admin/users/{id}','UsersController@destroy');
 
-    Route::get('admin/tickets', 'UsersController@tickets');
-    Route::post('admin/tickets/get-by-ajax','UsersController@getTicketsByAjax');
-    Route::delete('admin/tickets/{id}','UsersController@destroy_ticket');
+    Route::get('admin/tickets', 'TicketsController@index');\
+    Route::post('admin/tickets/get-by-ajax','TicketsController@getTicketsByAjax');
+    Route::get('admin/tickets/{id}', 'TicketsController@show');
+    Route::get('admin/tickets/{id}/edit', 'TicketsController@edit');
+    Route::put('admin/tickets/{id}', 'TicketsController@update');
+    Route::delete('admin/tickets/{id}','TicketsController@destroy');
 
     Route::get('user/support', 'SupportController@index');
     Route::get('user/support/new_ticket', 'SupportController@create');
     Route::post('user/support', 'SupportController@store');
+    Route::post('user/support/tickets/get-by-ajax','SupportController@getTicketsByAjax');
+    Route::delete('user/support/tickets/{id}','SupportController@destroy');
 
 });
 

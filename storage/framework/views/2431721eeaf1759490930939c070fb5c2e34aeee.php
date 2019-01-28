@@ -14,14 +14,39 @@
 
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Theme Create</h3>
+                    <h3 class="box-title">Ticket Create</h3>
                 </div>
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Theme</label>
-                                <input class="form-control" type="text" placeholder="Ticket theme" name="theme" required>
+                                <label>Title</label>
+                                <input class="form-control" type="text" placeholder="Ticket title" name="title"
+
+                                       <?php if($errors->has('title')): ?>
+                                       style="border-color: red"
+                                        <?php endif; ?>
+                                >
+                                <?php if($errors->has('title')): ?>
+                                    <span style="color: red">
+                                        <?php echo e($errors->first('title')); ?>
+
+                                    </span>
+                                <?php endif; ?>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Summary</label>
+                                <textarea class="form-control" type="text" rows="10" cols="20" placeholder="Description" name="summary"
+
+                                          <?php if($errors->has('summary')): ?>
+                                          style="border-color: red"
+                                        <?php endif; ?>
+                                ></textarea>
+                                <?php if($errors->has('summary')): ?>
+                                    <span style="color: red"><?php echo e($errors->first('summary')); ?></span>
+                                <?php endif; ?>
                             </div>
                         </div>
                     </div>

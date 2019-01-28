@@ -59,14 +59,13 @@ class LoginController extends Controller
         ];
         $validator = Validator::make($data, $rules);
         if ($validator->fails()) {
-            dd('error');
+
             return redirect()->back()->withErrors($validator);
         }
         $phone = $request->get('phone');
         $password = $request->get('password');
         $hash_password = User::where('phone', $phone)->first()->password;
         if(password_verify($password, $hash_password)) {
-
             $user = User::where('phone', $phone)->first();
             Auth::loginUsingId($user->id);
             return redirect()->to('/admin');

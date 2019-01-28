@@ -9,11 +9,13 @@ class Support extends Model
     protected $table='support';
 
     protected $fillable = [
-        'theme'
+
+        'theme','ticket_id'
     ];
 
     public function tickets()
     {
-        return $this->hasMany('App\Tickets','support_id');
+        return $this->belongsTo('App\Tickets','ticket_id','id');
     }
+
 }

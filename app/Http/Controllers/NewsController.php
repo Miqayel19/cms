@@ -51,25 +51,15 @@ class NewsController extends Controller
             $data['image']->save($path);
             $data['image']=$filename;
         }
+
         $data['user_id'] = Auth::user()->id;
         News::create($data);
 
-
         return redirect()->to('user/news');
-
     }
 
-//    public function show($id)
-//    {
-//
-//        $new = News::where('id', $id)->first();
-//        return view('admin.news.show',compact('new'));
-//
-//    }
-
-    public function show_user_news($id)
+    public function show($id)
     {
-
         $new= News::where('user_id',$id)->first();
         return  view('admin.news.show',compact('new'));
     }

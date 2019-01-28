@@ -10,11 +10,10 @@ class Tickets extends Model
 
     protected $fillable = [
 
-        'title','summary','support_id'
+        'title','summary'
     ];
-
     public function support()
     {
-        return $this->belongsTo('App\Support', 'support_id','id');
+        return $this->hasMany('App\Support', 'ticket_id');
     }
 }

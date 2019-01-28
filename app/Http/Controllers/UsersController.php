@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
-use App\User;
-use App\News;
-use App\Tickets;
 use Illuminate\Support\Facades\View;
 use Intervention\Image\Facades\Image;
+use App\User;
 
 class UsersController extends Controller
 {
@@ -22,7 +20,6 @@ class UsersController extends Controller
 
 
     public function index()
-
     {
         $users = User::orderBy('id', 'DESC')->get();
         return view('admin.users.index',compact('users'));
@@ -37,7 +34,6 @@ class UsersController extends Controller
     {
         return view('admin.users.create');
     }
-
     public function show_new_user()
     {
         return view('admin.users.new_user');
@@ -137,7 +133,6 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-
         $data = [
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
@@ -190,11 +185,8 @@ class UsersController extends Controller
         User::where('id',$id)->update($newData);
         return redirect()->to('/admin/users');
     }
-
     public function update_data(Request $request)
     {
-
-
         $data = [
             'name' => $request->get('name'),
             'surname' => $request->get('surname'),
@@ -226,7 +218,6 @@ class UsersController extends Controller
             $file = $request->file('image');
             $filename = time().$file->getClientOriginalName();
             $data['image'] = Image::make($request->file('image')->getRealPath());
-//            $data['image']->crop($request->get('w'), $request->get('h'), $request->get('x1'), $request->get('y1'));
             $path = ('images/'.$filename);
             $data['image']->save($path);
         }
@@ -248,38 +239,18 @@ class UsersController extends Controller
         User::where('id',$id)->delete();
         return redirect()->back();
     }
-
-    public function destroy_ticket($id)
-    {
-        Tickets::where('id',$id)->delete();
-        return redirect()->back();
-    }
-
-    public function tickets()
-    {
-        $tickets = Tickets::orderBy('id', 'DESC')->get();
-        return view('admin.tickets',compact('tickets'));
-    }
-
     public function getByAjax(Request $request)
     {
         $id = $request->get('id');
         $user = User::where('id',$id)->first();
         return View::make('admin.users.modals.delete',compact('user'));
     }
-
     public function send_sms()
     {
         return view('admin.auth.send');
-
     }
 
-    public function getTicketsByAjax(Request $request)
-    {
-        $id = $request->get('id');
-        $ticket = Tickets::where('id',$id)->first();
-        return View::make('admin.users.modals.delete_tickets',compact('ticket'));
-    }
+
 
 
 }

@@ -46,7 +46,7 @@
                             <div class="form-group">
                                 <label>Description</label>
 
-                                    <textarea class="form-control" type="text" minlength="8" placeholder="Description"
+                                    <textarea class="form-control" type="text" rows="5" cols="10" minlength="3" placeholder="Description"
                                               name="description"
                                     @if ($errors->has('description'))
                                         style="border-color: red"

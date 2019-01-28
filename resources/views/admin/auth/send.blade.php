@@ -298,22 +298,40 @@ class SMSRU {
 $sms_ru = new SMSRU('5BE5A487-BD1F-8494-3ECA-DDFABEAE2EDF'); // Ваш уникальный программный ключ, который можно получить на главной странице
 $data = new stdClass();
 $data->to = $_POST['phone'];
+$phone = $_POST['phone'];
 $verify_code = rand(1000,9999);
 
 $data->text = 'Your verification code:'.$verify_code;
 
 if(\App\User::where('phone', $_POST['phone'])->first()){
-    \App\User::where('phone', $_POST['phone'])->update(['verify_code'=>$verify_code]);
-//    $sms = $sms_ru->send_one($data); // Отправка сообщения и возврат данных в переменную
-        
-    }else{
-    $data = [
-        'phone' => $_POST['phone'],
-        'verify_code' => $verify_code
-    ];
-    $user = \App\User::create($data);
 
-}
+//    $sms = $sms_ru->send_one($data); // Отправка сообщения и возврат данных в переменную
+    if(true){
+        \App\User::where('phone', $_POST['phone'])->update(['verify_code'=>$verify_code]);
+        echo "<script>window.location ='/verify?phone=$phone'</script>";
+    }
+    else{
+        echo "<script>window.location ='/signup'</script>";
+    }
+        
+}   else{
+        $data = [
+            'phone' => $_POST['phone'],
+            'verify_code' => $verify_code
+        ];
+
+//        $sms = $sms_ru->send_one($data); // Отправка сообщения и возврат данных в переменную
+        if(true){
+            $user = \App\User::create($data);
+            echo "<script>window.location ='/verify?phone=$phone'</script>";
+        }
+        else{
+
+            echo "<script>window.location ='/signup'</script>";
+
+        }
+
+    }
 
 
 // $data->from = ''; // Если у вас уже одобрен буквенный отправитель, его можно указать здесь, в противном случае будет использоваться ваш отправитель по умолчанию
@@ -328,13 +346,7 @@ if(\App\User::where('phone', $_POST['phone'])->first()){
 
 ?>
 
-{{--@if($sms->status == "OK")--}}
 
-    <script>window.location = "/verify?phone=<?php echo $_POST['phone'];?>"</script>
-{{--@else--}}
-
-    {{--<script>window.location = "/signup"</script>--}}
-{{--@endif--}}
 
 
 

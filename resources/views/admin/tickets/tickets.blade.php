@@ -1,11 +1,10 @@
 @extends('admin.app')
-
 @section('content')
 
     <section class="content-header" style="padding:7px 15px 0 15px">
         <!-- /.row -->
         <ol class="breadcrumb" style="float:left;position:static">
-            <li><a href="users"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="/admin"><i class="fa fa-dashboard"></i>Home</a></li>
             <li><a href="tickets" active>Tickets</a></li>
         </ol>
     </section>
@@ -33,6 +32,7 @@
                                     <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$ticket->id}}" id="{{$ticket->id}}">
                                         <i class="fa fa-fw fa-remove"></i>
                                     </a>
+                                    <a href="{{url('admin/tickets/'.$ticket->id)}}" class="edit"><i class="fa fa-fw fa-eye"></i></a>
                                 </td>
                             </tr>
                         @endforeach

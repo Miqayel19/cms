@@ -5,15 +5,15 @@
     <section class="content-header" style="padding:7px 15px 0 15px">
         <!-- /.row -->
         <ol class="breadcrumb" style="float:left;position:static">
-            <li><a href="users"><i class="fa fa-dashboard"></i>Home</a></li>
-            <li><a href="tickets" active>Tickets</a></li>
+            <li><a href="/admin"><i class="fa fa-dashboard"></i>Home</a></li>
+            <li><a href="support" active>Support</a></li>
         </ol>
     </section>
     <section class="content">
         <div class="row">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Create Support theme</h3>
+                    <h3 class="box-title">Create Support ticket</h3>
                     <div class="box-tools" style='right:0px;top:3px'>
                         <a class="input-group input-group-sm" href="{{url('user/support/new_ticket')}}"
                            style="text-align: right">
@@ -29,16 +29,26 @@
                             <th>ID</th>
                             <th>Theme</th>
                             <th>Date</th>
-                        </tr>
-
-                        @foreach($tickets as $res)
+                            <th style="text-align: right">Action</th>
+                        @if($support)
+                        @foreach($support as $res)
                             <tr>
                                 <td>{{$res->id}}</td>
-                                <td>{{$res->theme}}</td>
+                                <td>
+
+                                    @if($res->tickets)
+                                        <a href="{{url('admin/tickets/'.$res->tickets->id)}}" class="edit">{{$res->tickets->title}}</a>
+                                    @endif
+                                </td>
                                 <td>{{$res->created_at}}</td>
+                                <td style="text-align: right">
+                                    <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$res->id}}" id="{{$res->id}}">
+                                        <i class="fa fa-fw fa-remove"></i>
+                                    </a>
+                                </td>
                             </tr>
                         @endforeach
-
+                            @endif
                     </table>
                 </div>
                 <!-- /.box-body -->
@@ -55,7 +65,7 @@
                 $.ajax({
                     type: 'POST',
                     headers: {'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')},
-                    url: '/admin/tickets/get-by-ajax',
+                    url: '/user/support/tickets/get-by-ajax',
                     data: {id: id},
                     success: function (data) {
                         $('.delete_modal').html(data);
