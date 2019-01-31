@@ -141,31 +141,7 @@
     </section>
     <?php echo Form::close(); ?>
 
-    
 
-        
-
-            
-            
-
-                
-                
-
-                
-                    
-                
-            
-            
-                
-                    
-                    
-                    
-                    
-                
-            
-        
-
-    
     <script>
 
         $(document).ready(function(){

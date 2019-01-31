@@ -13,7 +13,7 @@
         <div class="row">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Create Support ticket</h3>
+                    <h3 class="box-title">Create Ticket answer</h3>
                     <div class="box-tools" style='right:0px;top:3px'>
                         <a class="input-group input-group-sm" href="{{url('user/support/new_ticket')}}"
                            style="text-align: right">
@@ -28,18 +28,23 @@
                         <tr>
                             <th>ID</th>
                             <th>Theme</th>
+                            <th>Message</th>
+                            <th>Upload</th>
                             <th>Date</th>
                             <th style="text-align: right">Action</th>
                         @if($support)
                         @foreach($support as $res)
                             <tr>
                                 <td>{{$res->id}}</td>
-                                <td>
-
+                                <td style="width:20%">
                                     @if($res->tickets)
-                                        <a href="{{url('admin/tickets/'.$res->tickets->id)}}" class="edit">{{$res->tickets->title}}</a>
+                                        <a href="{{url('user/support/tickets/'.$res->id)}}" class="edit"><i class="fa fa-fw fa-envelope"></i>
+                                            {{$res->tickets->title}}
+                                        </a>
                                     @endif
                                 </td>
+                                <td style="width:35%">{{$res->message}}</td>
+                                <td>{{$res->upload}}</td>
                                 <td>{{$res->created_at}}</td>
                                 <td style="text-align: right">
                                     <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="{{$res->id}}" id="{{$res->id}}">

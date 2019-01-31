@@ -47,7 +47,7 @@
                             <div class="form-group">
                                 <label>Description</label>
 
-                                    <textarea class="form-control" type="text" rows="5" cols="10" minlength="8" placeholder="Description"
+                                    <textarea class="form-control" type="text" rows="5" cols="10" minlength="3" placeholder="Description"
                                               name="description"
                                     <?php if($errors->has('description')): ?>
                                         style="border-color: red"

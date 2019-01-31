@@ -10,7 +10,7 @@ class Tickets extends Model
 
     protected $fillable = [
 
-        'title','summary'
+        'title','summary','upload','answer'
     ];
     public function support()
     {

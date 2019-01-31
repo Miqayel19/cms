@@ -54,7 +54,6 @@ class NewsController extends Controller
 
         $data['user_id'] = Auth::user()->id;
         News::create($data);
-
         return redirect()->to('user/news');
     }
 
@@ -63,8 +62,6 @@ class NewsController extends Controller
         $new= News::where('user_id',$id)->first();
         return  view('admin.news.show',compact('new'));
     }
-
-
 
 
 }

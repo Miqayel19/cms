@@ -66,7 +66,7 @@ class UsersController extends Controller
             'company' => 'required|min:5',
             'email' => 'required|email|unique:users',
             'phone' => 'required|numeric|unique:users|digits:11',
-            'image' => 'required|mimes:jpeg,png,jpg,gif,svg'
+            'image' => 'required|max:2048|mimes:jpeg,png,jpg,gif,svg'
         ];
 
         $validator = Validator::make($data,$rules);
@@ -159,7 +159,6 @@ class UsersController extends Controller
 
         $validator = Validator::make($data,$rules);
         if ($validator->fails()) {
-            dd($validator->errors());
             return redirect()->back()->withErrors($validator);
         }
 

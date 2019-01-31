@@ -8,8 +8,6 @@
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.7 -->
 
-    
-
     <link href="<?php echo e(asset('css/iEdit.css')); ?>" rel="stylesheet"/>
 
     <link rel="stylesheet" href="<?php echo e(asset('css/bootstrap.min.css')); ?>">
@@ -75,8 +73,6 @@
 <script src="<?php echo e(asset('js/dashboard2.js')); ?>"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="<?php echo e(asset('js/demo.js')); ?>"></script>
-
-
 
 </body>
 </html>

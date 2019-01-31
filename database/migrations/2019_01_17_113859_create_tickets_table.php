@@ -17,6 +17,8 @@ class CreateTicketsTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('summary')->default('1000');
+            $table->string('answer')->nullable();
+            $table->string('file')->nullable();
             $table->timestamps();
         });
     }

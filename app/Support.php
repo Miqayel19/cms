@@ -10,7 +10,7 @@ class Support extends Model
 
     protected $fillable = [
 
-        'theme','ticket_id'
+        'theme','ticket_id','message','upload'
     ];
 
     public function tickets()

@@ -11,7 +11,7 @@
         <div class="row">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Create Support ticket</h3>
+                    <h3 class="box-title">Create Ticket answer</h3>
                     <div class="box-tools" style='right:0px;top:3px'>
                         <a class="input-group input-group-sm" href="<?php echo e(url('user/support/new_ticket')); ?>"
                            style="text-align: right">
@@ -26,18 +26,24 @@
                         <tr>
                             <th>ID</th>
                             <th>Theme</th>
+                            <th>Message</th>
+                            <th>Upload</th>
                             <th>Date</th>
                             <th style="text-align: right">Action</th>
                         <?php if($support): ?>
                         <?php $__currentLoopData = $support; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $res): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                             <tr>
                                 <td><?php echo e($res->id); ?></td>
-                                <td>
-
+                                <td style="width:20%">
                                     <?php if($res->tickets): ?>
-                                        <a href="<?php echo e(url('admin/tickets/'.$res->tickets->id)); ?>" class="edit"><?php echo e($res->tickets->title); ?></a>
+                                        <a href="<?php echo e(url('user/support/tickets/'.$res->id)); ?>" class="edit"><i class="fa fa-fw fa-envelope"></i>
+                                            <?php echo e($res->tickets->title); ?>
+
+                                        </a>
                                     <?php endif; ?>
                                 </td>
+                                <td style="width:35%"><?php echo e($res->message); ?></td>
+                                <td><?php echo e($res->upload); ?></td>
                                 <td><?php echo e($res->created_at); ?></td>
                                 <td style="text-align: right">
                                     <a class="delete_group" data-toggle="modal" data-target="#modal-primary" data-id="<?php echo e($res->id); ?>" id="<?php echo e($res->id); ?>">

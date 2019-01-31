@@ -9,51 +9,42 @@
     </section>
     <section class="content">
         <div class="row">
-            {!! Form::open(['url'=> 'user/support','method' =>'post', 'files'=>true]) !!}
+            {!! Form::open(['url'=> 'admin/tickets','method' =>'post']) !!}
             {{ csrf_field() }}
             <div class="box box-success">
                 <div class="box-header with-border">
-                    <h3 class="box-title">Create Answer</h3>
+                    <h3 class="box-title">Ticket Create</h3>
                 </div>
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label>Title</label>
-                                <select class="form-control" name="ticket_id">
-                                    @foreach($tickets as $ticket)
-                                        <option value={{$ticket->id}}>{{$ticket->title}}</option>
-                                    @endforeach
-                                </select>
+                                <input class="form-control" type="text" placeholder="Ticket title" name="title"
+
+                                       @if ($errors->has('title'))
+                                       style="border-color: red"
+                                        @endif
+                                >
+                                @if ($errors->has('title'))
+                                    <span style="color: red">
+                                        {{ $errors->first('title') }}
+                                    </span>
+                                @endif
                             </div>
                         </div>
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label>Message</label>
-                                <textarea class="form-control" type="text" rows="10" cols="5" placeholder="Reply" name="message"
-                                          @if ($errors->has('message'))
+                                <label>Summary</label>
+                                <textarea class="form-control" type="text" rows="5" cols="5" placeholder="Description" name="summary"
+
+                                          @if ($errors->has('summary'))
                                           style="border-color: red"
                                         @endif
                                 ></textarea>
-                                @if ($errors->has('message'))
-                                    <span style="color: red">{{ $errors->first('message') }}</span>
+                                @if ($errors->has('summary'))
+                                    <span style="color: red">{{ $errors->first('summary') }}</span>
                                 @endif
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="form-group">
-                                <label>Choose file</label>
-                                <div class="input-group">
-                                    <input type="file" name="upload" id="file"
-                                           @if ($errors->has('upload'))
-                                           style="color: red"
-                                            @endif
-                                    >
-                                    @if ($errors->has('upload'))
-                                        <span style="color: red">{{ $errors->first('upload') }}</span>
-                                    @endif
-
-                                </div>
                             </div>
                         </div>
                     </div>
@@ -69,7 +60,6 @@
             </div>
             <!-- /.box-body -->
         </div>
-        {!! Form::close() !!}
     </section>
-
+    {!! Form::close() !!}
 @endsection

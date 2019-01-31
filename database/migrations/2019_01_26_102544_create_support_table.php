@@ -16,6 +16,8 @@ class CreateSupportTable extends Migration
         Schema::create('support', function (Blueprint $table) {
             $table->increments('id');
             $table->string('theme');
+            $table->string('message');
+            $table->string('upload')->nullable();
             $table->integer('ticket_id');
             $table->timestamps();
         });

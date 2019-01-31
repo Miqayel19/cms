@@ -1,11 +1,17 @@
 
 <?php
+
+
+/**
+ * Класс для работы с API сайта sms.ru для PHP 5.3 и выше
+ * Разработчик WebProgrammer (kl.dm.vl@yandex.ru), легкие корректировки - Роман Гудев <rgudev@bk.ru>
+ */
 class SMSRU {
 
     private $ApiKey;
     private $protocol = 'https';
     private $domain = 'sms.ru';
-    private $count_repeat = 1;    //количество попыток достучаться до сервера если он не доступен
+    private $count_repeat = 5;    //количество попыток достучаться до сервера если он не доступен
 
 
     function __construct($ApiKey) {
@@ -295,7 +301,8 @@ class SMSRU {
     }
 }
 
-$sms_ru = new SMSRU('5BE5A487-BD1F-8494-3ECA-DDFABEAE2EDF'); // Ваш уникальный программный ключ, который можно получить на главной странице
+
+$sms_ru = new SMSRU('2B34FE3E-D35E-F106-C565-A96283B3E4F8'); // Ваш уникальный программный ключ, который можно получить на главной странице
 $data = new stdClass();
 $data->to = $_POST['phone'];
 $phone = $_POST['phone'];
@@ -305,8 +312,8 @@ $data->text = 'Your verification code:'.$verify_code;
 
 if(\App\User::where('phone', $_POST['phone'])->first()){
 
-//    $sms = $sms_ru->send_one($data); // Отправка сообщения и возврат данных в переменную
-    if(true){
+    $sms = $sms_ru->send_one($data); // Отправка сообщения и возврат данных в переменную
+    if($sms->status =="OK"){
         \App\User::where('phone', $_POST['phone'])->update(['verify_code'=>$verify_code]);
         echo "<script>window.location ='/verify?phone=$phone'</script>";
     }
@@ -320,8 +327,8 @@ if(\App\User::where('phone', $_POST['phone'])->first()){
             'verify_code' => $verify_code
         ];
 
-//        $sms = $sms_ru->send_one($data); // Отправка сообщения и возврат данных в переменную
-        if(true){
+        $sms = $sms_ru->send_one($data); // Отправка сообщения и возврат данных в переменную
+        if($sms->status == "OK"){
             $user = \App\User::create($data);
             echo "<script>window.location ='/verify?phone=$phone'</script>";
         }

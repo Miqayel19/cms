@@ -15,12 +15,35 @@ class TicketsController extends Controller
         return view('admin.tickets.tickets',compact('tickets'));
     }
 
+    public function create()
+    {
+        return view('admin.tickets.create', compact('tickets'));
+    }
+
     public function show($id)
     {
         $ticket = Tickets::where('id',$id)->first();
         return view('admin.tickets.show',compact('ticket'));
     }
 
+    public function store(Request $request)
+    {
+        $data = [
+            'title' => $request->get('title'),
+            'summary' => $request->get('summary'),
+        ];
+        $rules = [
+            'title' => 'required',
+            'summary' => 'required',
+        ];
+        $validator = Validator::make($data, $rules);
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator);
+        }
+
+        $tickets = Tickets::create($data)->get();
+        return view('admin.tickets.tickets', compact('tickets'));
+    }
     public function destroy($id)
     {
         Tickets::where('id',$id)->delete();
