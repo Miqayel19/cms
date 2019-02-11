@@ -36,9 +36,9 @@
                             <div class="form-group">
                                 <label>Surname</label>
                                 <input class="form-control" type="text" placeholder="User surname" name="surname"
-                                       @if ($errors->has('surname'))
-                                       style="border-color: red"
-                                        @endif
+                                    @if ($errors->has('surname'))
+                                        style="border-color: red"
+                                    @endif
                                 >
                                 @if ($errors->has('surname'))
                                     <span style="color: red">
@@ -51,9 +51,9 @@
                             <div class="form-group">
                                 <label>Father name</label>
                                 <input class="form-control" type="text" placeholder="User father name" name="fathername"
-                                       @if ($errors->has('fathername'))
-                                       style="border-color: red"
-                                        @endif
+                                    @if ($errors->has('fathername'))
+                                        style="border-color: red"
+                                    @endif
                                 >
                                 @if ($errors->has('fathername'))
                                     <span style="color: red">
@@ -66,9 +66,9 @@
                             <div class="form-group">
                                 <label>Phone</label>
                                 <input class="form-control" type="text" placeholder="Please enter the phone number +374XXXXXX " name="phone"
-                                       @if ($errors->has('phone'))
-                                       style="border-color: red"
-                                        @endif
+                                    @if ($errors->has('phone'))
+                                        style="border-color: red"
+                                    @endif
                                 >
                                 @if ($errors->has('phone'))
                                     <span style="color: red">

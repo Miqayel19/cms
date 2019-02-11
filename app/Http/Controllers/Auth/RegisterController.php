@@ -57,20 +57,6 @@ class RegisterController extends Controller
         return view('admin.auth.register');
     }
 
-//    protected function validator(array $data)
-//    {
-//        return Validator::make($data, [
-//            'name' => ['required', 'string', 'max:255'],
-//            'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-//            'password' => ['required', 'string', 'min:6', 'confirmed'],
-//            'surname' => ['required', 'string', 'max:255'],
-//            'city' => ['required', 'string', 'max:255'],
-//            'phone' => ['required', 'integer', 'max:255'],
-//            'image' => ['required', 'string', 'max:255'],
-//            'company' => ['required', 'string', 'max:255'],
-//
-//        ]);
-//    }
 
     /**
      * Create a new user instance after a valid registration.

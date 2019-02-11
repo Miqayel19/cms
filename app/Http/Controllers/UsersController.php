@@ -79,9 +79,9 @@ class UsersController extends Controller
             $data['image'] = Image::make($request->file('image')->getRealPath());
             $path = ('images/'.$filename);
             $data['image']->save($path);
-            $data['image']=$filename;
         }
-
+            $data['image'] = $filename;
+            
         $newData = [
             'name' => $request->get('name'),
             'email' => $request->get('email'),
@@ -141,7 +141,6 @@ class UsersController extends Controller
             'company' => $request->get('company'),
             'phone' => $request->get('phone'),
             'email' => $request->get('email'),
-            'password' => $request->get('password'),
             'image' => $request->file('image')
         ];
 
@@ -153,7 +152,6 @@ class UsersController extends Controller
             'company' => 'required|min:5',
             'phone' => 'required|numeric',
             'email' => 'required|email',
-            'password' => 'required',
             'image' => 'required|max:2048|mimes:jpeg,png'
         ];
 
@@ -170,18 +168,9 @@ class UsersController extends Controller
             $data['image']->save($path);
         }
 
-        $newData = [
-            'name' => $request->get('name'),
-            'email' => $request->get('email'),
-            'password' => Hash::make($request->get('password')),
-            'surname' => $request->get('surname'),
-            'fathername' => $request->get('fathername'),
-            'phone' => $request->get('phone'),
-            'city' => $request->get('city'),
-            'image' => $request->get('image'),
-            'company' => $request->get('company'),
-        ];
-        User::where('id',$id)->update($newData);
+        
+        $data['image'] = $filename;
+        User::where('id',$id)->update($data);
         return redirect()->to('/admin/users');
     }
     public function update_data(Request $request)
@@ -219,6 +208,7 @@ class UsersController extends Controller
             $data['image'] = Image::make($request->file('image')->getRealPath());
             $path = ('images/'.$filename);
             $data['image']->save($path);
+            
         }
         $id = Auth::user()->id;
         $data['image']=$filename;
